@@ -1,0 +1,176 @@
+//!<ПЕРЕМЕННЫЕ>=============================================================================================
+$color: #000;
+$fontFamily: 'Rubik';
+$minWidth: 320;
+$maxWidth: 1440;
+$container: 1192;
+//!</ПЕРЕМЕННЫЕ>============================================================================================
+
+//!<Адаптивное свойство>====================================================================================
+@mixin adaptiv($indentType, $pcSize, $mobSize, $important: false) {
+  $addSize: $pcSize - $mobSize;
+  $answer: calc(
+    #{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320})
+  );
+  @if $important == false {
+    #{$indentType}: $pcSize + px;
+    @media (max-width: #{$maxWidth + px}) {
+      #{$indentType}: $answer;
+    }
+  } @else {
+    #{$indentType}: $pcSize + px !important;
+    @media (max-width: #{$maxWidth + px}) {
+      #{$indentType}: $answer !important;
+    }
+  }
+}
+//!<Адаптивное свойство>====================================================================================
+
+//!<Отступы>================================================================================================
+@for $i from 0 through 100 {
+  $pcSizeM: $i;
+  $mobSizeM: $i / 2;
+
+  @if $i <= 5 {
+    // margins
+    .m-#{$i} {
+      @include adaptiv(margin, $pcSizeM, $mobSizeM, true);
+    }
+    .mt-#{$i} {
+      @include adaptiv(margin-top, $pcSizeM, $mobSizeM, true);
+    }
+    .mb-#{$i} {
+      @include adaptiv(margin-bottom, $pcSizeM, $mobSizeM, true);
+    }
+    .mr-#{$i} {
+      @include adaptiv(margin-right, $pcSizeM, $mobSizeM, true);
+    }
+    .ml-#{$i} {
+      @include adaptiv(margin-left, $pcSizeM, $mobSizeM, true);
+    }
+
+    // paddings
+    .p-#{$i} {
+      @include adaptiv(padding, $pcSizeM, $mobSizeM, true);
+    }
+    .pt-#{$i} {
+      @include adaptiv(padding-top, $pcSizeM, $mobSizeM, true);
+    }
+    .pb-#{$i} {
+      @include adaptiv(padding-bottom, $pcSizeM, $mobSizeM, true);
+    }
+    .pr-#{$i} {
+      @include adaptiv(padding-right, $pcSizeM, $mobSizeM, true);
+    }
+    .pl-#{$i} {
+      @include adaptiv(padding-left, $pcSizeM, $mobSizeM, true);
+    }
+  } @else {
+    // margins
+    .m-#{$i} {
+      @include adaptiv(margin, $pcSizeM, $mobSizeM);
+    }
+    .mt-#{$i} {
+      @include adaptiv(margin-top, $pcSizeM, $mobSizeM);
+    }
+    .mb-#{$i} {
+      @include adaptiv(margin-bottom, $pcSizeM, $mobSizeM);
+    }
+    .mr-#{$i} {
+      @include adaptiv(margin-right, $pcSizeM, $mobSizeM);
+    }
+    .ml-#{$i} {
+      @include adaptiv(margin-left, $pcSizeM, $mobSizeM);
+    }
+
+    // paddings
+    .p-#{$i} {
+      @include adaptiv(padding, $pcSizeM, $mobSizeM);
+    }
+    .pt-#{$i} {
+      @include adaptiv(padding-top, $pcSizeM, $mobSizeM);
+    }
+    .pb-#{$i} {
+      @include adaptiv(padding-bottom, $pcSizeM, $mobSizeM);
+    }
+    .pr-#{$i} {
+      @include adaptiv(padding-right, $pcSizeM, $mobSizeM);
+    }
+    .pl-#{$i} {
+      @include adaptiv(padding-left, $pcSizeM, $mobSizeM);
+    }
+  }
+
+  // 3 раза меньше
+
+  // margins
+  .m-#{$i}-3 {
+    @include adaptiv(margin, $pcSizeM, $i / 3);
+  }
+  .mt-#{$i}-3 {
+    @include adaptiv(margin-top, $pcSizeM, $i / 3);
+  }
+  .mb-#{$i}-3 {
+    @include adaptiv(margin-bottom, $pcSizeM, $i / 3);
+  }
+  .mr-#{$i}-3 {
+    @include adaptiv(margin-right, $pcSizeM, $i / 3);
+  }
+  .ml-#{$i}-3 {
+    @include adaptiv(margin-left, $pcSizeM, $i / 3);
+  }
+
+  // paddings
+  .p-#{$i}-3 {
+    @include adaptiv(padding, $pcSizeM, $i / 3);
+  }
+  .pt-#{$i}-3 {
+    @include adaptiv(padding-top, $pcSizeM, $i / 3);
+  }
+  .pb-#{$i}-3 {
+    @include adaptiv(padding-bottom, $pcSizeM, $i / 3);
+  }
+  .pr-#{$i}-3 {
+    @include adaptiv(padding-right, $pcSizeM, $i / 3);
+  }
+  .pl-#{$i}-3 {
+    @include adaptiv(padding-left, $pcSizeM, $i / 3);
+  }
+
+  // 4 раза меньше
+
+  // margins
+  .m-#{$i}-4 {
+    @include adaptiv(margin, $pcSizeM, $i / 4);
+  }
+  .mt-#{$i}-4 {
+    @include adaptiv(margin-top, $pcSizeM, $i / 4);
+  }
+  .mb-#{$i}-4 {
+    @include adaptiv(margin-bottom, $pcSizeM, $i / 4);
+  }
+  .mr-#{$i}-4 {
+    @include adaptiv(margin-right, $pcSizeM, $i / 4);
+  }
+  .ml-#{$i}-4 {
+    @include adaptiv(margin-left, $pcSizeM, $i / 4);
+  }
+
+  // paddings
+  .p-#{$i}-4 {
+    @include adaptiv(padding, $pcSizeM, $i / 4);
+  }
+  .pt-#{$i}-4 {
+    @include adaptiv(padding-top, $pcSizeM, $i / 4);
+  }
+  .pb-#{$i}-4 {
+    @include adaptiv(padding-bottom, $pcSizeM, $i / 4);
+  }
+  .pr-#{$i}-4 {
+    @include adaptiv(padding-right, $pcSizeM, $i / 4);
+  }
+  .pl-#{$i}-4 {
+    @include adaptiv(padding-left, $pcSizeM, $i / 4);
+  }
+}
+//!<Отступы>================================================================================================

@@ -1,0 +1,16 @@
+//!<Подключаем шрифты>======================================================================================
+// Convert fonts: https://transfonter.org/
+// font-weight:100-thin,200-UltraLite,300-lite,400-normal,500-medium,600-semibold,700-bold,800-Heavy,900-black
+//&display=swap&subset=cyrillic-ext
+//!</Подключаем шрифты>=====================================================================================
+
+@mixin font($font_name, $file_name, $weight, $style: normal) {
+  @font-face {
+    font-family: $font_name;
+    font-weight: #{$weight};
+    font-style: #{$style};
+    font-display: swap;
+    src: url('@/assets/fonts/#{$file_name}.woff') format('woff'),
+      url('@/assets//fonts/#{$file_name}.woff2') format('woff2');
+  }
+}
