@@ -1,5 +1,4 @@
 export default {
-  // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Albatross',
     meta: [
@@ -13,10 +12,8 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
-  // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['~/assets/scss/style.scss'],
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '~/plugins/webFontLoader.js', ssr: false },
     { src: '~/plugins/element.js' },
@@ -26,21 +23,15 @@ export default {
     { src: '~/assets/js/scripts.js' },
   ],
 
-  // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [],
+  buildModules: [
+    '@nuxtjs/tailwindcss'
+  ],
 
-  // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/style-resources',
-    // https://go.nuxtjs.dev/bootstrap
-    'bootstrap-vue/nuxt',
-    // ---
     'nuxt-webfontloader',
-    
-    // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
   
   ],
@@ -49,12 +40,10 @@ export default {
     scss: ['@/assets/scss/functions.scss'],
   },
 
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     baseURL: '',
   },
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     extractCSS: true,
     cssSourceMap: false,
