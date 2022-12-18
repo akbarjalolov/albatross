@@ -9692,7 +9692,7 @@ vue-server-renderer@^2.6.12:
 
 vue-slick-carousel@^1.0.6:
   version "1.0.6"
-  resolved "https://registry.npmjs.org/vue-slick-carousel/-/vue-slick-carousel-1.0.6.tgz"
+  resolved "https://registry.yarnpkg.com/vue-slick-carousel/-/vue-slick-carousel-1.0.6.tgz#8fbfe59a233b0fb7777e4934b60bbdf0a6a24f96"
   integrity sha512-1CN/hpWC8m1U/eO7Kuc71jntJqdg6Z/ieLji21OPfQUhs8ZYnnGhQSu1covpa3IyuovM9T5puPCVgexs3DDF5A==
   dependencies:
     enquire.js "2.1.6"

@@ -21,6 +21,7 @@ export default {
     { src: '~/plugins/vmask.js' },
     { src: '~/plugins/vuelidate.js' },
     { src: '~/assets/js/scripts.js' },
+    { src: '~/plugins/slick.js' },
   ],
 
   components: true,

@@ -36,3 +36,63 @@
 //========================================================================================================
 
 //!</ОБЩИЕ ПАРАМЕТРЫ>=====================================================================================
+
+.section-titles {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 130%;
+  text-align: center;
+  color: #22232C;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    background: linear-gradient(63.82deg, #2B0ABF 12.65%, #26C0DE 87.35%);
+    opacity: 0.4;
+    filter: blur(10px);
+  }
+}
+
+.shadoww {
+  background: linear-gradient(63.82deg, #2B0ABF 12.65%, #26C0DE 87.35%);
+  opacity: 0.4;
+  filter: blur(10px);
+  width: 100%;
+}
+
+.title-gradient {
+  font-style: normal;
+  padding-left: 2px;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 130%;
+  color: #FFF;
+  text-transform: capitalize;
+  background: linear-gradient(#2B0ABF, #26C0DE);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 8px transparent;
+
+}
+
+.group-steps:hover {
+  .title-gradient {
+    font-style: normal;
+    padding-left: 2px;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 130%;
+    color: #22232C;
+    text-transform: capitalize;
+    background: #26C0DE;
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 8px transparent;
+
+
+  }
+}
