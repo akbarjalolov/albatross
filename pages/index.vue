@@ -1,18 +1,13 @@
 <template>
-  <main class="page">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h4 class="text-[#00AFEF]">BLUE</h4>
-        </div>
-      </div>
-    </div>
-  </main>
+  <div>
+    <Main />
+  </div>
 </template>
 
 <script>
+import Main from '../components/Main.vue';
 export default {
-  components: {},
+  components: {Main},
 };
 </script>
 
