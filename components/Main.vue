@@ -31,6 +31,20 @@
             </div>
         </div>
     </div>
+    <div class="container mt-[140px] relative mx-auto flex items-center justify-between">
+        <div class="w-full flex items-center justify-between">
+            <button class="group flex items-center justify-center">
+                <img class="border border-solid border-white group-hover:border-dBlue duration-200 rounded-full w-[28px] p-4 h-auto object-cover" src="@/static/icons/arrow-down-white.svg"/>
+                <p class="text-white text-[16px] leading-130 font-normal ml-[12px] duration-200 group-hover:text-dBlue">learn more</p>
+            </button>
+            <div class="flex items-center">
+                <div :class="{'bg-dBlue' : index == 0}" v-for="(item,index) in statistic" :key="index" class="h-[100px] w-[100px] border-solid border border-dBlue flex flex-col items-center justify-center rounded-full">
+                    <h3 class="text-[white] leading-130 text-[24px] font-medium">{{item.count}}</h3>
+                    <h3 class="text-[white] leading-130 text-[12px] font-normal">{{item.name}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
   </div>
 </template>
 
@@ -42,7 +56,25 @@ export default {
     return {
       mainText: "We just want to get your job done!",
       subtext: 'As Soon As Possible',
-      buttonText: 'Get a quote'
+      buttonText: 'Get a quote',
+      statistic: [
+        {
+          count: 1218,
+          name: 'cars shipped',
+        },
+        {
+          count: 970,
+          name: 'happy clients',
+        },
+        {
+          count: 0,
+          name: 'fatal mistakes',
+        },
+        {
+            count: 650,
+            name: 'orders per year',
+        }
+      ],
     };
   },
 };
