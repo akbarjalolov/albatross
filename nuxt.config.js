@@ -13,7 +13,9 @@ export default {
   },
 
   css: ['~/assets/scss/style.scss'],
-
+  env: {
+    browser: true
+  },
   plugins: [
     { src: '~/plugins/webFontLoader.js', ssr: false },
     { src: '~/plugins/element.js' },
