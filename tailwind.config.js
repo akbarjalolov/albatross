@@ -16,6 +16,7 @@ module.exports = {
       darkBlue: '#047BAD',
       white: '#FFFFFF',
       dGray: '#BBBCB9',
+      lightGray: '#A7B2BD'
     },
     lineHeight: {
       120: '120%',
