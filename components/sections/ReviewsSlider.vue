@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h4>Reviews</h4>
+        <section-title title="Reviews" class="mt-[60px]"/>
         <swiper
       class="swiper parentSwiper !flex mt-[28px]"
       :slides-per-view="5"
@@ -15,14 +15,21 @@
       :pagination="{ clickable: true }"
       :autoplay="{ delay: 100 }"
     >
-      <swiper-slide v-for="(item, index) in data" :key="index" class="slide">
-        <a class="inline-block w-ful h-full relative group" :href="item.url">
-          <img class="w-full h-full object-cover" :src="item.img" alt="" />
-          <div
-            class="absolute w-full h-full top-0 left-0 opacity-0 duration-150 group-hover:opacity-100 bg-[#1160e88e] flex items-center justify-center"
-          >
-          </div>
-        </a>
+      <swiper-slide v-for="(item, index) in data" :key="index" class="review-slide">
+            <h3 class="text-[white] font-medium text-[28px] leading-130">{{item.title}}</h3>
+            <p class="text-[white] font-normal text-[16px] leading-140 mt-3">{{item.content}}</p>
+            <h4 class="text-[white] font-medium text-[20px] leading-130 mt-[26px]">{{item.rate}}</h4>
+            <div class="flex items-center">
+                <img v-for="(i,index) in item.rate" :key="index" src="@/static/icons/star.svg" alt="">
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex flex-col">
+                    <h4 class="text-[white] font-medium text-[20px] leading-[26px] mt-[24px]">{{item.person}}</h4>
+                    <h6 class="text-[white] opacity-30 font-normal text-[14px] leading-[24px] mt-[4px]">{{item.position}}</h6>
+                </div>
+                <img :src="item.img" class="max-h-[60px] h-full w-auto" alt="">
+            </div>
+
       </swiper-slide>
     </swiper>
 
@@ -30,19 +37,37 @@
 </template>
 
 <script>
+import SectionTitle from '../SectionTitle.vue'
 
     export default {
+  components: { SectionTitle },
         data(){
             return {
                 data: [
                      {
-                    img: 'https://picsum.photos/400/500',
-                    title: 'title2'        
-                },
-                 {
-                    img: 'https://picsum.photos/500/400',
-                    title: 'title3'        
-                }
+                    img: require('@/static/img/logo-rev.png'),
+                    title: 'Outstanding service!',
+                    content: "Brad was very kind, and helped me with the process. I would recommend them because of his kindness and concern for the customer. He followed up with me and answered all of my questions- maintained communication with my husband and I. Thanks Brad ! Brad was very kind, and helped me with the process.",
+                    rate: 5,
+                    person: "Malika Sharipova",
+                    position: "“CARE CSR” konsalting kompaniyasi asoschisi va direktori"        
+                  },
+                  {
+                    img: require('@/static/img/logo-rev.png'),
+                    title: 'Outstanding service!',
+                    content: "Brad was very kind, and helped me with the process. I would recommend them because of his kindness and concern for the customer. He followed up with me and answered all of my questions- maintained communication with my husband and I. Thanks Brad ! Brad was very kind, and helped me with the process.",
+                    rate: 5,
+                    person: "Malika Sharipova",
+                    position: "“CARE CSR” konsalting kompaniyasi asoschisi va direktori"        
+                  },
+                  {
+                    img: require('@/static/img/logo-rev.png'),
+                    title: 'Outstanding service!',
+                    content: "Brad was very kind, and helped me with the process. I would recommend them because of his kindness and concern for the customer. He followed up with me and answered all of my questions- maintained communication with my husband and I. Thanks Brad ! Brad was very kind, and helped me with the process.",
+                    rate: 5,
+                    person: "Malika Sharipova",
+                    position: "“CARE CSR” konsalting kompaniyasi asoschisi va direktori"        
+                  },
                 ]
             }
         }
@@ -54,13 +79,18 @@
   display: flex;
 }
 
-.parentSwiper .slide {
-  width: 280px !important;
-  height: 280px !important;
-  background: #fff;
+.parentSwiper .review-slide {
+  width: 950px !important;
+  height: 350px !important;
+  background-image: url('@/static/img/review-card-bg.png');
+  background-position: center;
+  background-size: cover;
+  border-radius: 32px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 28px;
+  margin-right: 20px;
 }
 
 </style>
