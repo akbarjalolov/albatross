@@ -24,6 +24,7 @@ export default {
     { src: '~/plugins/vuelidate.js' },
     { src: '~/assets/js/scripts.js' },
     { src: '~/plugins/slick.js' },
+    { src: '~/plugins/swiper', ssr: false }
   ],
 
   components: true,
