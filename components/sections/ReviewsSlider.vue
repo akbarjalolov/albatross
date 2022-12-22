@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <section-title title="Reviews" class="mt-[60px]"/>
+    <div class="py-[60px]">
+        <section-title title="Reviews" class=""/>
         <swiper
       class="swiper parentSwiper !flex mt-[28px]"
       :slides-per-view="5"
@@ -56,7 +56,7 @@ import SectionTitle from '../SectionTitle.vue'
                     img: require('@/static/img/logo-rev.png'),
                     title: 'Outstanding service!',
                     content: "Brad was very kind, and helped me with the process. I would recommend them because of his kindness and concern for the customer. He followed up with me and answered all of my questions- maintained communication with my husband and I. Thanks Brad ! Brad was very kind, and helped me with the process.",
-                    rate: 5,
+                    rate: 4,
                     person: "Malika Sharipova",
                     position: "“CARE CSR” konsalting kompaniyasi asoschisi va direktori"        
                   },

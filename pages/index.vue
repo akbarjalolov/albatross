@@ -4,6 +4,7 @@
     <easy-steps-slider />
     <MainForm /> 
     <ReviewsSlider />
+    <PartnersSlider />
     <Blogs />
   </div>
 </template>
@@ -14,8 +15,9 @@ import EasyStepsSlider from '../components/sections/EasyStepsSlider.vue';
 import MainForm from '../components/sections/MainForm.vue';
 import ReviewsSlider from '../components/sections/ReviewsSlider.vue'
 import Blogs from '../components/sections/Blogs.vue'
+import PartnersSlider from '../components/sections/PartnersSlider.vue';
 export default {
-  components: {Main, EasyStepsSlider, MainForm, ReviewsSlider, Blogs},
+  components: {Main, EasyStepsSlider, MainForm, ReviewsSlider, Blogs, PartnersSlider},
 };
 </script>
 
