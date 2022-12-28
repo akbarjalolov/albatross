@@ -1,9 +1,12 @@
 <template>
   <div class="main-section relative min-h-[98vh] w-full flex flex-col">
     <Header />
-    <div class="bg-stroke-text ">
-      <h3 class="typing-effect">Shipping</h3>
+    <div class="bg-stroke-text">
+      <div class="typing-demo">
+         SHIPPING
+      </div>
     </div>
+
     <h4
       class="text-white font-semibold text-[20px] md:text-[48px] leading-130 text-center mt-[30px] lg:mt-[135px]"
     >
@@ -15,7 +18,6 @@
         <c-button :text="buttonText" dynamicClass="max-w-[200px] min-w-[180px] mx-auto mt-[24px]"></c-button>
         <div class="w-full"></div>
     </div>
-
     <div class="w-full mt-[35px] lg:mt-[100px]">
         <div class="w-full flex flex-col lg:flex-row gap-[50px] lg:gap-0 items-center justify-center mx-auto">
              <div class="hidden lg:block">
@@ -170,6 +172,31 @@ export default {
         font-size: 50px;
     }
 }
+.wrapper {
+  height: 100vh;
+  /*This part is important for centering*/
+  display: grid;
+  place-items: center;
+}
 
+.typing-demo {
+  width: 11ch;
+  animation: typing 2s steps(8), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid white;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
 
 </style>
