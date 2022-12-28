@@ -20,7 +20,6 @@ export default {
     { src: '~/plugins/webFontLoader.js', ssr: false },
     { src: '~/plugins/element.js' },
     { src: '~/plugins/slider.js' },
-    { src: '~/plugins/vmask.js' },
     { src: '~/plugins/vuelidate.js' },
     { src: '~/assets/js/scripts.js' },
     { src: '~/plugins/slick.js' },

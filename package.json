@@ -20,6 +20,7 @@
     "typewriter-effect": "^2.19.0",
     "v-mask": "^2.2.4",
     "vue-awesome-swiper": "^4.1.1",
+    "vue-inputmask": "^0.2.1",
     "vue-number-animation": "^1.1.2",
     "vue-slick-carousel": "^1.0.6",
     "vuelidate": "^0.7.6"
