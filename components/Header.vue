@@ -1,6 +1,6 @@
 <template>
   <div
-    class="container mx-auto py-[28px] flex items-center justify-between bg-transparent z-50"
+    class="container px-[16px] mx-auto py-[28px] flex items-center justify-between bg-transparent z-50"
   >
     <nuxt-link to="/">
       <img
@@ -9,23 +9,29 @@
         alt=""
       />
     </nuxt-link>
-    <div class="header-menu flex items-center">
-      <nuxt-link
-        v-for="(item, index) in headerLink"
-        :key="index"
-        :to="item.link"
-        :exact="item.exact"
-        class="header-menu__link text-[white] leading-[130%] text-[16px] font-medium mx-4 duration-200 transition-all" 
-        :class="{ _active: $route.path === item.link }"
-      >
-        {{ item.text }}
-      </nuxt-link>
+    <div class="hidden lg:flex items-center gap-[120px] xl:gap-[150px]">
+      <div class="header-menu flex items-center">
+        <nuxt-link
+          v-for="(item, index) in headerLink"
+          :key="index"
+          :to="item.link"
+          :exact="item.exact"
+          class="header-menu__link text-[white] leading-[130%] text-[13px] xl:text-[16px] font-medium mx-2 lg:mx-4 duration-200 transition-all" 
+          :class="{ _active: $route.path === item.link }"
+        >
+          {{ item.text }}
+        </nuxt-link>
+      </div>
+      <div class="social-menu flex items-center justify-between">
+        <a class="w-[24px] h-[24px] mx-[6px] object-cover" :href="item.url" v-for="(item,index) in socials" :key="index">
+          <img class="w-full icon-hover-blue" :src="item.img" alt="" />
+        </a>
+      </div>
     </div>
-    <div class="social-menu flex items-center justify-between">
-      <a class="w-[24px] h-[24px] mx-[6px] object-cover" :href="item.url" v-for="(item,index) in socials" :key="index">
-        <img class="w-full icon-hover-blue" :src="item.img" alt="" />
-      </a>
+    <div class="lg:hidden">
+        <img src="@/static/icons/menu.svg" />
     </div>
+
   </div>
 </template>
 
