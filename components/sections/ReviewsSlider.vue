@@ -1,5 +1,5 @@
 <template>
-    <div class="py-[60px]">
+    <div class="lg:py-[60px]">
         <section-title title="Reviews" class=""/>
         <swiper
       class="swiper parentSwiper !flex mt-[28px]"
@@ -16,23 +16,21 @@
       :autoplay="{ delay: 100 }"
     >
       <swiper-slide v-for="(item, index) in data" :key="index" class="review-slide">
-            <h3 class="text-[white] font-medium text-[28px] leading-130">{{item.title}}</h3>
-            <p class="text-[white] font-normal text-[16px] leading-140 mt-3">{{item.content}}</p>
-            <h4 class="text-[white] font-medium text-[20px] leading-130 mt-[26px]">{{item.rate}}</h4>
+            <h3 class="text-[white] font-medium text-[20px] lg:text-[28px] leading-130">{{item.title}}</h3>
+            <p class="text-[white] font-normal text-[13px] lg:text-[16px] leading-140 mt-3">{{item.content}}</p>
+            <h4 class="text-[white] font-medium text-[16px] lg:text-[20px] leading-130 mt-[26px]">{{item.rate}}</h4>
             <div class="flex items-center">
                 <img v-for="(i,index) in item.rate" :key="index" src="@/static/icons/star.svg" alt="">
             </div>
-            <div class="flex items-center justify-between">
+            <div class="flex items-center justify-between flex-col lg:flex-row">
                 <div class="flex flex-col">
-                    <h4 class="text-[white] font-medium text-[20px] leading-[26px] mt-[24px]">{{item.person}}</h4>
-                    <h6 class="text-[white] opacity-30 font-normal text-[14px] leading-[24px] mt-[4px]">{{item.position}}</h6>
+                    <h4 class="text-[white] font-medium text-[16px] lg:text-[20px] leading-[26px] mt-[24px]">{{item.person}}</h4>
+                    <h6 class="text-[white] opacity-30 font-normal text-[12px] lg:text-[14px] leading-[16px] lg:leading-[24px] mt-[4px]">{{item.position}}</h6>
                 </div>
-                <img :src="item.img" class="max-h-[60px] h-full w-auto" alt="">
+                <img :src="item.img" class="max-h-[40px] lg:max-h-[60px] h-full w-auto" alt="">
             </div>
-
       </swiper-slide>
     </swiper>
-
     </div>
 </template>
 
@@ -91,6 +89,20 @@ import SectionTitle from '../SectionTitle.vue'
   justify-content: space-between;
   padding: 28px;
   margin-right: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+  .parentSwiper .review-slide {
+    width: 700px !important;
+    height: auto !important;
+  }
+}
+  
+@media screen and (max-width: 768px) {
+  .parentSwiper .review-slide {
+    width: 343px !important;
+    height: auto !important;
+  }
 }
 
 </style>
