@@ -1,7 +1,7 @@
 <template>
   <div>
     <Main />
-    <easy-steps-slider />
+    <EasyStepsSlider />
     <MainForm /> 
     <ReviewsSlider />
     <PartnersSlider />

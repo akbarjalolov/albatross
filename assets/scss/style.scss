@@ -57,6 +57,12 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .section-titles {
+    font-size: 24px;
+  }
+}
+  
 .shadoww {
   background: linear-gradient(63.82deg, #2B0ABF 12.65%, #26C0DE 87.35%);
   opacity: 0.4;
@@ -79,6 +85,8 @@
 
 }
 
+
+
 .group-steps:hover {
   .title-gradient {
     font-style: normal;
@@ -92,7 +100,11 @@
     background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-stroke: 8px transparent;
+  }
+}
 
-
+@media screen and (max-width: 768px) {
+  .title-gradient {
+    font-size: 32px;
   }
 }

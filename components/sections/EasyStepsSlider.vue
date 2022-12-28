@@ -1,13 +1,13 @@
 <template>
-  <div class="relative py-[60px]">
-    <img class="absolute left-[1%] top-[7%]" src="@/static/img/arrow-1.png" alt="" />
+  <div class="relative py-[30px] lg:py-[60px]">
+    <img class="absolute hidden lg:block left-[1%] top-[7%]" src="@/static/img/arrow-1.png" alt="" />
     <div class="container mx-auto">
         <section-title title="Easy Steps" />
         <VueSlickCarousel v-bind="settings" :arrows="true" :dots="true">
             <div v-for="(item, index) in steps" :key="index" class="group group-steps border border-solid border-[#D3D3D5] duration-300 hover:bg-dark hover:border-b-2 hover:border-b-dBlue rounded-3xl p-[24px]">
                 <h3 class="title-gradient group-hover:border-[#00AFEF] duration-300">{{item.step}}</h3>
-                <p class="text-dark group-hover:text-white duration-300 font-medium text-[24px] leading-130 mt-[16px] cursor-pointer">{{item.title}}</p>
-                <p class="text-dark group-hover:text-white duration-300 font-normal text-[16px] leading-140 mt-[12px] cursor-pointer">{{item.context}}</p>
+                <p class="text-dark group-hover:text-white duration-300 font-medium text-[18px] lg:text-[24px] leading-130 mt-[16px] cursor-pointer">{{item.title}}</p>
+                <p class="text-dark group-hover:text-white duration-300 font-normal text-[13px] lg:text-[16px] leading-140 mt-[12px] cursor-pointer">{{item.context}}</p>
             </div>
 
         </VueSlickCarousel>
@@ -77,19 +77,19 @@ export default {
 <style>
 .slick-slide {
 	margin: 0 10px;
-    max-width: 384px;
+  max-width: 384px;
 }
 
 @media screen and (max-width: 1024px) {
     .slick-slide {
-        max-width: 90% !important;
-        margin: 0 10px 0;
+        width: 350px !important;
+        margin: 0 10px;
     }
     
 }
     
 .slick-list {
 	margin: 0 -10px;
-    margin-top: 32px !important;
+  margin-top: 32px !important;
 }
 </style>
