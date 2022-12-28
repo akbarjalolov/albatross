@@ -1,6 +1,6 @@
 <template>
   <button
-    class="bg-dBlue duration-200 hover:!bg-darkBlue text-white rounded-lg w-full p-[10px] border-dBlue border-2"
+    class="bg-dBlue duration-200 h-fit hover:!bg-darkBlue text-white rounded-lg w-full p-[10px] border-dBlue border-2"
     :class="dynamicClass"
   >
     {{ text }}
