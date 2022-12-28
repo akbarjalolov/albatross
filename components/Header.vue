@@ -24,7 +24,12 @@
       </div>
       <div class="social-menu flex items-center justify-between">
         <a class="w-[24px] h-[24px] mx-[6px] object-cover" :href="item.url" v-for="(item,index) in socials" :key="index">
-          <img class="w-full icon-hover-blue" :src="item.img" alt="" />
+        <VTooltip>
+          <template #popper>
+            {{item.desc}}
+          </template>
+          <img class="w-full opacity-60 transition-all duration-300 hover:opacity-100" :src="item.img" alt="" />
+        </VTooltip>
         </a>
       </div>
     </div>
@@ -50,10 +55,10 @@ export default {
         { link: "", text: "Contacts" },
       ],
       socials: [
-        { url: 'https://twitter.com/', img: require('@/static/icons/twitter-svg.svg') },
-        { url: 'https://web.telegram.org/', img: require('@/static/icons/telegram-svg.svg') },
-        { url: 'https://www.instagram.com/', img: require('@/static/icons/instagram-svg.svg') },
-        { url: 'https://www.youtube.com/', img: require('@/static/icons/youtube-svg.svg')}
+        { url: 'https://twitter.com/', img: require('@/static/icons/twitter-header.svg'), desc: 'Twitter account' },
+        { url: 'https://web.telegram.org/', img: require('@/static/icons/telegram-header.svg'), desc: 'Telegram account' },
+        { url: 'https://www.instagram.com/', img: require('@/static/icons/instagram-header.svg'), desc: 'Instagram account' },
+        { url: 'https://www.youtube.com/', img: require('@/static/icons/linkedin-header.svg'), desc: 'Linkedin account'}
       ]
     };
   },

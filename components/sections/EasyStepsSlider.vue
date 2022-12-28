@@ -1,7 +1,7 @@
 <template>
   <div class="relative py-[30px] lg:py-[60px]">
     <img class="absolute hidden lg:block left-[1%] top-[7%]" src="@/static/img/arrow-1.png" alt="" />
-    <div class="container mx-auto">
+    <div class="container mx-auto h-[400px] lg:h-auto">
         <section-title title="Easy Steps" />
         <VueSlickCarousel v-bind="settings" :arrows="true" :dots="true">
             <div v-for="(item, index) in steps" :key="index" class="group group-steps border border-solid border-[#D3D3D5] duration-300 hover:bg-dark hover:border-b-2 hover:border-b-dBlue rounded-3xl p-[24px]">

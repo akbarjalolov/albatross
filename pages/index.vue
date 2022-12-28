@@ -1,11 +1,11 @@
 <template>
   <div>
-    <Main />
-    <EasyStepsSlider />
-    <MainForm /> 
-    <ReviewsSlider />
-    <PartnersSlider />
-    <Blogs />
+    <Main data-aos="fade-up"/>
+    <EasyStepsSlider data-aos="fade-up"/>
+    <MainForm data-aos="fade-up"/> 
+    <ReviewsSlider data-aos="fade-up"/>
+    <PartnersSlider data-aos="fade-up"/>
+    <Blogs data-aos="fade-up"/>
   </div>
 </template>
 
@@ -16,8 +16,10 @@ import MainForm from '../components/sections/MainForm.vue';
 import ReviewsSlider from '../components/sections/ReviewsSlider.vue'
 import Blogs from '../components/sections/Blogs.vue'
 import PartnersSlider from '../components/sections/PartnersSlider.vue';
+import aosMixin from '~/mixins/aos'
 export default {
   components: {Main, EasyStepsSlider, MainForm, ReviewsSlider, Blogs, PartnersSlider},
+  mixins: [aosMixin],
 };
 </script>
 

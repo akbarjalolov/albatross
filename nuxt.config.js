@@ -25,6 +25,7 @@ export default {
     { src: '~/plugins/slick.js' },
     { src: '~/plugins/swiper', ssr: false },
     { src: '~/plugins/number-animation.js', ssr: false },
+    { src: '~/plugins/tooltip.js' },
   ],
 
   components: true,

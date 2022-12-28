@@ -1,24 +1,30 @@
 <template>
-    <div class="bg-[#F5F8FC] py-[60px]">
-        <section-title title="Partners" class=""/>
-        <swiper
+    <div class="bg-[#F5F8FC] py-[20px] lg:py-[60px] my-[20px]">
+      <section-title title="Partners" class=""/>
+      <swiper
       class="swiper parentSwiper !flex mt-[28px]"
       :slides-per-view="5"
       :slides-per-group="1"
       :slides-per-group-skip="1"
       :centered-slides="false"
       :grab-cursor="true"
-      :speed="5000"
+      :speed="1000"
       :infinity="true"
       :loop="true"
       :keyboard="{ enabled: true }"
       :pagination="{ clickable: true }"
-      :autoplay="{ delay: 100 }"
+      slidesPerView="auto"
+      :autoplay="{
+          delay: 2000,
+          disableOnInteraction: false,
+      }"
+
     >
       <swiper-slide v-for="(item, index) in data" :key="index" class="partner-slide">
                <a :href="item.url" target="_blank" class="w-full h-full">
                 <div class="left-gradient"></div>
-                <img :src="item.img" class="max-w-[110px] h-auto w-full object-cover mx-auto" alt="">
+                <div class="top-gradient"></div>
+                <img :src="item.img" class="max-w-[80px] lg:max-w-[110px] h-auto w-full object-cover mx-auto" alt="">
                 </a>
       </swiper-slide>
     </swiper>
@@ -38,9 +44,10 @@
       :autoplay="{ delay: 100 }"
     >
       <swiper-slide v-for="(item, index) in data" :key="index" class="partner-slide">
-        <a :href="item.url" target="_blank" class="w-full h-full">
-                <div class="left-gradient"></div>
-                <img :src="item.img" class="max-w-[110px] h-auto w-full object-cover mx-auto" alt="">
+        <a :href="item.url" target="_blank" class="w-full h-full overflow-hidden">
+          <div class="left-gradient"></div>
+          <div class="top-gradient"></div>
+          <img :src="item.img" class="max-w-[80px] lg:max-w-[110px] h-auto w-full object-cover mx-auto" alt="">
         </a>
       </swiper-slide>
     </swiper>
@@ -109,6 +116,16 @@ import SectionTitle from '../SectionTitle.vue'
   padding: 18px;
   margin-right: 24px;
   position: relative;
+  overflow: hidden;
+}
+
+.parentSwiper .partner-slide:hover {
+  .top-gradient {
+    opacity: 1;
+  }
+  .left-gradient {
+    opacity: 0;
+  }
 }
 
 .left-gradient {
@@ -119,6 +136,20 @@ import SectionTitle from '../SectionTitle.vue'
     top: 18px;
     background: linear-gradient(63.82deg, #2B0ABF 12.65%, #26C0DE 87.35%);
     border-radius: 150px;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.top-gradient {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    left: 0;
+    top: 0;
+    background: linear-gradient(63.82deg, #2B0ABF 12.65%, #26C0DE 87.35%);
+    border-radius: 150px;
+    opacity: 0;
+    transition: all 0.3s ease;
 }
 
 </style>
