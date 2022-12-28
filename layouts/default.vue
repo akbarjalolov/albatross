@@ -2,8 +2,9 @@
   <div>
     <!-- <div v-if="$fetchState.pending" class="preloader"></div>
     <div v-else-if="$fetchState.error" class="error">Something is wrong here!</div> -->
+    <header />
     <div class="wrapper">
-      <!-- <Header /> -->
+      <Header />
       <Nuxt />
       <Footer />
     </div>
@@ -12,8 +13,14 @@
 
 <script>
   import { mapState } from 'vuex'
+import Header from '../components/Header.vue'
 
-  export default {}
+  export default {
+    components: {
+      Header
+    }
+  }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang
+Header="scss" scoped></style>

@@ -48,7 +48,7 @@ export default {
     return {
       activeMenu: false,
       headerLink: [
-        { link: "", text: "About us", exact: true },
+        { link: "/about", text: "About us", exact: true },
         { link: "", text: "How it works" },
         { link: "", text: "Transport options" },
         { link: "", text: "Who we serve" },
