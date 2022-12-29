@@ -1,22 +1,163 @@
 <template>
-    <div>   
-        <h4>
-            FAQ
-        </h4>
+  <div class="faq relative overflow-hidden md:py-16 py-4">
+    <section-title title="F.A.Q." />
+    <div class="container relative z-1 mt-[32px] mx-auto">
+      <div class="grid grid-cols-2 gap-x-6 gap-y-4">
+        <div
+          class="md:col-span-1 col-span-2"
+          v-for="(item, index) in faqQuestions"
+          :key="index"
+        >
+          <div class="tab">
+            <input type="checkbox" :id="`${q}` + item.id" />
+            <label class="tab-label" :for="`${q}` + item.id">{{ item.question }}</label>
+            <div class="tab-content">
+              {{item.answer}}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
     export default {
-        components: {
-        },
         data(){
             return {
+                q: 'q',
+                faqQuestions: [
+                    {
+                        id: 1,
+                        question: 'How do I get a quote for shipping my vehicle?',
+                        answer: 'YES, US Star Trucking LLC is a legitimate car shipping company. They are fully bonded, insured and licensed company with ICC-MC #206532. They have been in the transport sector for 7 years and now provide nationwide vehicle shipment of any kind and size. US Star Trucking has an overall 4.6/5 on Google Ratings, 4.7/5 on TransportReviews and 4.3/5 on BBB Ratings.'
+                    },
+                    {
+                        id: 2,
+                        question: 'How do I get a quote for shipping my vehicle?',
+                        answer: 'YES, US Star Trucking LLC is a legitimate car shipping company. They are fully bonded, insured and licensed company with ICC-MC #206532. They have been in the transport sector for 7 years and now provide nationwide vehicle shipment of any kind and size. US Star Trucking has an overall 4.6/5 on Google Ratings, 4.7/5 on TransportReviews and 4.3/5 on BBB Ratings.'
+                    },
+                    {
+                        id: 3,
+                        question: 'How do I get a quote for shipping my vehicle?',
+                        answer: 'YES, US Star Trucking LLC is a legitimate car shipping company. They are fully bonded, insured and licensed company with ICC-MC #206532. They have been in the transport sector for 7 years and now provide nationwide vehicle shipment of any kind and size. US Star Trucking has an overall 4.6/5 on Google Ratings, 4.7/5 on TransportReviews and 4.3/5 on BBB Ratings.'
+                    },
+                    {
+                        id: 4,
+                        question: 'How do I get a quote for shipping my vehicle?',
+                        answer: 'YES, US Star Trucking LLC is a legitimate car shipping company. They are fully bonded, insured and licensed company with ICC-MC #206532. They have been in the transport sector for 7 years and now provide nationwide vehicle shipment of any kind and size. US Star Trucking has an overall 4.6/5 on Google Ratings, 4.7/5 on TransportReviews and 4.3/5 on BBB Ratings.'
+                    },
+                    {
+                        id: 5,
+                        question: 'How do I get a quote for shipping my vehicle?',
+                        answer: 'YES, US Star Trucking LLC is a legitimate car shipping company. They are fully bonded, insured and licensed company with ICC-MC #206532. They have been in the transport sector for 7 years and now provide nationwide vehicle shipment of any kind and size. US Star Trucking has an overall 4.6/5 on Google Ratings, 4.7/5 on TransportReviews and 4.3/5 on BBB Ratings.'
+                    },
+                    {
+                        id: 6,
+                        question: 'How do I get a quote for shipping my vehicle?',
+                        answer: 'YES, US Star Trucking LLC is a legitimate car shipping company. They are fully bonded, insured and licensed company with ICC-MC #206532. They have been in the transport sector for 7 years and now provide nationwide vehicle shipment of any kind and size. US Star Trucking has an overall 4.6/5 on Google Ratings, 4.7/5 on TransportReviews and 4.3/5 on BBB Ratings.'
+                    }
+                ]
             }
         }
     }
+
 </script>
 
-<style lang="scss" scoped>
+<style >
 
+.faq {
+    background: #F5F8FC;
+}
+
+input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.tab {
+  width: 100%;
+  color: white;
+  overflow: hidden;
+}
+.tab-label {
+  background: #FFFFFF;
+  border: 1px solid #E0E0E0;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.02);
+  border-radius: 8px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  min-height: 54px;
+  align-items: center;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 130%;
+  color: #22232C;
+}
+
+@media screen and (max-width: 768px) {
+  .tab-label {
+    margin-top: 0px;
+  }
+}
+
+.tab-label::after {
+  content: "";
+  background: url(@/static/icons/chevron-down.svg) no-repeat;
+  min-width: 24px;
+  transform: rotate(0deg);
+  height: 24px;
+  text-align: center;
+  transition: 0.3s;
+}
+.tab-content {
+  max-height: 0;
+  padding: 0 1em;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  transition: 0.3s;
+  background: rgb(255, 255, 255);
+  border: 1px solid #E0E0E0;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
+  color: #333333;
+  border-radius: 0 0 8px 8px;
+}
+.tab-close {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1em;
+  font-size: 0.75em;
+  background: red;
+  cursor: pointer;
+}
+.tab-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+input:checked + .tab-label {
+  background: #FFFFFF;
+  border-radius: 8px 8px 0 0;
+}
+input:checked + .tab-label::after {
+  transform: rotate(180deg);
+}
+input:checked ~ .tab-content {
+  min-height: 80px;
+  max-height: 100vh;
+  padding: 1rem;
+  border-radius: 0 0 8px 8px;
+  border: 1px solid #E0E0E0;
+  opacity: 1;
+}
 </style>
