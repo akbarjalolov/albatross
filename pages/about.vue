@@ -37,14 +37,22 @@
                 </div>
             </div>
         </div>
+        <!-- faq -->
+       <Faq data-aos="fade-up"/>
+       <ReviewsSlider />
+       <PartnersSlider />
+
     </div>
 </template>
 
 <script>
 import SectionTitle from '../components/SectionTitle.vue'
 import TeamCard from '../components/cards/TeamCard.vue'
+import Faq from '../components/sections/Faq.vue'
+import ReviewsSlider from '../components/sections/ReviewsSlider.vue'
+import PartnersSlider from '../components/sections/PartnersSlider.vue'
     export default {
-  components: { SectionTitle, TeamCard },
+  components: { SectionTitle, TeamCard, Faq, ReviewsSlider, PartnersSlider },
         data(){
             return {
                 aboutInfo: [

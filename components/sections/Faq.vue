@@ -1,12 +1,12 @@
 <template>
     <div>   
-        F.A.Q
-         
+        <h4>
+            FAQ
+        </h4>
     </div>
 </template>
 
 <script>
-import VueAccordion from "accordion-vue";
     export default {
         components: {
         },

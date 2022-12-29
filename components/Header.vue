@@ -51,7 +51,7 @@ export default {
         { link: "/about", text: "About us", exact: true },
         { link: "", text: "How it works" },
         { link: "", text: "Transport options" },
-        { link: "", text: "Who we serve" },
+        { link: "/pages/terms-of-use", text: "Who we serve" },
         { link: "", text: "Contacts" },
       ],
       socials: [

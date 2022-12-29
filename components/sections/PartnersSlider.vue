@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-[#F5F8FC] py-[20px] lg:py-[60px] my-[20px]">
+    <div class="bg-[#F5F8FC] py-[20px] lg:py-[60px]">
       <section-title title="Partners" class=""/>
       <swiper
       class="swiper parentSwiper !flex mt-[28px]"
