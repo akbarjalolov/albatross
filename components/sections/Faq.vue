@@ -135,7 +135,7 @@
   line-height: 140%;
   color: #333333;
   border-radius: 0 0 8px 8px;
-  width: 100px;
+  overflow: auto;
 }
 .tab-close {
   display: flex;

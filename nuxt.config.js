@@ -26,6 +26,7 @@ export default {
     { src: '~/plugins/swiper', ssr: false },
     { src: '~/plugins/number-animation.js', ssr: false },
     { src: '~/plugins/tooltip.js' },
+    { src: '~/plugins/datepicker.js' },
   ],
 
   components: true,
