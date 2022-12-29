@@ -5,8 +5,8 @@
     <MainForm data-aos="fade-up"/> 
     <ReviewsSlider data-aos="fade-up"/>
     <PartnersSlider data-aos="fade-up"/>
-    <Faq data-aos="fade-up"/>
     <Blogs data-aos="fade-up"/>
+    <Faq data-aos="fade-up"/>
   </div>
 </template>
 
@@ -21,7 +21,7 @@ import Faq from '../components/sections/Faq.vue';
 import aosMixin from '~/mixins/aos'
 export default {
   components: {Main, EasyStepsSlider, MainForm, ReviewsSlider, Blogs, PartnersSlider, Faq},
-  mixins: [aosMixin],
+    mixins: [aosMixin],
 };
 </script>
 

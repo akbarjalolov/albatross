@@ -1,5 +1,5 @@
 <template>
-  <div class="faq relative overflow-hidden md:py-16 py-4">
+  <div class="faq relative overflow-hidden md:py-16 py-4 px-[16px]">
     <section-title title="F.A.Q." />
     <div class="container relative z-1 mt-[32px] mx-auto">
       <div class="grid grid-cols-2 gap-x-6 gap-y-4">
@@ -9,7 +9,7 @@
           :key="index"
         >
           <div class="tab">
-            <input type="checkbox" :id="`${q}` + item.id" />
+            <input class="input-form" type="checkbox" :id="`${q}` + item.id" />
             <label class="tab-label" :for="`${q}` + item.id">{{ item.question }}</label>
             <div class="tab-content">
               {{item.answer}}
@@ -29,17 +29,17 @@
                 faqQuestions: [
                     {
                         id: 1,
-                        question: 'How do I get a quote for shipping my vehicle?',
+                        question: 'dasdasdasd a quote for shipping my vehicle?',
                         answer: 'YES, US Star Trucking LLC is a legitimate car shipping company. They are fully bonded, insured and licensed company with ICC-MC #206532. They have been in the transport sector for 7 years and now provide nationwide vehicle shipment of any kind and size. US Star Trucking has an overall 4.6/5 on Google Ratings, 4.7/5 on TransportReviews and 4.3/5 on BBB Ratings.'
                     },
                     {
                         id: 2,
-                        question: 'How do I get a quote for shipping my vehicle?',
+                        question: 'Hodsdad dasdng my vehicle?',
                         answer: 'YES, US Star Trucking LLC is a legitimate car shipping company. They are fully bonded, insured and licensed company with ICC-MC #206532. They have been in the transport sector for 7 years and now provide nationwide vehicle shipment of any kind and size. US Star Trucking has an overall 4.6/5 on Google Ratings, 4.7/5 on TransportReviews and 4.3/5 on BBB Ratings.'
                     },
                     {
                         id: 3,
-                        question: 'How do I get a quote for shipping my vehicle?',
+                        question: 'How do I gdsadasdad  quote for shipping my vehicle?',
                         answer: 'YES, US Star Trucking LLC is a legitimate car shipping company. They are fully bonded, insured and licensed company with ICC-MC #206532. They have been in the transport sector for 7 years and now provide nationwide vehicle shipment of any kind and size. US Star Trucking has an overall 4.6/5 on Google Ratings, 4.7/5 on TransportReviews and 4.3/5 on BBB Ratings.'
                     },
                     {
@@ -49,7 +49,7 @@
                     },
                     {
                         id: 5,
-                        question: 'How do I get a quote for shipping my vehicle?',
+                        question: 'How doasfa for shipping my vehicle?',
                         answer: 'YES, US Star Trucking LLC is a legitimate car shipping company. They are fully bonded, insured and licensed company with ICC-MC #206532. They have been in the transport sector for 7 years and now provide nationwide vehicle shipment of any kind and size. US Star Trucking has an overall 4.6/5 on Google Ratings, 4.7/5 on TransportReviews and 4.3/5 on BBB Ratings.'
                     },
                     {
@@ -64,22 +64,23 @@
 
 </script>
 
-<style >
+<style lang="scss" scoped>
 
 .faq {
     background: #F5F8FC;
 }
 
-input {
-  position: absolute;
-  opacity: 0;
-  z-index: -1;
-}
 
 .tab {
   width: 100%;
   color: white;
   overflow: hidden;
+  input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+    
+  }
 }
 .tab-label {
   background: #FFFFFF;
@@ -98,10 +99,11 @@ input {
   font-size: 18px;
   line-height: 130%;
   color: #22232C;
-}
+  }
 
 @media screen and (max-width: 768px) {
   .tab-label {
+    font-size: 15px;
     margin-top: 0px;
   }
 }
@@ -145,14 +147,13 @@ input {
 .tab-close:hover {
   background: rgba(255, 255, 255, 0.1);
 }
-input:checked + .tab-label {
-  background: #FFFFFF;
+.input-form:checked + .tab-label {
   border-radius: 8px 8px 0 0;
 }
-input:checked + .tab-label::after {
+.input-form:checked + .tab-label::after {
   transform: rotate(180deg);
 }
-input:checked ~ .tab-content {
+.input-form:checked ~ .tab-content {
   min-height: 80px;
   max-height: 100vh;
   padding: 1rem;

@@ -1,10 +1,30 @@
 <template>
+  <div class="w-full z-[100]">
+    <transition name="fade">
+    <div class="bg-dark p-[16px] w-[100vw] h-[100vh]" v-if="burger">
+      <div class="container px-[16px] mx-auto py-[28px] flex items-center justify-end">
+        <img @click="closeBurger" class="cursor-pointer max-w-[24px] h-auto object-cover" src="@/static/icons/close.svg" />
+      </div>
+      <div class="flex flex-col items-center mt-[24px] gap-[16px]">
+          <nuxt-link
+            v-for="(item, index) in headerLink"
+            :key="index"
+            :to="item.link"
+            :exact="item.exact"
+            class="header-menu__link text-[white] leading-[130%] text-[24px] xl:text-[16px] font-medium mx-2 lg:mx-4 duration-200 transition-all" 
+            :class="{ _active: $route.path === item.link }"
+          >
+            {{ item.text }}
+          </nuxt-link>
+        </div>
+    </div>
+    </transition>
   <div
     class="container px-[16px] mx-auto py-[28px] flex items-center justify-between bg-transparent z-50"
   >
     <nuxt-link to="/">
       <img
-        class="max-w-[215px] object-cover"
+        class="max-w-[180px] lg:max-w-[215px] object-cover"
         src="@/static/img/logo-white.png"
         alt=""
       />
@@ -34,10 +54,11 @@
       </div>
     </div>
     <div class="lg:hidden">
-        <img src="@/static/icons/menu.svg" />
+        <img @click="openBurger" class="cursor-pointer" src="@/static/icons/menu.svg" />
     </div>
-
   </div>
+  </div>
+
 </template>
 
 <script>
@@ -59,9 +80,22 @@ export default {
         { url: 'https://web.telegram.org/', img: require('@/static/icons/telegram-header.svg'), desc: 'Telegram account' },
         { url: 'https://www.instagram.com/', img: require('@/static/icons/instagram-header.svg'), desc: 'Instagram account' },
         { url: 'https://www.youtube.com/', img: require('@/static/icons/linkedin-header.svg'), desc: 'Linkedin account'}
-      ]
+      ],
+      burger: false
     };
   },
+  methods: {
+    openBurger(){
+      this.burger = true
+      const body = document.querySelector('body')
+      body.style.overflow = 'hidden'
+    },
+    closeBurger() {
+      this.burger = false
+      const body = document.querySelector('body')
+      body.style.overflow = 'auto'
+    }
+  }
 };
 </script>
 
@@ -88,4 +122,12 @@ export default {
       filter: invert(47%) sepia(100) saturate(1000%) hue-rotate(183deg) brightness(83%) contrast(170%);
     }
   }
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0
+}
+
 </style>
