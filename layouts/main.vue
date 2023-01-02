@@ -4,7 +4,6 @@
     <div v-else-if="$fetchState.error" class="error">Something is wrong here!</div> -->
     <!-- <header /> -->
     <div class="wrapper">
-      <!-- <Header /> -->
       <Nuxt />
       <Footer />
     </div>
@@ -15,8 +14,7 @@
   import { mapState } from 'vuex'
 
   export default {
-    name: 'default',
-    components: {
+     components: {
     }
   }
 </script>

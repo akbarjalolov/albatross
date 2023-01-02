@@ -35,7 +35,7 @@
                     <div class="flex flex-col relative">
                         <img class="max-w-[24px] h-auto object-cover absolute top-[38px] left-[18px]" src="@/static/icons/car.svg" alt="">
                         <label for="fromCity" class="text-white text-[14px] leading-140 font-medium">Vehicle</label>
-                        <input class="text-white bg-[#323636] border border-solid border-[#5C6670] rounded-md px-[16px] pl-[62px] py-[12px] mt-[8px] transition-all duration-200 focus:border-dBlue" type="text" placeholder="ZIP or City, State">
+                        <input class="text-white bg-[#323636] border border-solid border-[#5C6670] rounded-md px-[16px] pl-[62px] py-[12px] mt-[8px] transition-all duration-200 focus:border-dBlue" type="text" placeholder="Vehicle Type">
                     </div>
                     <CButton text="Send details" dynamicClass="mt-[28px]"/>
                 </div>

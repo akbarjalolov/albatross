@@ -52,7 +52,8 @@ import Faq from '../components/sections/Faq.vue'
 import ReviewsSlider from '../components/sections/ReviewsSlider.vue'
 import PartnersSlider from '../components/sections/PartnersSlider.vue'
     export default {
-  components: { SectionTitle, TeamCard, Faq, ReviewsSlider, PartnersSlider },
+        layout: 'black',
+        components: { SectionTitle, TeamCard, Faq, ReviewsSlider, PartnersSlider },
         data(){
             return {
                 aboutInfo: [

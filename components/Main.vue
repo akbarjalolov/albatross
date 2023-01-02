@@ -76,7 +76,7 @@
 <script>
 import CButton from './CButton.vue';
 export default {
-  
+  layout: 'default',
   components: { CButton },
   
   data() {

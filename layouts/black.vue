@@ -4,7 +4,7 @@
     <div v-else-if="$fetchState.error" class="error">Something is wrong here!</div> -->
     <!-- <header /> -->
     <div class="wrapper">
-      <!-- <Header /> -->
+      <HeaderBlack />
       <Nuxt />
       <Footer />
     </div>
@@ -13,10 +13,11 @@
 
 <script>
   import { mapState } from 'vuex'
+import Header from '../components/Header.vue'
 
   export default {
-    name: 'default',
     components: {
+      Header
     }
   }
 </script>
