@@ -11,7 +11,7 @@
             :key="index"
             :to="item.link"
             :exact="item.exact"
-            class="header-menu__link text-[white] leading-[130%] text-[24px] xl:text-[16px] font-medium mx-2 lg:mx-4 duration-200 transition-all" 
+            class="header-menu__link text-white leading-[130%] text-[24px] xl:text-[16px] font-medium mx-2 lg:mx-4 duration-200 transition-all" 
             :class="{ _active: $route.path === item.link }"
           >
             {{ item.text }}
@@ -36,7 +36,7 @@
           :key="index"
           :to="item.link"
           :exact="item.exact"
-          class="header-menu__link text-[white] leading-[130%] text-[13px] xl:text-[16px] font-medium mx-2 lg:mx-4 duration-200 transition-all" 
+          class="header-menu__link text-white leading-[130%] text-[13px] xl:text-[16px] font-medium mx-2 lg:mx-4 duration-200 transition-all" 
           :class="{ _active: $route.path === item.link }"
         >
           {{ item.text }}

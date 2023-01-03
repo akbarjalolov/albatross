@@ -56,7 +56,7 @@
             </button>
             <div class="flex items-center flex-wrap mt-[30px] lg:mt-0">
                 <div :class="{'bg-dBlue' : index == 0}" v-for="(item,index) in statistic" :key="index" class="h-[80px] lg:h-[100px] w-[80px] lg:w-[100px] border-solid border border-dBlue flex flex-col items-center justify-center rounded-full">
-                    <h3 class="text-[white] leading-130 text-[12px] lg:text-[24px] font-medium">
+                    <h3 class="text-white leading-130 text-[12px] lg:text-[24px] font-medium">
                        <number
                           ref="number1"
                           :from="0"
@@ -65,7 +65,7 @@
                           :delay="2"
                           easing="Power1.easeOut"/>
                       </h3>
-                    <h3 class="text-[white] leading-130 text-[10px] lg:text-[12px] font-normal">{{item.name}}</h3>
+                    <h3 class="text-white leading-130 text-[10px] lg:text-[12px] font-normal">{{item.name}}</h3>
                 </div>
             </div>
         </div>

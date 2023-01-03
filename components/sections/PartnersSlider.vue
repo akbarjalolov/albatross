@@ -1,6 +1,7 @@
 <template>
     <div class="bg-[#F5F8FC] py-[20px] lg:py-[60px]">
       <section-title title="Partners" class=""/>
+      <client-only>
       <swiper
       class="swiper parentSwiper !flex mt-[28px]"
       :slides-per-view="5"
@@ -51,6 +52,7 @@
         </a>
       </swiper-slide>
     </swiper>
+    </client-only>
     </div>
 </template>
 

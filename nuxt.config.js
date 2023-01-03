@@ -16,6 +16,7 @@ export default {
   env: {
     browser: true
   },
+  ssr: true,
   plugins: [
     { src: '~/plugins/webFontLoader.js', ssr: false },
     { src: '~/plugins/element.js' },
@@ -25,8 +26,8 @@ export default {
     { src: '~/plugins/slick.js' },
     { src: '~/plugins/swiper', ssr: false },
     { src: '~/plugins/number-animation.js', ssr: false },
-    { src: '~/plugins/tooltip.js' },
-    { src: '~/plugins/datepicker.js' },
+    { src: '~/plugins/tooltip.js', ssr: false },
+    { src: '~/plugins/datepicker.js', ssr: false },
   ],
 
   components: true,
