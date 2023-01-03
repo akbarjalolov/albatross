@@ -6,7 +6,7 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nov"
+    "generate": "nuxt generate"
   },
   "dependencies": {
     "@dafcoe/vue-collapsible-panel": "^0.2.0",
