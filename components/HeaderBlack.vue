@@ -70,7 +70,7 @@ export default {
       activeMenu: false,
       headerLink: [
         { link: "/about", text: "About us", exact: true },
-        { link: "", text: "How it works" },
+        { link: "/how-it-works", text: "How it works" },
         { link: "", text: "Transport options" },
         { link: "/pages/terms-of-use", text: "Who we serve" },
         { link: "", text: "Contacts" },
@@ -106,7 +106,7 @@ export default {
       display: block;
       width: 0;
       height: 1.6px;
-      background-color: #fff;
+      background-color: rgb(0, 0, 0);
       transition: width 0.3s ease;
     }
     &:hover {
