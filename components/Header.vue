@@ -68,7 +68,7 @@ export default {
       headerLink: [
         { link: "/about", text: "About us", exact: true },
         { link: "/how-it-works", text: "How it works" },
-        { link: "", text: "Transport options" },
+        { link: "/transport-options", text: "Transport options" },
         { link: "/pages/terms-of-use", text: "Who we serve" },
         { link: "", text: "Contacts" },
       ],

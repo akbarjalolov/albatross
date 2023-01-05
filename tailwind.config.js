@@ -30,4 +30,7 @@ module.exports = {
       150: '150%',
     },
   },
+   plugins: [
+    require('@tailwindcss/line-clamp'),
+  ],
 }
