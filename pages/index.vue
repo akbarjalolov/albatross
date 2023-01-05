@@ -2,7 +2,7 @@
   <div>
     <Main data-aos="fade-up"/>
     <EasyStepsSlider data-aos="fade-up"/>
-    <MainForm data-aos="fade-up"/> 
+    <MainForm /> 
     <ReviewsSlider data-aos="fade-up"/>
     <PartnersSlider data-aos="fade-up"/>
     <Blogs data-aos="fade-up"/>

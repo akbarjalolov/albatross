@@ -44,12 +44,9 @@
       </div>
       <div class="social-menu flex items-center justify-between">
         <a class="w-[24px] h-[24px] mx-[6px] object-cover" :href="item.url" v-for="(item,index) in socials" :key="index">
-        <VTooltip>
-          <template #popper>
-            {{item.desc}}
-          </template>
+          <el-tooltip class="item" effect="dark" :content="item.desc" placement="top">
           <img class="w-full opacity-60 transition-all duration-300 hover:opacity-100" :src="item.img" alt="" />
-        </VTooltip>
+          </el-tooltip>
         </a>
       </div>
     </div>

@@ -60,6 +60,8 @@
         </div>
 
     </div>
+    <!-- faq -->
+    <Faq data-aos="fade-up"/>
 </div>
 
 </template>
@@ -67,9 +69,10 @@
 <script>
     import BreadCrumb from '@/components/common/BreadCrumb.vue'
     import SectionTitle from '@/components/SectionTitle.vue'
+    import Faq from '@/components/sections/Faq.vue'
     export default {
         layout: 'black',
-        components: { BreadCrumb, SectionTitle },
+        components: { BreadCrumb, SectionTitle, Faq },
         data(){
             return {
                  links: [ {

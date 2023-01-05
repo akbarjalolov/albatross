@@ -29,8 +29,13 @@
                     <div class="flex flex-col relative">
                         <img class="max-w-[24px] z-[2] h-auto object-cover absolute top-[32px] left-[18px]" src="@/static/icons/calendar 01.svg" alt="">
                         <label for="fromCity" class="text-white text-[14px] leading-140 font-medium">Time</label>
-                        <date-picker placeholder="21/12/2022" v-model="time2" type="date"></date-picker>
+                        <!-- <date-picker placeholder="21/12/2022" v-model="time2" type="date"></date-picker> -->
                         <!-- <input class="text-white bg-[#323636] border border-solid border-[#5C6670] rounded-md px-[16px] pl-[62px] py-[12px] mt-[8px] transition-all duration-200 focus:border-dBlue" type="text" placeholder="Pickup a date"> -->
+                        <el-date-picker
+                            v-model="timeValue"
+                            type="date"
+                            placeholder="Pickup a date">
+                        </el-date-picker>
                     </div>
                     <div class="flex flex-col relative">
                         <img class="max-w-[24px] h-auto object-cover absolute top-[38px] left-[18px]" src="@/static/icons/car.svg" alt="">
@@ -46,15 +51,13 @@
 
 <script>
 import SectionTitle from '@/components/SectionTitle.vue'
-  import DatePicker from 'vue2-datepicker';
-  import 'vue2-datepicker/index.css';
     export default {
       components: {
-        SectionTitle, DatePicker
+        SectionTitle
       },
       data(){
         return {
-            time2: ''
+            timeValue: ''
         }
       }
     }
@@ -71,10 +74,9 @@ import SectionTitle from '@/components/SectionTitle.vue'
 </style>
 
 <style lang="scss">
-    .mx-datepicker {
+    .el-date-editor {
         width: 100% !important;
-        .mx-input-wrapper {
-            .mx-input {
+            .el-input__inner {
                 background: #323636 !important;
                 border: 1px solid #5C6670 !important;
                 border-radius: 6px !important;
@@ -83,9 +85,8 @@ import SectionTitle from '@/components/SectionTitle.vue'
                 color: #fff !important;
                 width: 100% !important;
             }
-            .mx-icon-calendar {
+            .el-input__prefix {
                 display: none;
-            }
         }
     }
 </style>
