@@ -33,6 +33,7 @@
     "@nuxtjs/tailwindcss": "^4.0.0",
     "node-sass": "^6.0.0",
     "nuxt-webfontloader": "^1.1.0",
-    "sass-loader": "10.2.0"
+    "sass-loader": "10.2.0",
+    "vue-js-parallax-component": "^0.2.1"
   }
 }
