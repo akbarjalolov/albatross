@@ -23,7 +23,6 @@ export default {
     { src: '~/plugins/slider.js' },
     { src: '~/plugins/vuelidate.js' },
     { src: '~/assets/js/scripts.js' },
-    { src: '~/plugins/slick.js' },
     { src: '~/plugins/swiper', ssr: false },
     { src: '~/plugins/number-animation.js', ssr: false },
   ],

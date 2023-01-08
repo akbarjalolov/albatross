@@ -68,13 +68,21 @@ import SectionTitle from '../SectionTitle.vue'
                     person: "Malika Sharipova",
                     position: "“CARE CSR” konsalting kompaniyasi asoschisi va direktori"        
                   },
+                  {
+                    img: require('@/static/img/logo-rev.png'),
+                    title: 'Outstanding service!',
+                    content: "Brad was very kind, and helped me with the process. I would recommend them because of his kindness and concern for the customer. He followed up with me and answered all of my questions- maintained communication with my husband and I. Thanks Brad ! Brad was very kind, and helped me with the process.",
+                    rate: 5,
+                    person: "Malika Sharipova",
+                    position: "“CARE CSR” konsalting kompaniyasi asoschisi va direktori"        
+                  },
                 ]
             }
         }
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .parentSwiper .swiper-wrapper {
   display: flex;
 }
