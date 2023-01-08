@@ -11,6 +11,7 @@ module.exports = {
   },
   theme: {
     colors: {
+      darks: '#333333',
       dark: '#22232C',
       dBlue: '#00AFEF',
       darkBlue: '#047BAD',
