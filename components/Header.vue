@@ -70,7 +70,7 @@ export default {
         { link: "/how-it-works", text: "How it works" },
         { link: "/transport-options", text: "Transport options" },
         { link: "/pages/terms-of-use", text: "Who we serve" },
-        { link: "", text: "Contacts" },
+        { link: "/contacts", text: "Contacts" },
       ],
       socials: [
         { url: 'https://twitter.com/', img: require('@/static/icons/twitter-header.svg'), desc: 'Twitter account' },

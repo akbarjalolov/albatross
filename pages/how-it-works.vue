@@ -61,7 +61,7 @@
 
     </div>
     <!-- faq -->
-    <Faq data-aos="fade-up"/>
+    <Faq />
 </div>
 
 </template>

@@ -3,19 +3,19 @@
         <section-title title="Reviews" class=""/>
         <client-only>
         <swiper
-      class="swiper parentSwiper !flex mt-[28px]"
-      :slides-per-view="5"
-      :slides-per-group="2"
-      :slides-per-group-skip="1"
-      :centered-slides="false"
-      :grab-cursor="true"
-      :speed="5000"
-      :infinity="true"
-      :loop="true"
-      :keyboard="{ enabled: true }"
-      :pagination="{ clickable: true }"
-      :autoplay="{ delay: 100 }"
-    >
+          class="swiper parentSwiper !flex mt-[28px]"
+          :slides-per-view="5"
+          :slides-per-group="2"
+          :slides-per-group-skip="1"
+          :centered-slides="false"
+          :grab-cursor="true"
+          :speed="5000"
+          :infinity="true"
+          :loop="true"
+          :keyboard="{ enabled: true }"
+          :pagination="{ clickable: true }"
+          :autoplay="{ delay: 100 }"
+       >  
       <swiper-slide v-for="(item, index) in data" :key="index" class="review-slide">
             <h3 class="text-white font-medium text-[20px] lg:text-[28px] leading-130">{{item.title}}</h3>
             <p class="text-white font-normal text-[13px] lg:text-[16px] leading-140 mt-3">{{item.content}}</p>
