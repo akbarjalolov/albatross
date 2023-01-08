@@ -1,5 +1,5 @@
 <template>
-    <div class="max-h-[564px] h-full w-full bg-white border border-solid border-[#F0F0F0] rounded-[20px] p-[8px] flex flex-col justify-between">
+    <div class="max-h-[564px] h-full w-full bg-white cursor-pointer border border-solid border-[#F0F0F0] rounded-[20px] p-[8px] flex flex-col justify-between">
         <img class="max-h-[214px] h-full w-full object-cover rounded-[16px]" :src="data.img" alt="img-auto">
         <div class="p-[12px]">
             <h4 class="text-dark leading-130 text-[20px] font-medium mt-[20px]">{{data.title}}</h4>

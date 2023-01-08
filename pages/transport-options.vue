@@ -10,6 +10,7 @@
             </div>
         </div>
     </div>
+        <MainForm />
 </div>
 
 </template>
@@ -18,9 +19,10 @@
     import BreadCrumb from '@/components/common/BreadCrumb.vue'
     import SectionTitle from '@/components/SectionTitle.vue'
     import TransportCard from '@/components/cards/TransportCard.vue'
+    import MainForm from '@/components/sections/MainForm.vue'
     export default {
         layout: 'black',
-        components: { BreadCrumb, SectionTitle, TransportCard },
+        components: { BreadCrumb, SectionTitle, TransportCard, MainForm },
         data(){
             return {
                 transportCardData: [
