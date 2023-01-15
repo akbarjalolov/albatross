@@ -37,6 +37,7 @@
                     {
                         img: 'https://picsum.photos/300/300',
                         title: 'Open transport',
+                        slug: 'blog-2',
                         author: {
                             name: 'John Doe',
                             position: 'Account executive, Auto Transport Expert'
@@ -47,6 +48,7 @@
                     {
                         img: 'https://picsum.photos/300/350',
                         title: 'Door-to-Door Car Shipping',
+                        slug: 'blog-2',
                          author: {
                             name: 'John Doe',
                             position: 'Account executive, Auto Transport Expert'
@@ -57,6 +59,7 @@
                     {
                         img: 'https://picsum.photos/300/400',
                         title: 'Enclosed Auto Transport',
+                        slug: 'blog-2',
                          author: {
                             name: 'John Doe',
                             position: 'Account executive, Auto Transport Expert'
@@ -67,6 +70,7 @@
                     {
                         img: 'https://picsum.photos/300/300',
                         title: 'Open transport',
+                        slug: '',
                          author: {
                             name: 'John Doe',
                             position: 'Account executive, Auto Transport Expert'
@@ -77,6 +81,7 @@
                     {
                         img: 'https://picsum.photos/300/350',
                         title: 'Door-to-Door Car Shipping',
+                        slug: '',
                          author: {
                             name: 'John Doe',
                             position: 'Account executive, Auto Transport Expert'
@@ -87,6 +92,7 @@
                     {
                         img: 'https://picsum.photos/300/400',
                         title: 'Enclosed Auto Transport',
+                        slug: 'blog-1',
                          author: {
                             name: 'John Doe',
                             position: 'Account executive, Auto Transport Expert'
@@ -97,7 +103,7 @@
                 ],
                  links: [ {
                     name: 'Blog',
-                    link: '/blog'
+                    link: '/blog,'
                 }]
             }
         }
