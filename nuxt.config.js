@@ -20,11 +20,12 @@ export default {
   plugins: [
     { src: '~/plugins/webFontLoader.js', ssr: false },
     { src: '~/plugins/element.js' },
-    { src: '~/plugins/slider.js' },
     { src: '~/plugins/vuelidate.js' },
     { src: '~/assets/js/scripts.js' },
     { src: '~/plugins/swiper', ssr: false },
     { src: '~/plugins/number-animation.js', ssr: false },
+    { src: '~/plugins/slick.js', ssr: false},
+    { src: '~/plugins/marquee.js'}
   ],
 
   components: true,

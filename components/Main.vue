@@ -6,7 +6,6 @@
          SHIPPING
       </div>
     </div>
-
     <h4
       class="text-white font-semibold text-[20px] md:text-[48px] leading-130 text-center mt-[30px] lg:mt-[135px]"
     >
@@ -50,8 +49,16 @@
     </div>
     <div class="container mt-[30px] lg:mt-[140px] relative mx-auto flex items-center justify-between">
         <div class="w-full flex flex-col lg:flex-row items-center lg:items-end justify-center lg:justify-between">
-            <button class="group flex items-center justify-center">
-                <img class="border border-solid border-white group-hover:border-dBlue duration-200 rounded-full w-[28px] p-4 h-auto object-cover" src="@/static/icons/arrow-down-white.svg"/>
+            <button @click="scrollToDown" class="to-down group flex items-center justify-center">
+                <div class="border border-solid border-white group-hover:border-dBlue duration-200 rounded-full w-[28px] p-4 h-auto">
+                  <span class="arrow-container block object-cover">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.99984 3.89581V14.1041" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M11.9167 11.1875L9 14.1042" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M6.0835 11.1875L9.00016 14.1042" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </div>
                 <p class="text-white text-[16px] leading-130 font-normal ml-[12px] duration-200 group-hover:text-dBlue">learn more</p>
             </button>
             <div class="flex items-center flex-wrap mt-[30px] lg:mt-0">
@@ -110,6 +117,9 @@ export default {
     };
   },
   methods: {
+    scrollToDown() {
+      document.querySelector('#easySteps').scrollIntoView({ behavior: 'smooth' });
+    }
   }
 };
 </script>
@@ -181,10 +191,10 @@ export default {
 
 .typing-demo {
   width: 11ch;
-  animation: typing 2s steps(8), blink .5s step-end infinite alternate;
+  animation: typing 2s steps(8), blink .5s step-end alternate;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 3px solid white;
+  // border-right: 3px solid white;
 }
 
 @keyframes typing {
@@ -198,5 +208,22 @@ export default {
     border-color: transparent
   }
 }
+
+
+.to-down:hover .arrow-container svg path{
+  stroke: #00AFEF !important;
+}
+
+@keyframes bounce {
+50% {
+    transform: translateY(-3px);
+  }
+}
+
+.arrow-container {
+  animation: bounce 1600ms infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+
 
 </style>

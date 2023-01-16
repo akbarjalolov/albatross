@@ -1,5 +1,5 @@
 <template>
-  <div class="relative py-[30px] lg:py-[60px]">
+  <div id="easySteps" class="relative py-[30px] lg:py-[60px]">
     <img class="absolute hidden lg:block left-[1%] top-[7%]" src="@/static/img/arrow-1.png" alt="" />
     <div class="container mx-auto h-[400px] lg:h-auto">
         <section-title title="Easy Steps" />
@@ -18,7 +18,7 @@
           :pagination="{ clickable: true }"
           :autoplay="{ delay: 100 }"  
        >  
-      <swiper-slide v-for="(item, index) in steps" :key="index" class="group group-steps border max-w-[385px] w-full border-solid border-[#D3D3D5] duration-300 hover:bg-dark hover:border-b-2 hover:border-b-dBlue rounded-3xl p-[24px]">
+      <swiper-slide v-for="(item, index) in steps" :key="index" class="group group-steps max-w-[385px] w-full border-2 border-solid border-[#D3D3D5] duration-300 hover:bg-dark hover:border-b-2 hover:border-b-dBlue rounded-3xl p-[24px]">
             <h3 class="title-gradient group-hover:border-[#00AFEF] duration-300">{{item.step}}</h3>
                 <p class="text-dark group-hover:text-white duration-300 font-medium text-[18px] lg:text-[24px] leading-130 mt-[16px] cursor-pointer">{{item.title}}</p>
                 <p class="text-dark group-hover:text-white duration-300 font-normal text-[13px] lg:text-[16px] leading-140 mt-[12px] cursor-pointer">{{item.context}}</p>
