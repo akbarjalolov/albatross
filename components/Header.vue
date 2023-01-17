@@ -1,59 +1,45 @@
 <template>
   <div class="w-full z-[100]">
     <transition name="fade">
-    <div class="bg-dark p-[16px] w-[100vw] h-[100vh]" v-if="burger">
-      <div class="container px-[16px] mx-auto py-[28px] flex items-center justify-end">
-        <img @click="closeBurger" class="cursor-pointer max-w-[24px] h-auto object-cover" src="@/static/icons/close.svg" />
-      </div>
-      <div class="flex flex-col items-center mt-[24px] gap-[16px]">
-          <nuxt-link
-            v-for="(item, index) in headerLink"
-            :key="index"
-            :to="item.link"
-            :exact="item.exact"
-            class="header-menu__link text-white leading-[130%] text-[24px] xl:text-[16px] font-medium mx-2 lg:mx-4 duration-200 transition-all" 
-            :class="{ _active: $route.path === item.link }"
-          >
+      <div class="bg-dark p-[16px] w-[100vw] h-[100vh]" v-if="burger">
+        <div class="container px-[16px] mx-auto py-[28px] flex items-center justify-end">
+          <img @click="closeBurger" class="cursor-pointer max-w-[24px] h-auto object-cover"
+            src="@/static/icons/close.svg" />
+        </div>
+        <div class="flex flex-col items-center mt-[24px] gap-[16px]">
+          <nuxt-link v-for="(item, index) in headerLink" :key="index" :to="item.link" :exact="item.exact"
+            class="header-menu__link text-white leading-[130%] text-[24px] xl:text-[16px] font-medium mx-2 lg:mx-4 duration-200 transition-all"
+            :class="{ _active: $route.path === item.link }">
             {{ item.text }}
           </nuxt-link>
         </div>
-    </div>
+      </div>
     </transition>
-  <div
-    class="container px-[16px] mx-auto py-[28px] flex items-center justify-between bg-transparent z-50"
-  >
-    <nuxt-link to="/">
-      <img
-        class="max-w-[180px] lg:max-w-[215px] object-cover"
-        src="@/static/img/logo-white.png"
-        alt=""
-      />
-    </nuxt-link>
-    <div class="hidden lg:flex items-center gap-[120px] xl:gap-[150px]">
-      <div class="header-menu flex items-center">
-        <nuxt-link
-          v-for="(item, index) in headerLink"
-          :key="index"
-          :to="item.link"
-          :exact="item.exact"
-          class="header-menu__link text-white leading-[130%] text-[13px] xl:text-[16px] font-medium mx-2 lg:mx-4 duration-200 transition-all" 
-          :class="{ _active: $route.path === item.link }"
-        >
-          {{ item.text }}
-        </nuxt-link>
+    <div class="container px-[16px] mx-auto py-[28px] flex items-center justify-between bg-transparent z-50">
+      <nuxt-link to="/" data-aos="fade-right">
+        <img class="max-w-[180px] lg:max-w-[215px] object-cover" src="@/static/img/logo-white.png" alt="" />
+      </nuxt-link>
+      <div class="hidden lg:flex items-center gap-[120px] xl:gap-[150px]">
+        <div class="header-menu flex items-center">
+          <nuxt-link v-for="(item, index) in headerLink" :key="index" :to="item.link" :exact="item.exact"
+            class="header-menu__link text-white leading-[130%] text-[13px] xl:text-[16px] font-medium mx-2 lg:mx-4 duration-200 transition-all"
+            :class="{ _active: $route.path === item.link }" data-aos="fade-down" :data-aos-delay="index + 1 + '00'">
+            {{ item.text }}
+          </nuxt-link>
+        </div>
+        <div class="social-menu flex items-center justify-between">
+          <a class="w-[24px] h-[24px] mx-[6px] object-cover" :href="item.url" v-for="(item, index) in socials"
+            :key="index" data-aos="fade-left" :data-aos-delay="index + 1 + '00'">
+            <el-tooltip class="item" effect="dark" :content="item.desc" placement="top">
+              <img class="w-full opacity-60 transition-all duration-300 hover:opacity-100" :src="item.img" alt="" />
+            </el-tooltip>
+          </a>
+        </div>
       </div>
-      <div class="social-menu flex items-center justify-between">
-        <a class="w-[24px] h-[24px] mx-[6px] object-cover" :href="item.url" v-for="(item,index) in socials" :key="index">
-          <el-tooltip class="item" effect="dark" :content="item.desc" placement="top">
-          <img class="w-full opacity-60 transition-all duration-300 hover:opacity-100" :src="item.img" alt="" />
-          </el-tooltip>
-        </a>
-      </div>
-    </div>
-    <div class="lg:hidden">
+      <div class="lg:hidden">
         <img @click="openBurger" class="cursor-pointer" src="@/static/icons/menu.svg" />
+      </div>
     </div>
-  </div>
   </div>
 
 </template>
@@ -76,13 +62,13 @@ export default {
         { url: 'https://twitter.com/', img: require('@/static/icons/twitter-header.svg'), desc: 'Twitter account' },
         { url: 'https://web.telegram.org/', img: require('@/static/icons/telegram-header.svg'), desc: 'Telegram account' },
         { url: 'https://www.instagram.com/', img: require('@/static/icons/instagram-header.svg'), desc: 'Instagram account' },
-        { url: 'https://www.youtube.com/', img: require('@/static/icons/linkedin-header.svg'), desc: 'Linkedin account'}
+        { url: 'https://www.youtube.com/', img: require('@/static/icons/linkedin-header.svg'), desc: 'Linkedin account' }
       ],
       burger: false
     };
   },
   methods: {
-    openBurger(){
+    openBurger() {
       this.burger = true
       const body = document.querySelector('body')
       body.style.overflow = 'hidden'
@@ -97,34 +83,41 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .header-menu__link {
+.header-menu__link {
+  &::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 1.6px;
+    background-color: #fff;
+    transition: width 0.3s ease;
+  }
+
+  &:hover {
     &::after {
-      content: "";
-      display: block;
-      width: 0;
-      height: 1.6px;
-      background-color: #fff;
-      transition: width 0.3s ease;
-    }
-    &:hover {
-      &::after {
-        width: 100%;
-      }
+      width: 100%;
     }
   }
+}
 
-  .icon-hover-blue {
-    transition: all 0.3s ease;
-    &:hover {
-      filter: invert(47%) sepia(100) saturate(1000%) hue-rotate(183deg) brightness(83%) contrast(170%);
-    }
+.icon-hover-blue {
+  transition: all 0.3s ease;
+
+  &:hover {
+    filter: invert(47%) sepia(100) saturate(1000%) hue-rotate(183deg) brightness(83%) contrast(170%);
   }
+}
 
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
   transition: opacity .5s
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+
+.fade-enter,
+.fade-leave-to
+
+/* .fade-leave-active below version 2.1.8 */
+  {
   opacity: 0
 }
-
 </style>

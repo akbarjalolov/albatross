@@ -2,49 +2,45 @@
   <div class="bg-[#F5F8FC] py-[20px] py-[60px] partners-slider">
     <section-title title="Partners" data-aos="fade-up" class="mb-[36px]" />
     <div class="mb-[24px]" data-aos="fade-up" data-aos-delay="100">
-    <VueSlickCarousel v-bind="settings">
-      <div v-for="(item, index) in data" :key="index" class="partner-slide">
-        <a :href="item.url" target="_blank" class="min-w-[240px] w-full h-full">
-          <div class="left-gradient"></div>
-          <div class="top-gradient"></div>
-          <img
-            :src="item.img"
-            class="
+      <client-only>
+        <VueSlickCarousel v-bind="settings">
+          <div v-for="(item, index) in data" :key="index" class="partner-slide">
+            <a :href="item.url" target="_blank" class="min-w-[240px] w-full h-full">
+              <div class="left-gradient"></div>
+              <div class="top-gradient"></div>
+              <img :src="item.img" class="
               max-w-[80px]
               lg:max-w-[110px]
               h-auto
               w-full
               object-cover
               mx-auto
-            "
-            alt=""
-          />
-        </a>
-      </div>
-    </VueSlickCarousel>
-  </div>
+            " alt="" />
+            </a>
+          </div>
+        </VueSlickCarousel>
+      </client-only>
+    </div>
     <div data-aos="fade-up" data-aos-delay="200">
-    <VueSlickCarousel v-bind="settings2">
-      <div v-for="(item, index) in data" :key="index" class="partner-slide">
-        <a :href="item.url" target="_blank" class="min-w-[240px] w-full h-full">
-          <div class="left-gradient"></div>
-          <div class="top-gradient"></div>
-          <img
-            :src="item.img"
-            class="
+      <client-only>
+        <VueSlickCarousel v-bind="settings2">
+          <div v-for="(item, index) in data" :key="index" class="partner-slide">
+            <a :href="item.url" target="_blank" class="min-w-[240px] w-full h-full">
+              <div class="left-gradient"></div>
+              <div class="top-gradient"></div>
+              <img :src="item.img" class="
               max-w-[80px]
               lg:max-w-[110px]
               h-auto
               w-full
               object-cover
               mx-auto
-            "
-            alt=""
-          />
-        </a>
-      </div>
-    </VueSlickCarousel>
-  </div>
+            " alt="" />
+            </a>
+          </div>
+        </VueSlickCarousel>
+      </client-only>
+    </div>
   </div>
 </template>
 
@@ -59,17 +55,16 @@ export default {
         dots: false,
         arrows: false,
         centerMode: true,
-        infinite: true,
+        // infinite: true,
         autoplay: true,
         autoplaySpeed: 2000,
         slidesToShow: 6,
         slidesToScroll: 1,
-        loop: true,
         responsive: [
           {
             breakpoint: 991,
             settings: {
-              slidesToShow: 1,
+              slidesToShow: 3,
               slidesToScroll: 1,
             },
           },
@@ -169,6 +164,7 @@ export default {
   .top-gradient {
     opacity: 1;
   }
+
   .left-gradient {
     opacity: 0;
   }
