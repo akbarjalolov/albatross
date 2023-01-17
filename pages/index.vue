@@ -1,12 +1,12 @@
 <template>
   <div>
     <Main data-aos="fade-up"/>
-    <EasyStepsSlider data-aos="fade-up"/>
+    <EasyStepsSlider/>
     <MainForm /> 
-    <ReviewsSlider data-aos="fade-up"/>
-    <PartnersSlider data-aos="fade-up"/>
-    <Blogs data-aos="fade-up"/>
-    <Faq data-aos="fade-up"/>
+    <ReviewsSlider/>
+    <PartnersSlider />
+    <Blogs/>
+    <Faq/>
   </div>
 </template>
 

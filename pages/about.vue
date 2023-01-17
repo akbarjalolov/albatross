@@ -38,7 +38,7 @@
             </div>
         </div>
         <!-- faq -->
-       <Faq data-aos="fade-up"/>
+       <Faq/>
        <ReviewsSlider />
        <PartnersSlider />
 

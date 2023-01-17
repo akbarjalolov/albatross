@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[13],{520:function(n,t,e){"use strict";e.r(t);var c={},o=e(9),component=Object(o.a)(c,(function(){this._self._c;return this._m(0)}),[function(){var n=this._self._c;return n("div",[n("h3",[this._v("Blogs")])])}],!1,null,"30d0b1d9",null);t.default=component.exports}}]);

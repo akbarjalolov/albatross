@@ -1,6 +1,6 @@
 <template>
   <div class="lg:py-[60px]">
-    <section-title title="Reviews" class="" />
+    <section-title data-aos="fade-up" title="Reviews" class="" />
     <!-- <client-only>
       <swiper
         class="swiper parentSwiper !flex mt-[28px]"
@@ -102,62 +102,48 @@
         </swiper-slide>
       </swiper>
     </client-only> -->
-
-    <VueSlickCarousel class="parentSwiper !flex mt-[32px]" v-bind="settings">
-      <div v-for="(item, index) in data" :key="index" class="review-slide">
-        <h3
-          class="text-white font-medium text-[20px] lg:text-[28px] leading-130"
-        >
-          {{ item.title }}
-        </h3>
-        <p
-          class="
+    <div data-aos="fade-up" data-aos-delay="100">
+      <VueSlickCarousel class="parentSwiper !flex mt-[32px]" v-bind="settings">
+        <div v-for="(item, index) in data" :key="index" class="review-slide">
+          <h3 class="text-white font-medium text-[20px] lg:text-[28px] leading-130">
+            {{ item.title }}
+          </h3>
+          <p class="
             text-white
             font-normal
             text-[13px]
             lg:text-[16px]
             leading-140
             mt-3
-          "
-        >
-          {{ item.content }}
-        </p>
-        <h4
-          class="
+          ">
+            {{ item.content }}
+          </p>
+          <h4 class="
             text-white
             font-medium
             text-[16px]
             lg:text-[20px]
             leading-130
             mt-[26px]
-          "
-        >
-          {{ item.rate }}
-        </h4>
-        <div class="flex items-center">
-          <img
-            v-for="(i, index) in item.rate"
-            :key="index"
-            src="@/static/icons/star.svg"
-            alt=""
-          />
-        </div>
-        <div class="flex items-center justify-between flex-col lg:flex-row">
-          <div class="flex flex-col">
-            <h4
-              class="
+          ">
+            {{ item.rate }}
+          </h4>
+          <div class="flex items-center">
+            <img v-for="(i, index) in item.rate" :key="index" src="@/static/icons/star.svg" alt="" />
+          </div>
+          <div class="flex items-center justify-between flex-col lg:flex-row">
+            <div class="flex flex-col">
+              <h4 class="
                 text-white
                 font-medium
                 text-[16px]
                 lg:text-[20px]
                 leading-[26px]
                 mt-[24px]
-              "
-            >
-              {{ item.person }}
-            </h4>
-            <h6
-              class="
+              ">
+                {{ item.person }}
+              </h4>
+              <h6 class="
                 text-white
                 opacity-30
                 font-normal
@@ -166,19 +152,15 @@
                 leading-[16px]
                 lg:leading-[24px]
                 mt-[4px]
-              "
-            >
-              {{ item.position }}
-            </h6>
+              ">
+                {{ item.position }}
+              </h6>
+            </div>
+            <img :src="item.img" class="max-h-[40px] lg:max-h-[60px] h-full w-auto" alt="" />
           </div>
-          <img
-            :src="item.img"
-            class="max-h-[40px] lg:max-h-[60px] h-full w-auto"
-            alt=""
-          />
         </div>
-      </div>
-    </VueSlickCarousel>
+      </VueSlickCarousel>
+    </div>
   </div>
 </template>
 
@@ -195,13 +177,31 @@ export default {
     return {
       settings: {
         dots: false,
-        dotsClass: "slick-dots custom-dot-class",
-        edgeFriction: 0.35,
+        arrows: false,
+        centerMode: true,
         infinite: true,
-        speed: 500,
-        slidesToShow: 1.1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        slidesToShow: 1.72,
         slidesToScroll: 1,
-        loop: true
+        loop: true,
+        responsive: [
+          {
+            breakpoint: 991,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+          {
+            breakpoint: 617,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+
+        ],
       },
       data: [
         {
@@ -252,35 +252,17 @@ export default {
 }
 
 .parentSwiper .review-slide {
-  width: 950px !important;
-  height: 350px !important;
   background-image: url("@/static/img/review-card-bg.png");
   background-position: center;
   background-size: cover;
   border-radius: 32px;
-  display: flex;
   flex-direction: column;
-  justify-content: space-between;
   padding: 28px;
-  margin-right: 20px;
-}
-
-@media screen and (max-width: 1024px) {
-  .parentSwiper .review-slide {
-    width: 700px !important;
-    height: auto !important;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .parentSwiper .review-slide {
-    width: 300px !important;
-    height: auto !important;
-  }
+  gap: 24px;
 }
 </style>
 
-<style lang="scss">
+<!-- <style lang="scss">
 .slick-list .slick-track .slick-slide {
   max-width: 974px !important;
 }
@@ -295,5 +277,5 @@ export default {
   .slick-list .slick-track .slick-slide {
   max-width: 315px !important;
 }
-}
+} -->
 </style>

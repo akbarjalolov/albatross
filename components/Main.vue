@@ -59,10 +59,10 @@
                     </svg>
                   </span>
                 </div>
-                <p class="text-white text-[16px] leading-130 font-normal ml-[12px] duration-200 group-hover:text-dBlue">learn more</p>
+                <p class="text-white text-[16px] leading-130 font-normal ml-[12px] duration-200 group-hover:text-dBlue">Learn more</p>
             </button>
             <div class="flex items-center flex-wrap mt-[30px] lg:mt-0">
-                <div :class="{'bg-dBlue' : index == 0}" v-for="(item,index) in statistic" :key="index" class="h-[80px] lg:h-[100px] w-[80px] lg:w-[100px] border-solid border border-dBlue flex flex-col items-center justify-center rounded-full">
+                <div :class="{'bg-dBlue' : index == 0}" v-for="(item,index) in statistic" :key="index" class="h-[80px] lg:h-[100px] w-[80px] lg:w-[100px] border-solid border border-dBlue flex flex-col items-center justify-center rounded-full mr-[12px]">
                     <h3 class="text-white leading-130 text-[12px] lg:text-[24px] font-medium">
                        <number
                           ref="number1"
