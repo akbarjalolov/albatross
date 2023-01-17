@@ -3,15 +3,16 @@
     <Header />
     <div class="bg-stroke-text">
       <div class="typing-demo">
-         SHIPPING
+         AUTO SHIPMENT
       </div>
     </div>
     <h4
       class="text-white font-semibold text-[20px] md:text-[48px] leading-130 text-center mt-[30px] lg:mt-[135px]"
+      data-aos="fade-up"
     >
       {{ mainText }}
     </h4>
-    <p class="text-dGray font-normal leading-130 text-[14px] lg:text-xl mt-[12px] text-center">{{ subtext }}</p>
+    <p class="text-dGray font-normal leading-130 text-[14px] lg:text-xl mt-[12px] text-center" data-aos="fade-up">{{ subtext }}</p>
     <div class="w-full max-w-[450px] lg:max-w-[1400px] flex justify-center mx-auto">
         <img class="w-full h-auto object-cover max-w-[105px] lg:max-w-[575px]" src="@/static/img/line-button.png"/>
         <c-button :text="buttonText" dynamicClass="max-w-[200px] min-w-[180px] mx-auto mt-[24px]"></c-button>
@@ -22,7 +23,7 @@
              <div class="hidden lg:block">
                 <img class="w-full h-auto object-cover" src="@/static/img/line-1.png"/>
             </div>
-            <div class="max-w-[190px] w-full bg-white border border-solid border-dBlue rounded-xl flex flex-col p-[12px] min-h-[82px]">
+            <div  class="max-w-[190px] w-full bg-white border border-solid border-dBlue rounded-xl flex flex-col p-[12px] min-h-[82px]">
                 <img class="max-w-[32px] h-auto object-cover" src="@/static/icons/headphone.png"/>
                 <h3 class="text-dark text-sm leading-130 font-medium mt-8">Quote & Reservation</h3>
             </div>
@@ -143,7 +144,7 @@ export default {
 .bg-stroke-text {
     font-style: normal;
     font-weight: 600;
-    font-size: 160px;
+    font-size: 140PX;
     line-height: 130%;
     letter-spacing: 0.33em;
     opacity: 0.1;
@@ -156,6 +157,7 @@ export default {
     position: absolute;
     transform: translate(-50%, 0%);
     left: 50%;
+    margin-top: 4%;
 }
 
 @media (max-width: 1100px) {
@@ -190,8 +192,8 @@ export default {
 }
 
 .typing-demo {
-  width: 11ch;
-  animation: typing 2s steps(8), blink .5s step-end alternate;
+  width: 100%;
+  animation: typing 2s steps(12), blink .5s step-end alternate;
   white-space: nowrap;
   overflow: hidden;
   // border-right: 3px solid white;

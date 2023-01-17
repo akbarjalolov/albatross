@@ -19,13 +19,10 @@
     "element-ui": "^2.15.1",
     "floating-vue": "^1.0.0-beta.19",
     "nuxt": "^2.15.3",
-    "swiper": "^8.4.5",
     "tailwindcss": "^3.2.4",
     "typewriter-effect": "^2.19.0",
     "v-mask": "^2.2.4",
-    "vue-awesome-swiper": "^4.1.1",
     "vue-inputmask": "^0.2.1",
-    "vue-marquee-slider": "^1.0.6",
     "vue-number-animation": "^1.1.2",
     "vue-slick-carousel": "^1.0.6",
     "vuelidate": "^0.7.6"

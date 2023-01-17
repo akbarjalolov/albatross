@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Main data-aos="fade-up"/>
+    <Main/>
     <EasyStepsSlider/>
     <MainForm /> 
     <ReviewsSlider/>

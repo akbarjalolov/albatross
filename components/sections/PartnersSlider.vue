@@ -1,7 +1,8 @@
 <template>
-  <div class="bg-[#F5F8FC] py-[20px] lg:py-[60px]">
-    <section-title title="Partners" class="" />
-    <vue-marquee-slider id="marquee-slider-loop" :speed="25000" :reverse="true">
+  <div class="bg-[#F5F8FC] py-[20px] py-[60px] partners-slider">
+    <section-title title="Partners" data-aos="fade-up" class="mb-[36px]" />
+    <div class="mb-[24px]" data-aos="fade-up" data-aos-delay="100">
+    <VueSlickCarousel v-bind="settings">
       <div v-for="(item, index) in data" :key="index" class="partner-slide">
         <a :href="item.url" target="_blank" class="min-w-[240px] w-full h-full">
           <div class="left-gradient"></div>
@@ -20,9 +21,10 @@
           />
         </a>
       </div>
-    </vue-marquee-slider>
-
-      <vue-marquee-slider id="marquee-slider-loop" :speed="25000" :reverse="true">
+    </VueSlickCarousel>
+  </div>
+    <div data-aos="fade-up" data-aos-delay="200">
+    <VueSlickCarousel v-bind="settings2">
       <div v-for="(item, index) in data" :key="index" class="partner-slide">
         <a :href="item.url" target="_blank" class="min-w-[240px] w-full h-full">
           <div class="left-gradient"></div>
@@ -41,17 +43,74 @@
           />
         </a>
       </div>
-    </vue-marquee-slider>
+    </VueSlickCarousel>
+  </div>
   </div>
 </template>
 
 <script>
 import SectionTitle from "../SectionTitle.vue";
-
+import VueSlickCarousel from "vue-slick-carousel";
 export default {
-  components: { SectionTitle },
+  components: { SectionTitle, VueSlickCarousel },
   data() {
     return {
+      settings: {
+        dots: false,
+        arrows: false,
+        centerMode: true,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        loop: true,
+        responsive: [
+          {
+            breakpoint: 991,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+          {
+            breakpoint: 617,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+
+        ],
+      },
+      settings2: {
+        dots: false,
+        arrows: false,
+        centerMode: true,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        loop: true,
+        responsive: [
+          {
+            breakpoint: 991,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+          {
+            breakpoint: 617,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+
+        ],
+      },
       data: [
         {
           img: require("@/static/img/logo-rev.png"),
@@ -97,9 +156,6 @@ export default {
 }
 
 .partner-slide {
-  min-width: 240px !important;
-  margin-right: 24px !important;
-  height: 80px !important;
   background-color: #ffffff;
   background-position: center;
   border-radius: 16px;
@@ -107,7 +163,6 @@ export default {
   justify-content: center;
   padding: 18px;
   position: relative;
-  overflow: hidden;
 }
 
 .parentSwiper .partner-slide:hover {

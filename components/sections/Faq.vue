@@ -1,12 +1,13 @@
 <template>
   <div class="faq relative overflow-hidden md:py-16 py-4 px-[16px]">
-    <section-title title="F.A.Q." />
+    <section-title title="F.A.Q." data-aos="fade-up" />
     <div class="container relative z-1 mt-[32px] mx-auto">
       <div class="grid grid-cols-2 gap-x-6 gap-y-4">
         <div
           class="md:col-span-1 col-span-2"
           v-for="(item, index) in faqQuestions"
           :key="index"
+          data-aos="fade-up" :data-aos-delay="index + 1 +'00'"
         >
           <div class="tab">
             <input class="input-form" type="checkbox" :id="`${q}` + item.id" />
