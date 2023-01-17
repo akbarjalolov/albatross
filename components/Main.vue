@@ -14,9 +14,9 @@
     </h4>
     <p class="text-dGray font-normal leading-130 text-[14px] lg:text-xl mt-[12px] text-center" data-aos="fade-up">{{ subtext }}</p>
     <div class="w-full max-w-[450px] lg:max-w-[1400px] flex justify-center mx-auto">
-        <img class="w-full h-auto object-cover max-w-[105px] lg:max-w-[575px]" src="@/static/img/line-button.png"/>
+        <img class="w-full h-auto object-cover hidden lg:block max-w-[105px] lg:max-w-[575px]" src="@/static/img/line-button.png"/>
         <c-button :text="buttonText" dynamicClass="max-w-[200px] min-w-[180px] mx-auto mt-[24px]"></c-button>
-        <div class="w-full"></div>
+        <div class="w-full hidden lg:block"></div>
     </div>
     <div class="w-full mt-[35px] lg:mt-[100px]">
         <div class="w-full flex flex-col lg:flex-row gap-[50px] lg:gap-0 items-center justify-center mx-auto">
@@ -144,7 +144,7 @@ export default {
 .bg-stroke-text {
     font-style: normal;
     font-weight: 600;
-    font-size: 140PX;
+    font-size: 120px;
     line-height: 130%;
     letter-spacing: 0.33em;
     opacity: 0.1;

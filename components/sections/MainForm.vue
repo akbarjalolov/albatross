@@ -1,5 +1,5 @@
 <template>
-    <div class="main-form py-[60px] relative">
+    <div class="main-form  sm:px-[20px] lg:px-0 py-[60px] relative">
         <img src="@/static/img/form-top.png" class="absolute top-0 right-0" data-aos="fade-left" alt="">
         <img src="@/static/img/form-top.png" class="absolute bottom-0 left-0 rotate-180" alt="">
         <img src="@/static/img/bg-form-pattern.svg" class="absolute bottom-0 w-full h-[80%]" data-aos="fade-up" alt="">

@@ -23,7 +23,7 @@ export default {
     { src: '~/plugins/vuelidate.js' },
     { src: '~/assets/js/scripts.js' },
     { src: '~/plugins/number-animation.js', ssr: false },
-    { src: '~/plugins/slick.js', ssr: false},
+    { src: '~/plugins/slick.js'},
   ],
 
   components: true,
