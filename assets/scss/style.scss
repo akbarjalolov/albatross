@@ -1,8 +1,8 @@
 //!<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>========================================================
-@import 'fonts';
-@import 'functions';
-@import 'null';
-@import 'main';
+@import "fonts";
+@import "functions";
+@import "null";
+@import "main";
 //!</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>=======================================================
 
 //!</ОБЩИЕ ПАРАМЕТРЫ>=====================================================================================
@@ -43,15 +43,15 @@
   font-size: 32px;
   line-height: 130%;
   text-align: center;
-  color: #22232C;
+  color: #22232c;
   position: relative;
   display: block;
   margin: 0 auto;
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
-    background: linear-gradient(63.82deg, #2B0ABF 12.65%, #26C0DE 87.35%);
+    background: linear-gradient(63.82deg, #2b0abf 12.65%, #26c0de 87.35%);
     opacity: 0.4;
     filter: blur(10px);
   }
@@ -62,9 +62,9 @@
     font-size: 24px;
   }
 }
-  
+
 .shadoww {
-  background: linear-gradient(63.82deg, #2B0ABF 12.65%, #26C0DE 87.35%);
+  background: linear-gradient(63.82deg, #2b0abf 12.65%, #26c0de 87.35%);
   opacity: 0.4;
   filter: blur(10px);
   width: 100%;
@@ -76,32 +76,31 @@
   font-weight: 700;
   font-size: 48px;
   line-height: 130%;
-  color: #FFF;
+  color: #fff;
   text-transform: capitalize;
-  background: linear-gradient(#2B0ABF, #26C0DE);
+  background: linear-gradient(#2b0abf, #26c0de);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-stroke: 8px transparent;
-
 }
 
-
-
-.group-steps:hover {
-  .title-gradient {
-    font-style: normal;
-    padding-left: 2px;
-    font-weight: 700;
-    line-height: 130%;
-    color: #22232C;
-    text-transform: capitalize;
-    background: #26C0DE;
-    background-size: 200% 200%;
-    -webkit-background-clip: text;
-    -webkit-text-stroke: 8px transparent;
+.group-steps {
+  transition: 5s all;
+  &:hover {
+    .title-gradient {
+      font-style: normal;
+      padding-left: 2px;
+      font-weight: 700;
+      line-height: 130%;
+      color: #22232c;
+      text-transform: capitalize;
+      background: #26c0de;
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-stroke: 8px transparent;
+    }
   }
 }
-
 @media screen and (max-width: 768px) {
   .title-gradient {
     font-size: 32px;

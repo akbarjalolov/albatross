@@ -1,12 +1,12 @@
 <template>
   <div>
-    <Main/>
-    <EasyStepsSlider/>
-    <MainForm /> 
-    <ReviewsSlider/>
+    <Main />
+    <EasyStepsSlider />
+    <MainForm />
+    <ReviewsSlider />
     <PartnersSlider />
-    <Blogs/>
-    <Faq/>
+    <Blogs />
+    <Faq />
   </div>
 </template>
 
@@ -20,9 +20,11 @@ import PartnersSlider from '../components/sections/PartnersSlider.vue';
 import Faq from '../components/sections/Faq.vue';
 import aosMixin from '~/mixins/aos'
 export default {
-  components: {Main, EasyStepsSlider, MainForm, ReviewsSlider, Blogs, PartnersSlider, Faq},
-    mixins: [aosMixin],
+  components: { Main, EasyStepsSlider, MainForm, ReviewsSlider, Blogs, PartnersSlider, Faq },
+  mixins: [aosMixin],
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+
+</style>

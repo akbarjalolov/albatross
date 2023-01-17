@@ -20,10 +20,10 @@
 
 //!</ВСЕ СТИЛИ>=======================================================================================
 .parentSwiper {
-   .slick-track {
-  display: flex !important;
-  gap: 20px;
-}
+  .slick-track {
+    display: flex !important;
+    gap: 20px;
+  }
 }
 
 .partners-slider {
@@ -34,18 +34,39 @@
 }
 
 img.vert-move {
-  -webkit-animation: mover 1s infinite  alternate;
-  animation: mover 1s infinite  alternate;
+  -webkit-animation: mover 1s infinite alternate;
+  animation: mover 1s infinite alternate;
 }
 img.vert-move {
-  -webkit-animation: mover 1s infinite  alternate;
-  animation: mover 1s infinite  alternate;
+  -webkit-animation: mover 1s infinite alternate;
+  animation: mover 1s infinite alternate;
 }
 @-webkit-keyframes mover {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-10px); }
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
 }
 @keyframes mover {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-10px); }
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+.svg-animation {
+  svg .svg-elem-1 {
+    stroke-dashoffset: 758.4019775390625px;
+    stroke-dasharray: 758.4019775390625px;
+    -webkit-transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0s;
+    transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0s;
+  }
+
+  svg.active .svg-elem-1 {
+    stroke-dashoffset: 0;
+  }
 }
