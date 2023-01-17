@@ -16,7 +16,7 @@ export default {
   env: {
     browser: true
   },
-  ssr: false,
+  ssr: true,
   plugins: [
     { src: '~/plugins/webFontLoader.js', ssr: false },
     { src: '~/plugins/element.js' },
