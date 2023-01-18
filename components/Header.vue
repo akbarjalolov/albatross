@@ -64,7 +64,8 @@ export default {
         { url: 'https://www.instagram.com/', img: require('@/static/icons/instagram-header.svg'), desc: 'Instagram account' },
         { url: 'https://www.youtube.com/', img: require('@/static/icons/linkedin-header.svg'), desc: 'Linkedin account' }
       ],
-      burger: false
+      burger: false,
+      toggle: false,
     };
   },
   methods: {
@@ -77,7 +78,23 @@ export default {
       this.burger = false
       const body = document.querySelector('body')
       body.style.overflow = 'auto'
+    },
+    func(){
+      console.log('func')
     }
+  },
+  watch: {
+    burger: function (item) {
+      console.log(item);
+      if (item) {
+        console.log("false");
+        document.querySelector("body").style.overflow = "hidden";
+      } else {
+        console.log("true");
+        document.querySelector("body").style.overflow = "auto";
+      }
+    },
+
   }
 };
 </script>
