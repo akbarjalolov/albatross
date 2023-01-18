@@ -1,9 +1,9 @@
 <template>
-  <div class="lg:py-[60px] ">
+  <div class="lg:py-[60px] mt-[24px] lg:mt-0">
     <section-title data-aos="fade-up" title="Reviews" class="" />
     <div>
       <VueSlickCarousel class="parentSwiper !flex mt-[32px]" v-bind="settings">
-        <div v-for="(item, index) in data" :key="index" data-aos="fade-up" :data-aos-delay="index + 1 +'00'" class="review-slide">
+        <a :href="item.url" v-for="(item, index) in data" :key="index" data-aos="fade-up" :data-aos-delay="index + 1 +'00'" class="review-slide">
           <h3 class="text-white font-medium text-[20px] lg:text-[28px] leading-130">
             {{ item.title }}
           </h3>
@@ -15,7 +15,7 @@
             leading-140
             mt-3
           ">
-            {{ item.content }}
+            {{ item.description }}
           </p>
           <h4 class="
             text-white
@@ -40,7 +40,7 @@
                 leading-[26px]
                 mt-[24px]
               ">
-                {{ item.person }}
+                {{ item.full_name }}
               </h4>
               <h6 class="
                 text-white
@@ -52,12 +52,12 @@
                 lg:leading-[24px]
                 mt-[4px]
               ">
-                {{ item.position }}
+                {{ item.address }}
               </h6>
             </div>
-            <img :src="item.img" class="max-h-[40px] lg:max-h-[60px] h-full w-auto" alt="" />
+            <img :src="item.logo_url" class="max-h-[40px] lg:max-h-[60px] h-full w-auto" alt="" />
           </div>
-        </div>
+        </a>
       </VueSlickCarousel>
     </div>
   </div>
@@ -101,47 +101,15 @@ export default {
           },
 
         ],
-      },
-      data: [
-        {
-          img: require("@/static/img/logo-rev.png"),
-          title: "Outstanding service!",
-          content:
-            "Brad was very kind, and helped me with the process. I would recommend them because of his kindness and concern for the customer. He followed up with me and answered all of my questions- maintained communication with my husband and I. Thanks Brad ! Brad was very kind, and helped me with the process.",
-          rate: 5,
-          person: "Malika Sharipova",
-          position: "“CARE CSR” konsalting kompaniyasi asoschisi va direktori",
-        },
-        {
-          img: require("@/static/img/logo-rev.png"),
-          title: "Outstanding service!",
-          content:
-            "Brad was very kind, and helped me with the process. I would recommend them because of his kindness and concern for the customer. He followed up with me and answered all of my questions- maintained communication with my husband and I. Thanks Brad ! Brad was very kind, and helped me with the process.",
-          rate: 4,
-          person: "Malika Sharipova",
-          position: "“CARE CSR” konsalting kompaniyasi asoschisi va direktori",
-        },
-        {
-          img: require("@/static/img/logo-rev.png"),
-          title: "Outstanding service!",
-          content:
-            "Brad was very kind, and helped me with the process. I would recommend them because of his kindness and concern for the customer. He followed up with me and answered all of my questions- maintained communication with my husband and I. Thanks Brad ! Brad was very kind, and helped me with the process.",
-          rate: 5,
-          person: "Malika Sharipova",
-          position: "“CARE CSR” konsalting kompaniyasi asoschisi va direktori",
-        },
-        {
-          img: require("@/static/img/logo-rev.png"),
-          title: "Outstanding service!",
-          content:
-            "Brad was very kind, and helped me with the process. I would recommend them because of his kindness and concern for the customer. He followed up with me and answered all of my questions- maintained communication with my husband and I. Thanks Brad ! Brad was very kind, and helped me with the process.",
-          rate: 5,
-          person: "Malika Sharipova",
-          position: "“CARE CSR” konsalting kompaniyasi asoschisi va direktori",
-        },
-      ],
+      }
     };
   },
+  props: {
+    data: {
+      type: Array,
+      default: {}
+    }
+  }
 };
 </script>
 

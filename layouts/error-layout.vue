@@ -2,19 +2,20 @@
   <div>
     <div class="wrapper">
       <Nuxt />
-      <Footer />
     </div>
   </div>
 </template>
 
 <script>
-  import { mapState } from 'vuex'
+import { mapState } from "vuex";
 
-  export default {
-    name: 'default',
-    components: {
-    }
-  }
+import Header from "../components/Header.vue";
+export default {
+  name: "default",
+  components: {
+    Header,
+  },
+};
 </script>
 
 <style lang

@@ -5,15 +5,15 @@
       <div class="grid grid-cols-2 gap-x-6 gap-y-4">
         <div
           class="md:col-span-1 col-span-2"
-          v-for="(item, index) in faqQuestions"
+          v-for="(item, index) in data"
           :key="index"
           data-aos="fade-up" :data-aos-delay="index + 1 +'00'"
         >
           <div class="tab">
             <input class="input-form" type="checkbox" :id="`${q}` + item.id" />
-            <label class="tab-label" :for="`${q}` + item.id">{{ item.question }}</label>
+            <label class="tab-label" :for="`${q}` + item.id">{{ item.title }}</label>
             <div class="tab-content">
-              {{item.answer}}
+              {{item.description}}
             </div>
           </div>
         </div>
@@ -27,39 +27,12 @@
         data(){
             return {
                 q: 'q',
-                faqQuestions: [
-                    {
-                        id: 1,
-                        question: 'dasdasdasd a quote for shipping my vehicle?',
-                        answer: 'YES, US Star Trucking LLC is a legitimate car shipping company. They are fully bonded, insured and licensed company with ICC-MC #206532. They have been in the transport sector for 7 years and now provide nationwide vehicle shipment of any kind and size. US Star Trucking has an overall 4.6/5 on Google Ratings, 4.7/5 on TransportReviews and 4.3/5 on BBB Ratings.'
-                    },
-                    {
-                        id: 2,
-                        question: 'Hodsdad dasdng my vehicle?',
-                        answer: 'YES, US Star Trucking LLC is a legitimate car shipping company. They are fully bonded, insured and licensed company with ICC-MC #206532. They have been in the transport sector for 7 years and now provide nationwide vehicle shipment of any kind and size. US Star Trucking has an overall 4.6/5 on Google Ratings, 4.7/5 on TransportReviews and 4.3/5 on BBB Ratings.'
-                    },
-                    {
-                        id: 3,
-                        question: 'How do I gdsadasdad  quote for shipping my vehicle?',
-                        answer: 'YES, US Star Trucking LLC is a legitimate car shipping company. They are fully bonded, insured and licensed company with ICC-MC #206532. They have been in the transport sector for 7 years and now provide nationwide vehicle shipment of any kind and size. US Star Trucking has an overall 4.6/5 on Google Ratings, 4.7/5 on TransportReviews and 4.3/5 on BBB Ratings.'
-                    },
-                    {
-                        id: 4,
-                        question: 'How do I get a quote for shipping my vehicle?',
-                        answer: 'YES, US Star Trucking LLC is a legitimate car shipping company. They are fully bonded, insured and licensed company with ICC-MC #206532. They have been in the transport sector for 7 years and now provide nationwide vehicle shipment of any kind and size. US Star Trucking has an overall 4.6/5 on Google Ratings, 4.7/5 on TransportReviews and 4.3/5 on BBB Ratings.'
-                    },
-                    {
-                        id: 5,
-                        question: 'How doasfa for shipping my vehicle?',
-                        answer: 'YES, US Star Trucking LLC is a legitimate car shipping company. They are fully bonded, insured and licensed company with ICC-MC #206532. They have been in the transport sector for 7 years and now provide nationwide vehicle shipment of any kind and size. US Star Trucking has an overall 4.6/5 on Google Ratings, 4.7/5 on TransportReviews and 4.3/5 on BBB Ratings.'
-                    },
-                    {
-                        id: 6,
-                        question: 'How do I get a quote for shipping my vehicle?',
-                        answer: 'YES, US Star Trucking LLC is a legitimate car shipping company. They are fully bonded, insured and licensed company with ICC-MC #206532. They have been in the transport sector for 7 years and now provide nationwide vehicle shipment of any kind and size. US Star Trucking has an overall 4.6/5 on Google Ratings, 4.7/5 on TransportReviews and 4.3/5 on BBB Ratings.'
-                    }
-                ]
             }
+        },
+        props: {
+          data: {
+            default: []
+          }
         }
     }
 

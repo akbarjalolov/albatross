@@ -23,7 +23,8 @@ export default {
     { src: '~/plugins/vuelidate.js' },
     { src: '~/assets/js/scripts.js' },
     { src: '~/plugins/number-animation.js', ssr: false },
-    { src: '~/plugins/slick.js'},
+    { src: '~/plugins/slick.js'}, 
+    { src: '~/plugins/axios.js' },
   ],
 
   components: true,
@@ -44,8 +45,9 @@ export default {
   },
 
   axios: {
-    baseURL: '',
+    baseURL: process.env.BASE_URL || "http://107.173.122.114:8000/api/swagger/"
   },
+
 
   build: {
     extractCSS: true,

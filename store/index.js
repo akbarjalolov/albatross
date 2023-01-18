@@ -1,52 +1,34 @@
-// GET API script in page
-// computed: {
-//   ...mapState({
-//     ###: (state) => state.#src#.###,
-//   }),
-// },
-// async fetch() {
-//   await this.$store.dispatch("#src#/fetch###");
-// },
+export const state = () => ({
+    reviews: [],
+    faq: [],
+    teammates: []
+})
+export const mutations = {
+    SET_REVIEWS(state, reviews) {
+        state.reviews = reviews
+    },
+    SET_FAQ(state, faq) {
+        state.faq = faq
+    },
+    SET_TEAMMATES(state, teammates){
+        state.teammates = teammates
+    }
 
-// GET API in js
-// export const state = () => ({
-//     ###: [],
-//   })
+}
 
-//   export const mutations = {
-//     SET_###(state, payload){
-//       state.###: = payload
-//     },
-//   }
 
-//   export const actions = {
+export const actions = {
+    async fetchReviews({ commit }) {
+        const reviewData = await this.$axios.$get('http://107.173.122.114:8000/api/reviews/')
+        commit('SET_REVIEWS', reviewData)
+    },
+    async fetchFaq({ commit }) {
+        const faqData = await this.$axios.$get('http://107.173.122.114:8000/api/faq/')
+        commit('SET_FAQ', faqData)
+    },
+    async fetchTeammates({ commit }) {
+        const teammatesData = await this.$axios.$get('http://107.173.122.114:8000/api/team-members/')
+        commit('SET_TEAMMATES', teammatesData)
+    }
+}
 
-//     fetch###({ commit }) {
-//       return new Promise((resolve, reject) => {
-//         this.$axios
-//           .get("~link_in_swagger~/", headers: { "Accept-Language": this.$i18n.locale })
-//           .then(res => {
-//             commit("SET_###", res.data);
-//             resolve(res);
-//           })
-//           .catch(error => {
-//             console.log('FAIL')
-//           });
-//       });
-//     },
-
-// }
-
-//POST API in page (without js file)
-// if() {
-//     this.$axios
-//     .post("~link_in_swagger~/",{
-//         here you should send data in api (example: ###:this.###)
-//     })
-//     .then(res => {
-//         console.log('PASS')
-//     })
-//     .catch(error => {
-//         console.log('FAIL')
-//     });
-// }
