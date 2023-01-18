@@ -5,7 +5,7 @@
       <client-only>
         <VueSlickCarousel v-bind="settings">
           <div v-for="(item, index) in data" :key="index" class="partner-slide">
-            <a :href="item.url" target="_blank" class="min-w-[240px] w-full h-full">
+            <a :href="item.url" target="_blank" class="w-full h-full">
               <div class="left-gradient"></div>
               <div class="top-gradient"></div>
               <img :src="item.img" class="
@@ -146,11 +146,13 @@ export default {
 </script>
 
 <style lang="scss">
-.parentSwiper .swiper-wrapper {
-  display: flex;
+
+.slick-slide {
+  min-width: 240px !important;
 }
 
 .partner-slide {
+  width: 240px !important;
   background-color: #ffffff;
   background-position: center;
   border-radius: 16px;

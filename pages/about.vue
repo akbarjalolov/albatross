@@ -2,28 +2,28 @@
     <div>
         <!-- target -->
         <div class="w-full max-w-[1500px] mx-auto flex items-center justify-between gap-[40px]">
-            <div class="pl-[32px] lg:pl-[140px]">
+            <div class="pl-[32px] lg:pl-[140px] px-[16px]">
                 <h4 class="font-medium text-dark text-[26px] lg:text-[64px] leading-130 lg:leading-[82px]">We build bridges between <span class="font-normal text-[26px] lg:text-[64px] leading-130 lg:leading-[82px] text-dark opacity-80">drivers and customers</span></h4>
                 <p class="mt-[24px] font-normal text-dark text-[16px] lg:text-[20px] leading-130">Albatros LLC, is one of the country’s top Auto Transport firms, specializing in the shipping of privately owned vehicles, motorcycles, and heavy equipment to and from all fifty states as well as international.</p>
             </div>
-            <div>
+            <div class="hidden md:block">
                 <img class="max-w-[550px] w-full object-cover" src="@/static/img/target.png" alt="">
             </div>
         </div>
         <!-- truck img -->
         <div class="w-full max-h-[640px] mt-[60px]">
-            <img class="w-full h-full object-cover" src="@/static/img/truck-about.png" alt="">
+            <img class="w-full h-full max-h-[640px] object-cover" src="@/static/img/truck-about.png" alt="">
         </div>
         <!-- cards -->
         <div class="bg-gray-100 py-[60px]">
             <div class="container mx-auto px-[16px]">
                 <div class="grid grid-cols-12">
                     <div v-for="(item,index) in aboutInfo" :key="index" class="col-span-12 md:col-span-6 lg:col-span-3 about-card flex flex-col py-[20px] px-[66px]">
-                        <div class="flex items-center">
+                        <div class="flex items-center justify-center">
                             <div class="about-card__circle mr-[-60px] w-[72px] h-[72px] bg-dBlue rounded-full"></div>
                             <h4 class="text-dark  leading-130 text-[40px] font-medium">{{item.title}}</h4>
                         </div>
-                        <p class="mt-[16px] font-normal text-dark text-[20px] leading-130 ">{{item.desc}}</p>
+                        <p class="mt-[16px] font-normal text-dark text-[20px] leading-130 text-center">{{item.desc}}</p>
                     </div>
                 </div>
             </div>
