@@ -1,7 +1,8 @@
 export const state = () => ({
     reviews: [],
     faq: [],
-    teammates: []
+    teammates: [],
+    partners: []
 })
 export const mutations = {
     SET_REVIEWS(state, reviews) {
@@ -12,6 +13,9 @@ export const mutations = {
     },
     SET_TEAMMATES(state, teammates){
         state.teammates = teammates
+    },
+    SET_PARTNERS(state, partners){
+        state.partners = partners
     }
 
 }
@@ -29,6 +33,10 @@ export const actions = {
     async fetchTeammates({ commit }) {
         const teammatesData = await this.$axios.$get('http://107.173.122.114:8000/api/team-members/')
         commit('SET_TEAMMATES', teammatesData)
+    },
+    async fetchPartners({ commit }) {
+        const partnersData = await this.$axios.$get('http://107.173.122.114:8000/api/partners/')
+        commit('SET_PARTNERS', partnersData)
     }
 }
 

@@ -8,14 +8,18 @@
             <a :href="item.url" target="_blank" class="w-full h-full">
               <div class="left-gradient"></div>
               <div class="top-gradient"></div>
-              <img :src="item.img" class="
-              max-w-[80px]
-              lg:max-w-[110px]
-              h-auto
-              w-full
-              object-cover
-              mx-auto
-            " alt="" />
+              <img
+                :src="item.logo_url"
+                class="
+                  max-w-[80px]
+                  lg:max-w-[110px]
+                  h-auto
+                  w-full
+                  object-cover
+                  mx-auto
+                "
+                alt=""
+              />
             </a>
           </div>
         </VueSlickCarousel>
@@ -25,17 +29,25 @@
       <client-only>
         <VueSlickCarousel v-bind="settings2">
           <div v-for="(item, index) in data" :key="index" class="partner-slide">
-            <a :href="item.url" target="_blank" class="min-w-[240px] w-full h-full">
+            <a
+              :href="item.url"
+              target="_blank"
+              class="min-w-[240px] w-full h-full"
+            >
               <div class="left-gradient"></div>
               <div class="top-gradient"></div>
-              <img :src="item.img" class="
-              max-w-[80px]
-              lg:max-w-[110px]
-              h-auto
-              w-full
-              object-cover
-              mx-auto
-            " alt="" />
+              <img
+                :src="item.logo_url"
+                class="
+                  max-w-[80px]
+                  lg:max-w-[110px]
+                  h-auto
+                  w-full
+                  object-cover
+                  mx-auto
+                "
+                alt=""
+              />
             </a>
           </div>
         </VueSlickCarousel>
@@ -55,11 +67,12 @@ export default {
         dots: false,
         arrows: false,
         centerMode: true,
-        // infinite: true,
+        infinite: true,
         autoplay: true,
         autoplaySpeed: 2000,
         slidesToShow: 6,
         slidesToScroll: 1,
+        loop: true,
         responsive: [
           {
             breakpoint: 991,
@@ -75,7 +88,6 @@ export default {
               slidesToScroll: 1,
             },
           },
-
         ],
       },
       settings2: {
@@ -103,50 +115,20 @@ export default {
               slidesToScroll: 1,
             },
           },
-
         ],
       },
-      data: [
-        {
-          img: require("@/static/img/logo-rev.png"),
-          url: "https://google.com",
-        },
-        {
-          img: require("@/static/img/logo-rev.png"),
-          url: "https://google.com",
-        },
-        {
-          img: require("@/static/img/logo-rev.png"),
-          url: "https://google.com",
-        },
-        {
-          img: require("@/static/img/logo-rev.png"),
-          url: "https://google.com",
-        },
-        {
-          img: require("@/static/img/logo-rev.png"),
-          url: "https://google.com",
-        },
-        {
-          img: require("@/static/img/logo-rev.png"),
-          url: "https://google.com",
-        },
-        {
-          img: require("@/static/img/logo-rev.png"),
-          url: "https://google.com",
-        },
-        {
-          img: require("@/static/img/logo-rev.png"),
-          url: "https://google.com",
-        },
-      ],
     };
+  },
+  props: {
+    data: {
+      type: Array,
+      default: () => [],
+    },
   },
 };
 </script>
 
 <style lang="scss">
-
 .slick-slide {
   min-width: 240px !important;
 }

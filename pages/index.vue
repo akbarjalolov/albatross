@@ -1,11 +1,11 @@
 <template>
   <div>
-    <pre>{{faq}}</pre>
+    <pre>{{partners}}</pre>
     <Main />
     <EasyStepsSlider />
     <MainForm />
     <ReviewsSlider :data="reviews"/>
-    <PartnersSlider />
+    <PartnersSlider :data="partners"/>
     <Blogs />
     <Faq :data="faq"/>
   </div>
@@ -35,12 +35,14 @@ export default {
   computed: {
     ...mapState({
       reviews: (state) => state.reviews,
-      faq: (state) => state.faq
+      faq: (state) => state.faq,
+      partners: (state) => state.partners,
     }),
   },
   async fetch() {
     await this.$store.dispatch("fetchReviews")
     await this.$store.dispatch("fetchFaq")
+    await this.$store.dispatch("fetchPartners")
   },
 };
 </script>
