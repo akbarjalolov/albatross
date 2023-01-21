@@ -2,7 +2,10 @@ export const state = () => ({
     reviews: [],
     faq: [],
     teammates: [],
-    partners: []
+    partners: [],
+    settings: [],
+    blogs: [],
+    blogSlug: {},
 })
 export const mutations = {
     SET_REVIEWS(state, reviews) {
@@ -16,6 +19,15 @@ export const mutations = {
     },
     SET_PARTNERS(state, partners){
         state.partners = partners
+    },
+    SET_SETTINGS(state, settings){
+        state.settings = settings
+    },
+    SET_BLOGS(state, blogs){
+        state.blogs = blogs
+    },
+    SET_BLOGSLUG(state, blogSlug){
+        state.blogSlug = blogSlug
     }
 
 }
@@ -37,6 +49,18 @@ export const actions = {
     async fetchPartners({ commit }) {
         const partnersData = await this.$axios.$get('http://107.173.122.114:8000/api/partners/')
         commit('SET_PARTNERS', partnersData)
+    },
+    async fetchSettings({commit}) {
+        const settingsData = await this.$axios.$get('http://107.173.122.114:8000/api/settings/')
+        commit('SET_SETTINGS', settingsData)
+    },
+    async fetchBlogs({commit}) {
+        const blogsData = await this.$axios.$get('http://107.173.122.114:8000/api/blog')
+        commit('SET_BLOGS', blogsData)
+    },
+    async fetchBlogSlug({commit}, slug) {
+        const blogSlugData = await this.$axios.$get(`http://107.173.122.114:8000/api/blog/${slug}/`)
+        commit('SET_BLOGSLUG', blogSlugData)
     }
 }
 

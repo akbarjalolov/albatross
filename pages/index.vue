@@ -1,12 +1,14 @@
 <template>
   <div>
-    <pre>{{partners}}</pre>
+    <!-- <pre>{{blogs}}</pre> -->
     <Main />
     <EasyStepsSlider />
     <MainForm />
     <ReviewsSlider :data="reviews"/>
     <PartnersSlider :data="partners"/>
-    <Blogs />
+    <Blogs :blogs="blogs.results" />
+    <client-only>
+    </client-only>
     <Faq :data="faq"/>
   </div>
 </template>
@@ -37,12 +39,16 @@ export default {
       reviews: (state) => state.reviews,
       faq: (state) => state.faq,
       partners: (state) => state.partners,
+      settings: (state) => state.settings,
+      blogs: (state) => state.blogs,
     }),
   },
   async fetch() {
     await this.$store.dispatch("fetchReviews")
     await this.$store.dispatch("fetchFaq")
     await this.$store.dispatch("fetchPartners")
+    await this.$store.dispatch("fetchSettings")
+    await this.$store.dispatch("fetchBlogs")
   },
 };
 </script>

@@ -4,30 +4,30 @@
     <div class="container px-[16px] mx-auto">
       <div class="container mx-auto px-[16px] my-[32px]">
         <img
-          :src="slugData.img"
-          class="w-full max-h-[480px] h-full rounded-[30px]"
+          :src="slugData?.image_url"
+          class="w-full max-h-[480px] h-full rounded-[30px] object-contain"
           alt=""
         />
         <div class="max-w-[990px] w-full mx-auto flex flex-col">
           <h4
             class="mt-[16px] md:mt-[32px] font-semibold text-[20px] md:text-[32px] leading-[140%] text-dark"
           >
-            {{ slugData.title }}
+            {{ slugData?.title }}
           </h4>
           <div class="flex space-x-1 flex-wrap items-center mt-2">
             <h4 class="text-dBlue font-semibold text-xl leading-130">
-              {{ slugData.author.name }}
+              {{ slugData?.full_name }}
             </h4>
             <div class="w-[4px] h-[4px] rounded-full bg-dBlue"></div>
             <h4 class="text-[#74787D] font-normal text-sm leading-130">
-              {{ slugData.author.position }}
+              {{ slugData?.position }}
             </h4>
             <div class="w-[4px] h-[4px] rounded-full bg-dBlue"></div>
             <h4 class="text-[#74787D] font-normal text-sm leading-130">
-              {{ slugData.publishedData }}
+              {{ slugData?.published_at }}
             </h4>
           </div>
-          <div class="content-styles mt-[16px] md:mt-[32px]" v-html="slugData.content"></div>
+          <div class="content-styles mt-[16px] md:mt-[32px]" v-html="slugData?.content"></div>
           <div class="flex items-end justify-end mt-[16px] md:mt-[32px]">
             <CopyUrl />
           </div>
@@ -53,6 +53,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import BreadCrumb from "@/components/common/BreadCrumb.vue";
 import CopyUrl from "@/components/CopyUrl.vue";
 import BlogCard from '@/components/cards/BlogCard.vue'
@@ -62,17 +63,17 @@ export default {
   components: { BreadCrumb, CopyUrl, SectionTitle, BlogCard },
   data() {
     return {
-      slugData: {
-        img: "https://picsum.photos/1200/500",
-        title: "Lowest Quote Isn’t Always the Best Option Car Shipping",
-        author: {
-          name: "David Branson",
-          position: "Account executive, Auto Transport Expert",
-        },
-        publishedData: "12.12.2022",
-        content:
-          "Everyone enjoys a good smoking bargain. It's no surprise that 76 percent of customers say price comparison shopping is a regular part of their buying habits. Furthermore, 61 percent of customers see discounts and coupons as inducements to purchase. Seeking bargains is not just human nature, but it may also help you remain within your budget. However, whether it's apparel, gadgets, or services like auto transportation, you don't want to trade quality for the price. When it comes to automobile transportation, cheaper does not necessarily imply better. Continue reading to learn how to identify the top vehicle shipping companies.",
-      },
+      // slugData: {
+      //   img: "https://picsum.photos/1200/500",
+      //   title: "Lowest Quote Isn’t Always the Best Option Car Shipping",
+      //   author: {
+      //     name: "David Branson",
+      //     position: "Account executive, Auto Transport Expert",
+      //   },
+      //   publishedData: "12.12.2022",
+      //   content:
+      //     "Everyone enjoys a good smoking bargain. It's no surprise that 76 percent of customers say price comparison shopping is a regular part of their buying habits. Furthermore, 61 percent of customers see discounts and coupons as inducements to purchase. Seeking bargains is not just human nature, but it may also help you remain within your budget. However, whether it's apparel, gadgets, or services like auto transportation, you don't want to trade quality for the price. When it comes to automobile transportation, cheaper does not necessarily imply better. Continue reading to learn how to identify the top vehicle shipping companies.",
+      // },
       relatedPosts: [
         {
           img: "https://picsum.photos/300/300",
@@ -120,10 +121,21 @@ export default {
       ],
     };
   },
+  computed: {
+    ...mapState({
+      slugData: (state) => state.blogSlug,
+    }),
+  },
+  mounted() {
+    console.log(this.$route)
+  },
+  async fetch(){
+     this.$store.dispatch("fetchBlogSlug", this.$route.params.slug)
+  }
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .content-styles {
   padding-bottom: 32px;
   border-bottom: 1px solid #e0e0e0;
@@ -138,6 +150,7 @@ export default {
     font-weight: 500;
     font-size: 24px;
     line-height: 33px;
+    margin: 12px 0;
   }
 
   p {
@@ -153,7 +166,17 @@ export default {
     width: 100%;
     height: 100%;
     max-height: 480px;
-    margin: 24px 0;
+    margin: 32px 0;
+    object-fit: cover;
+  }
+
+  ul {
+    list-style-type: circle;
+    padding-left: 20px;
+    margin: 12px 0;
+    li {
+      list-style-type: disc;
+    }
   }
 }
 </style>

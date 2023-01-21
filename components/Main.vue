@@ -78,14 +78,42 @@
             more</p>
         </button>
         <div class="flex items-center flex-wrap mt-[30px] lg:mt-0">
-          <div :class="{ 'bg-dBlue': index == 0 }" v-for="(item, index) in statistic" :key="index"
-            class="h-[80px] lg:h-[100px] w-[80px] lg:w-[100px] border-solid border border-dBlue flex flex-col items-center justify-center rounded-full mr-[12px]"
-            data-aos="fade-left" :data-aos-delay="index + 1 + '00'">
-            <h3 class="text-white leading-130 text-[12px] lg:text-[24px] font-medium">
-              <number ref="number1" :from="0" :to="item.count" :duration="5" :delay="0" easing="Power1.easeOut" />
+
+          <div class="bg-dBLue h-[80px] lg:h-[100px] w-[80px] lg:w-[100px] border-solid border border-dBlue flex flex-col items-center justify-center rounded-full mr-[12px]"
+            data-aos="fade-left" :data-aos-delay="'00'">
+            <h3 v-if="settings.shipped" class="text-white leading-130 text-[12px] lg:text-[24px] font-medium">
+              <number ref="number1" :from="0" :to="settings.shipped" :duration="5" :delay="0" easing="Power1.easeOut" />
             </h3>
-            <h3 class="text-white leading-130 text-[10px] lg:text-[12px] font-normal">{{ item.name }}</h3>
+            <h3 class="text-white leading-130 text-[10px] lg:text-[12px] font-normal">cars shipped</h3>
           </div>
+
+          <div class="bg-dBLue h-[80px] lg:h-[100px] w-[80px] lg:w-[100px] border-solid border border-dBlue flex flex-col items-center justify-center rounded-full mr-[12px]"
+            data-aos="fade-left" :data-aos-delay="'100'">
+            <h3 v-if="settings.clients" class="text-white leading-130 text-[12px] lg:text-[24px] font-medium">
+              <number ref="number1" :from="0" :to="settings.clients" :duration="5" :delay="0" easing="Power1.easeOut" />
+            </h3>
+            <h3 class="text-white leading-130 text-[10px] lg:text-[12px] font-normal">happy clients</h3>
+          </div>
+
+          <div class="bg-dBLue h-[80px] lg:h-[100px] w-[80px] lg:w-[100px] border-solid border border-dBlue flex flex-col items-center justify-center rounded-full mr-[12px]"
+            data-aos="fade-left" :data-aos-delay="'200'">
+            <h3 v-if="settings.mistakes == 0" class="text-white leading-130 text-[12px] lg:text-[24px] font-medium">
+              0
+            </h3>
+            <h3 v-else-if="settings.mistakes" class="text-white leading-130 text-[12px] lg:text-[24px] font-medium">
+              <number ref="number1" :from="0" :to="settings.mistakes" :duration="5" :delay="0" easing="Power1.easeOut" />
+            </h3>
+            <h3 class="text-white leading-130 text-[10px] lg:text-[12px] font-normal">fatal mistakes</h3>
+          </div>
+
+          <div class="bg-dBLue h-[80px] lg:h-[100px] w-[80px] lg:w-[100px] border-solid border border-dBlue flex flex-col items-center justify-center rounded-full mr-[12px]"
+            data-aos="fade-left" :data-aos-delay="'300'">
+            <h3 v-if="settings.yearly_orders" class="text-white leading-130 text-[12px] lg:text-[24px] font-medium">
+              <number ref="number1" :from="0" :to="settings.yearly_orders" :duration="5" :delay="0" easing="Power1.easeOut" />
+            </h3>
+            <h3 class="text-white leading-130 text-[10px] lg:text-[12px] font-normal">orders per year</h3>
+          </div>
+
         </div>
       </div>
     </div>
@@ -94,6 +122,7 @@
 
 <script>
 import CButton from './CButton.vue';
+import { mapState } from 'vuex';
 export default {
   layout: 'default',
   components: { CButton },
@@ -103,30 +132,19 @@ export default {
       mainText: "We just want to get your job done!",
       subtext: 'As Soon As Possible',
       buttonText: 'Get a quote',
-      options: {
-        strings: ['Hello', 'World'],
-        autoStart: true,
-        loop: true,
-      },
-      statistic: [
-        {
-          count: 1218,
-          name: 'cars shipped',
-        },
-        {
-          count: 970,
-          name: 'happy clients',
-        },
-        {
-          count: 0,
-          name: 'fatal mistakes',
-        },
-        {
-          count: 650,
-          name: 'orders per year',
-        }
-      ],
+      carsShipped: 0,
+      happyClients: 0,
+      fatalMistakes: 0,
+      ordersPerYear: 0,
     };
+  },
+  computed: {
+    ...mapState({
+      settings: (state) => state.settings,
+    }),
+  },
+  async fetch() {
+    await this.$store.dispatch("fetchSettings")
   },
   methods: {
     scrollToDown() {

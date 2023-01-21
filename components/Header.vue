@@ -28,10 +28,27 @@
           </nuxt-link>
         </div>
         <div class="social-menu flex items-center justify-between">
-          <a class="w-[24px] h-[24px] mx-[6px] object-cover" :href="item.url" v-for="(item, index) in socials"
-            :key="index" data-aos="fade-left" :data-aos-delay="index + 1 + '00'">
-            <el-tooltip class="item" effect="dark" :content="item.desc" placement="top">
-              <img class="w-full opacity-60 transition-all duration-300 hover:opacity-100" :src="item.img" alt="" />
+          <a target="_blank" class="w-[24px] h-[24px] mx-[6px] object-cover" :href="settings.twitter" data-aos="fade-left" :data-aos-delay="'0'">
+            <el-tooltip class="item" effect="dark" content="Twitter account" placement="top">
+              <img class="w-full opacity-60 transition-all duration-300 hover:opacity-100" src="@/static/icons/twitter-header.svg" alt="" />
+            </el-tooltip>
+          </a>
+
+          <a target="_blank" class="w-[24px] h-[24px] mx-[6px] object-cover" :href="settings.facebook" data-aos="fade-left" :data-aos-delay="'0'">
+            <el-tooltip class="item" effect="dark" content="Telegram account" placement="top">
+              <img class="w-full opacity-60 transition-all duration-300 hover:opacity-100" src="@/static/icons/telegram-header.svg" alt="" />
+            </el-tooltip>
+          </a>
+
+          <a target="_blank" class="w-[24px] h-[24px] mx-[6px] object-cover" :href="settings.linkedin" data-aos="fade-left" :data-aos-delay="'0'">
+            <el-tooltip class="item" effect="dark" content="Linkedin account" placement="top">
+              <img class="w-full opacity-60 transition-all duration-300 hover:opacity-100" src="@/static/icons/linkedin-header.svg" alt="" />
+            </el-tooltip>
+          </a>
+
+          <a target="_blank" class="w-[24px] h-[24px] mx-[6px] object-cover" :href="settings.instagram" data-aos="fade-left" :data-aos-delay="'0'">
+            <el-tooltip class="item" effect="dark" content="Instagram account" placement="top">
+              <img class="w-full opacity-60 transition-all duration-300 hover:opacity-100" src="@/static/icons/instagram-header.svg" alt="" />
             </el-tooltip>
           </a>
         </div>
@@ -48,6 +65,14 @@
 import { mapState } from "vuex";
 export default {
   name: "Header",
+    computed: {
+    ...mapState({
+      settings: (state) => state.settings,
+    }),
+  },
+  async fetch() {
+    await this.$store.dispatch("fetchSettings")
+  },
   data() {
     return {
       activeMenu: false,
