@@ -5,15 +5,15 @@
         <section-title title="Blog" class="mt-[32px]" />
         <div class="container mx-auto px-[16px] my-[32px]">
             <div class="grid grid-cols-1">                
-                <BlogCard :isThumbnail="true" v-for="item in transportCardData.slice(0,1)" :data="item" :key="item.id">
+                <BlogCard :isThumbnail="true" v-for="item in blogs?.results?.slice(0,1)" :data="item" :key="item.id">
                 </BlogCard>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[20px] gap-y-[24px] mt-[32px]">                
-                <BlogCard v-for="item in transportCardData.slice(1)" :data="item" :key="item.id">
+                <BlogCard v-for="item in blogs?.results?.slice(1)" :data="item" :key="item.id">
                 </BlogCard>
             </div>
             <div class="flex justify-center">
-               <CButton dynamicClass="max-w-[200px] mt-[32px] mx-auto bg-white border border-solid border-[#00AFEF] text-[#00AFEF] hover:text-white" text="Load more" />
+               <CButton v-if="blogs?.results.length >= 7" dynamicClass="max-w-[200px] mt-[32px] mx-auto bg-white border border-solid border-[#00AFEF] text-[#00AFEF] hover:text-white" text="Load more" />
             </div>
         </div>
     </div>
@@ -23,6 +23,7 @@
 </template>
 
 <script>
+    import { mapState } from 'vuex'
     import BreadCrumb from '@/components/common/BreadCrumb.vue'
     import SectionTitle from '@/components/SectionTitle.vue'
     import BlogCard from '@/components/cards/BlogCard.vue'
@@ -30,6 +31,14 @@
     import CButton from '@/components/CButton.vue'
     export default {
         layout: 'black',
+          computed: {
+    ...mapState({
+      blogs: (state) => state.blogs,
+    }),
+  },
+  async fetch() {
+    await this.$store.dispatch("fetchBlogs");
+  },
         components: { BreadCrumb, SectionTitle, BlogCard, MainForm, CButton },
         data(){
             return {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nuxt-link :to="`/blogs/${data.slug}`"  
+    <nuxt-link :to="`/blogs/${data?.slug}`"  
       v-if="isThumbnail"
       class="
         lg:max-h-[290px]
@@ -19,13 +19,13 @@
     >
       <img
         class="max-h-[185px] lg:max-h-[290px] w-full object-cover"
-        :src="data.img"
+        :src="data?.image_url"
         alt="img-auto"
       />
       <div class="p-[12px] flex flex-col justify-between">
         <div>
           <h4 class="text-dark leading-[140%] text-[16px] font-medium">
-            {{ data.title }}
+            {{ data?.title }}
           </h4>
           <p
             class="
@@ -37,25 +37,25 @@
               line-clamp-2
             "
           >
-            {{ data.desc }}
+            {{ data?.description }}
           </p>
         </div>
         <div class="flex items-end justify-between mt-[40px]">
           <div class="flex flex-col">
             <h4 class="text-dBlue leading-130 text-[14px] font-medium">
-              {{ data.author.name }}
+              {{ data?.full_name }}
             </h4>
             <h4 class="text-lightGray leading-130 text-[14px] font-normal">
-              {{ data.author.position }}
+              {{ data?.position }}
             </h4>
           </div>
           <h4 class="text-lightGray leading-130 text-[14px] font-normal">
-            {{ data.date }}
+            {{ data?.published_at }}
           </h4>
         </div>
       </div>
     </nuxt-link>
-    <nuxt-link :to="`/blogs/${data.slug}`"
+    <nuxt-link :to="`/blogs/${data?.slug}`"
       v-else
       class="
         max-h-[360px]
@@ -73,12 +73,12 @@
     >
       <img
         class="max-h-[185px] h-full w-full object-cover"
-        :src="data.img"
+        :src="data?.image_url"
         alt="img-auto"
       />
       <div class="p-[12px]">
         <h4 class="text-dark leading-[140%] text-[16px] font-medium">
-          {{ data.title }}
+          {{ data?.title }}
         </h4>
         <p
           class="
@@ -90,14 +90,14 @@
             line-clamp-2
           "
         >
-          {{ data.desc }}
+          {{ data?.description }}
         </p>
         <div class="flex items-cetner justify-between mt-[40px]">
           <h4 class="text-dBlue leading-130 text-[14px] font-medium">
-            {{ data.author.name }}
+            {{ data?.full_name }}
           </h4>
           <h4 class="text-lightGray leading-130 text-[14px] font-normal">
-            {{ data.date }}
+            {{ data?.published_at }}
           </h4>
         </div>
       </div>
