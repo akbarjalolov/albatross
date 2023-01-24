@@ -38,7 +38,6 @@
         {{ settings?.footer_info }}
       </h5>
       <div class="footer-socials flex items-center justify-center mt-24 gap-2">
-
         <a
           :href="settings?.instagram"
           data-aos="fade-up"
@@ -160,7 +159,7 @@
         "
       >
         <nuxt-link
-          :to="item.link"
+          :to="item?.link"
           v-for="(item, index) in footerLinks"
           :key="index"
           data-aos="fade-up"
@@ -174,7 +173,7 @@
             hover:opacity-100
           "
         >
-          {{ item.text }}
+          {{ item?.text }}
         </nuxt-link>
       </div>
       <div

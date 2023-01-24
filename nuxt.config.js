@@ -23,8 +23,9 @@ export default {
     { src: '~/plugins/vuelidate.js' },
     { src: '~/assets/js/scripts.js' },
     { src: '~/plugins/number-animation.js', ssr: false },
-    { src: '~/plugins/slick.js'}, 
+    { src: '~/plugins/slick.js' },
     { src: '~/plugins/axios.js' },
+    { src: '~/plugins/vee-validate.js' },
   ],
 
   components: true,
@@ -37,7 +38,8 @@ export default {
     '@nuxtjs/style-resources',
     'nuxt-webfontloader',
     '@nuxtjs/axios',
-  
+    "vue-toastification/nuxt"
+
   ],
 
   styleResources: {

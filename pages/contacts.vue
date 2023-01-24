@@ -38,13 +38,13 @@
               >
                 <img src="@/static/icons/map-pin.svg" />
               </span>
-              <h4 class="text-dark duration-300 hover:text-dBlue font-normal text-[16px] leading-130">
-                151 New Park Ave, Hartford, CT 06106 United States
-              </h4>
+              <a :href="contact?.location" class="text-dark duration-300 hover:text-dBlue font-normal text-[16px] leading-130">
+                {{contact?.address}}
+              </a>
             </a>
             <a
               class="flex items-center gap-[8px] hover-underline"
-              href="mailto:info@albatrosllc.com"
+              :href="`mailto:${contact?.email}`"
             >
               <span
                 class="
@@ -65,12 +65,12 @@
                 <img src="@/static/icons/mail.svg" />
               </span>
               <h4 class="text-dark duration-300 hover:text-dBlue font-normal text-[16px] leading-130">
-                info@albatrosllc.com
+                {{contact?.email}}
               </h4>
             </a>
             <a
               class="flex items-center gap-[8px] hover-underline"
-              href="tel:info@albatrosllc.com"
+              :href="`tel:${contact?.phone_number}`"
             >
               <span
                 class="
@@ -91,7 +91,7 @@
                 <img src="@/static/icons/phone-call.svg" />
               </span>
               <h4 class="text-dark duration-300 hover:text-dBlue font-normal text-[16px] leading-130">
-                +1 (203) 302-05-45
+                {{contact?.phone_number}}
               </h4>
             </a>
           </div>
@@ -99,14 +99,15 @@
         <div class="col-span-12 md:col-span-6 lg:col-span-5">
           <div class="bg-[#07192A] rounded-[16px] p-[16px] md:p-[28px]">
             <div class="flex flex-col gap-[20px]">
+              <form @submit.prevent="validateBeforeSubmit">
               <div class="relative">
                 <input
                   class="text-white"
                   id="input"
                   type="text"
                   placeholder="Your name"
-                  required
                   v-model="form.fullName"
+                  v-validate="'required'"
                 />
                 <label
                   class="
@@ -129,8 +130,8 @@
                   id="input"
                   type="text"
                   placeholder="Your phone number"
-                  required
                   v-model="form.phone"
+                  v-validate="'required|numeric'"
                 />
                 <label
                   class="
@@ -153,8 +154,9 @@
                   id="input"
                   type="text"
                   placeholder="example@albatros.com"
-                  required
                   v-model="form.mail"
+                  v-validate="'required|email'"
+                  :class="{'input': true, 'is-danger': errors.has('email') }"
                 />
                 <label
                   class="
@@ -170,6 +172,7 @@
                   "
                   >Email</label
                 >
+                 {{ errors.first("field") }}
               </div>
               <div class="relative">
                 <textarea
@@ -177,8 +180,8 @@
                   id="input"
                   type="text"
                   placeholder="Type your message"
-                  required
                   v-model="form.message"
+                  v-validate="'required'"
                 />
                 <label
                   class="
@@ -195,25 +198,66 @@
                   >Message</label
                 >
               </div>
-              <CButton dynamicClass="md:mt-[44px]" text="Send"/>
+              <CButton type="submit" dynamicClass="md:mt-[44px]" text="Send"/>
+              </form>
             </div>
           </div>
         </div>
       </div>
     </div>
     <!-- faq -->
-    <Faq />
+    <Faq :data="faq"/>
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
 import BreadCrumb from "@/components/common/BreadCrumb.vue";
 import SectionTitle from "@/components/SectionTitle.vue";
 import Faq from "@/components/sections/Faq.vue";
 import CButton from '../components/CButton.vue';
+import { ValidationObserver, ValidationProvider } from "vee-validate";
 export default {
   layout: "black",
-  components: { BreadCrumb, SectionTitle, Faq, CButton },
+  components: { BreadCrumb, SectionTitle, Faq, CButton, ValidationObserver, ValidationProvider },
+  methods: {
+    validateBeforeSubmit() {
+      this.$validator.validateAll().then((result) => {
+        if (result) {
+          const formData = new FormData();
+          formData.append("full_name", this.form.fullName);
+          formData.append("phone_number", this.form.phone);
+          formData.append("email", this.form.mail);
+          formData.append("description", this.form.message);
+          this.$store.dispatch("postContact", formData)
+          .then(() => {
+            this.$toast.success('You are successfully sent message!')
+            this.form.fullName = "";
+            this.form.phone = "";
+            this.form.mail = "";
+            this.form.message = "";
+          })
+          .catch((error) => {
+            reject(error)
+          })
+          return;
+        }
+        else {
+          // this.$toast.error('Please fill all fields!');
+        }
+      });
+    },
+  },
+  computed: {
+    ...mapState({
+      faq: (state) => state.faq,
+      contact: (state) => state.settings
+    }),
+  },
+  async fetch() {
+    await this.$store.dispatch("fetchFaq")
+    await this.$store.dispatch("fetchSettings")
+  },
   data() {
     return {
       form: {
@@ -252,5 +296,9 @@ textarea {
 input[type="text"]:focus,
 textarea:focus {
   border-color: #00bafa;
+}
+
+.is-invalid {
+  border-color: #dc3545 !important;
 }
 </style>

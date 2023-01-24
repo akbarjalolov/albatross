@@ -2,8 +2,8 @@
   <div>
     <!-- target -->
     <div class="w-full mx-auto flex items-center justify-between gap-[40px]">
-      <div class="pl-[32px] lg:pl-[140px] px-[16px]">
-        <h4
+      <div class="pl-[32px] lg:pl-[140px] px-[16px]" v-html="about?.description">
+        <!-- <h4
           class="
             font-medium
             text-dark text-[26px]
@@ -39,7 +39,7 @@
           specializing in the shipping of privately owned vehicles, motorcycles,
           and heavy equipment to and from all fifty states as well as
           international.
-        </p>
+        </p> -->
       </div>
       <div class="hidden md:block">
         <img
@@ -127,7 +127,7 @@
     <!-- faq -->
     <Faq :data="faq" />
     <ReviewsSlider :data="reviews" />
-    <PartnersSlider />
+    <PartnersSlider :data="partners"/>
   </div>
 </template>
 
@@ -197,13 +197,17 @@ export default {
     ...mapState({
       reviews: (state) => state.reviews,
       faq: (state) => state.faq,
-      teamMembers: (state) => state.teammates
+      teamMembers: (state) => state.teammates,      
+      partners: (state) => state.partners,
+      about: (state) => state.settings
     }),
   },
   async fetch() {
     await this.$store.dispatch("fetchReviews");
     await this.$store.dispatch("fetchFaq");
     await this.$store.dispatch("fetchTeammates")
+    await this.$store.dispatch("fetchPartners")
+    await this.$store.dispatch("fetchSettings")
   },
 };
 </script>

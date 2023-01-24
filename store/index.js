@@ -6,6 +6,7 @@ export const state = () => ({
     settings: [],
     blogs: [],
     blogSlug: {},
+    contact: {}
 })
 export const mutations = {
     SET_REVIEWS(state, reviews) {
@@ -28,10 +29,12 @@ export const mutations = {
     },
     SET_BLOGSLUG(state, blogSlug){
         state.blogSlug = blogSlug
+    },
+    POST_CONTACT(state, contact){
+        state.contact = contact
     }
 
 }
-
 
 export const actions = {
     async fetchReviews({ commit }) {
@@ -61,6 +64,10 @@ export const actions = {
     async fetchBlogSlug({commit}, slug) {
         const blogSlugData = await this.$axios.$get(`http://107.173.122.114:8000/api/blog/${slug}/`)
         commit('SET_BLOGSLUG', blogSlugData)
+    },
+    async postContact({commit}, contact) {
+        const contactData = await this.$axios.$post('http://107.173.122.114:8000/api/contact/', contact)
+        commit('POST_CONTACT', contactData)
     }
 }
 

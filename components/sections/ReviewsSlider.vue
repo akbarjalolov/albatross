@@ -106,7 +106,7 @@ export default {
   },
   props: {
     data: {
-      type: Array,
+      type: Array || Object,
       default: {}
     }
   }

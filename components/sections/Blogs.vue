@@ -26,8 +26,9 @@
                         </div>
                     </nuxt-link>
                     </div>
-                    <div class="col-span-12 md:col-span-5" >
-                        <div class="flex flex-col bg-white blogs rounded-2xl p-[14px] lg:p-[28px]">
+                    <div class="col-span-12 md:col-span-5">
+                        <div class="h-full flex flex-col justify-between bg-white blogs rounded-2xl p-[14px] lg:p-[28px]">
+                            <div>
                             <nuxt-link :to="`/blogs/${item.slug}`" data-aos="fade-up" :data-aos-delay="index + 1 +'00'" v-for="(item,index) in blogs.slice(1,4)" :key="index" class="flex justify-center align-items-center gap-4 group border-b border-solid border-[#E6ECF0] last:border-b-0 py-[20px]">
                                 <img :src="item?.image_url" class="min-w-[80px] h-[48px] object-cover rounded-[4px] border border-solid border-[#E6ECF0]" alt="">
                                 <div class="flex flex-col">
@@ -38,6 +39,8 @@
                                     </div>
                                 </div>
                             </nuxt-link>
+                            </div>
+
                             <nuxt-link to="/blogs" data-aos="fade-right" :data-aos-delay="300" class="flex justify-end md:justify-start items-center mt-20 gap-[12px] group duration-300 hover:gap-[20px]">
                                 <h4 class="text-dBlue text-[20px] leading-130 font-normal">See all</h4>
                             <img class="border border-solid border-dBlue duration-200 rounded-full w-[28px] p-4 h-auto object-cover group-hover:translate-x-1" src="@/static/icons/arrow-right-blue.svg"/>
