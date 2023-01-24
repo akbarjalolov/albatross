@@ -123,7 +123,7 @@
         </a>
 
         <a
-          :href="settings?.instagram"
+          :href="settings?.telegram"
           data-aos="fade-up"
           :data-aos-delay="'400'"
           class="
@@ -310,7 +310,7 @@ export default {
         { link: "/contacts", text: "Contacts" },
         { link: "/transport-options", text: "Transport options" },
         { link: "/blogs", text: "Blog" },
-        { link: "/about", text: "Terms of use" },
+        { link: "/pages/terms-of-use", text: "Terms of use" },
         { link: "/about", text: "Privacy policy" },
       ],
     };

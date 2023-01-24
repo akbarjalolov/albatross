@@ -6,7 +6,9 @@ export const state = () => ({
     settings: [],
     blogs: [],
     blogSlug: {},
-    contact: {}
+    contact: {},
+    staticPage: {},
+    transportOptions: []
 })
 export const mutations = {
     SET_REVIEWS(state, reviews) {
@@ -32,6 +34,12 @@ export const mutations = {
     },
     POST_CONTACT(state, contact){
         state.contact = contact
+    },
+    SET_STATICPAGE(state, staticPage){
+        state.staticPage = staticPage
+    },
+    SET_TRANSPORT_OPTIONS(state, transportOptions){
+        state.transportOptions = transportOptions
     }
 
 }
@@ -68,6 +76,14 @@ export const actions = {
     async postContact({commit}, contact) {
         const contactData = await this.$axios.$post('http://107.173.122.114:8000/api/contact/', contact)
         commit('POST_CONTACT', contactData)
+    },
+    async fetchStaticPage({commit}, {slug}) {
+        const staticPageData = await this.$axios.$get(`http://107.173.122.114:8000/api/pages/${slug}/`)
+        commit('SET_STATICPAGE', staticPageData)
+    },
+    async fetchTransportOptions({commit}) {
+        const transportOptionsData = await this.$axios.$get('http://107.173.122.114:8000/api/pages-list/transport-option/')
+        commit('SET_TRANSPORT_OPTIONS', transportOptionsData)
     }
 }
 
