@@ -1,5 +1,5 @@
 <template>
-  <div class="lg:py-[60px] mt-[24px] lg:mt-0">
+  <div v-if="data && data.length" class="lg:py-[60px] mt-[24px] lg:mt-0">
     <section-title data-aos="fade-up" title="Reviews" class="" />
     <div>
       <VueSlickCarousel class="parentSwiper !flex mt-[32px]" v-bind="settings">

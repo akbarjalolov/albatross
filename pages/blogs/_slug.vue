@@ -111,12 +111,12 @@ export default {
       ],
       links: [
         {
-          name: "Blog",
-          link: "/blog,",
+          title: "Blog",
+          link: "/blogs",
         },
         {
-          name: "Blog",
-          link: "/blog,",
+          title: '',
+          link: "aaa",
         },
       ],
     };

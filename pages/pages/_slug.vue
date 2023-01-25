@@ -20,7 +20,7 @@ import { mapState } from 'vuex'
                 title: '',
                 links: [ 
                     {
-                    name: this.title,
+                    name: this.staticData?.title,
                     link: '/terms-of-use'
                    }
                 ]

@@ -280,7 +280,7 @@ export default {
       },
       links: [
         {
-          name: "Contacts",
+          title: "Contacts",
           link: "/contacts",
         },
       ],

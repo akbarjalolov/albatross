@@ -59,7 +59,7 @@
                     }
                 ],
                  links: [ {
-                    name: 'Transport options',
+                    title: 'Transport options',
                     link: '/transport-options'
                 }]
             }

@@ -260,7 +260,7 @@ export default {
     return {
       links: [
         {
-          name: "How it works",
+          title: "How it works",
           link: "/how-it-works",
         },
       ],

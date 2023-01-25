@@ -62,12 +62,7 @@ import SectionTitle from '../SectionTitle.vue'
             return {
             }
         },
-        props: {
-            blogs: {
-                type: Array,
-                default: () => ({})
-            }
-        }
+       props: ['blogs']
     }
 </script>
 
