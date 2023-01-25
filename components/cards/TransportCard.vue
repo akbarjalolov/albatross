@@ -1,9 +1,9 @@
 <template>
-    <div class="max-h-[564px] h-full w-full bg-white cursor-pointer border border-solid border-[#F0F0F0] rounded-[20px] p-[8px] flex flex-col justify-between">
-        <img class="max-h-[214px] h-full w-full object-cover rounded-[16px]" :src="data.img" alt="img-auto">
+    <nuxt-link :to="`/pages/${data?.slug}`" class="max-h-[564px] h-full w-full bg-white cursor-pointer border border-solid border-[#F0F0F0] rounded-[20px] p-[8px] flex flex-col justify-between">
+        <img class="max-h-[214px] h-full w-full object-cover rounded-[16px]" :src="data?.image_url" alt="img-auto">
         <div class="p-[12px]">
-            <h4 class="text-dark leading-130 text-[20px] font-medium mt-[20px]">{{data.title}}</h4>
-            <p class="text-dark leading-130 text-[18px] font-normal mt-[12px] line-clamp-3">{{data.desc}}</p>
+            <h4 class="text-dark leading-130 text-[20px] font-medium mt-[20px]">{{data?.title}}</h4>
+            <p class="text-dark leading-130 text-[18px] font-normal mt-[12px] line-clamp-3">{{data?.short_content}}</p>
             <button class="btn-arrow mt-[45px] hover:bg-dBlue duration-200 h-fit border-solid text-dBlue hover:text-white w-full flex items-center justify-center gap-[12px]  p-[10px] rounded-full border-dBlue border-2">
                 Learn more
                 <span>
@@ -16,7 +16,7 @@
                 </span>
             </button>
         </div>
-    </div>
+    </nuxt-link>
 </template>
 
 <script>

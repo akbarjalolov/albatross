@@ -43,11 +43,30 @@
         </nuxt-link>
       </div>
       <div class="social-menu flex items-center justify-between">
-        <a class="w-[24px] h-[24px] mx-[6px] object-cover" :href="item.url" v-for="(item,index) in socials" :key="index">
-         <el-tooltip class="item" effect="dark" :content="item.desc" placement="top">
-            <img class="w-full opacity-60 transition-all duration-300 hover:opacity-100 contrast-[0.1]" :src="item.img" alt="" />
-          </el-tooltip>
-        </a>
+
+        <a target="_blank" class="w-[24px] h-[24px] mx-[6px] object-cover" :href="settings.twitter">
+            <el-tooltip class="item" effect="dark" content="Twitter account" placement="top">
+              <img class="w-full opacity-60 transition-all duration-300 hover:opacity-100 contrast-[0.1]" src="@/static/icons/twitter-header.svg" alt="" />
+            </el-tooltip>
+          </a>
+
+          <a target="_blank" class="w-[24px] h-[24px] mx-[6px] object-cover" :href="settings.facebook">
+            <el-tooltip class="item" effect="dark" content="Telegram account" placement="top">
+              <img class="w-full opacity-60 transition-all duration-300 hover:opacity-100 contrast-[0.1]" src="@/static/icons/telegram-header.svg" alt="" />
+            </el-tooltip>
+          </a>
+
+          <a target="_blank" class="w-[24px] h-[24px] mx-[6px] object-cover" :href="settings.linkedin">
+            <el-tooltip class="item" effect="dark" content="Linkedin account" placement="top">
+              <img class="w-full opacity-60 transition-all duration-300 hover:opacity-100 contrast-[0.1]" src="@/static/icons/linkedin-header.svg" alt="" />
+            </el-tooltip>
+          </a>
+
+          <a target="_blank" class="w-[24px] h-[24px] mx-[6px] object-cover" :href="settings.instagram">
+            <el-tooltip class="item" effect="dark" content="Instagram account" placement="top">
+              <img class="w-full opacity-60 transition-all duration-300 hover:opacity-100 contrast-[0.1]" src="@/static/icons/instagram-header.svg" alt="" />
+            </el-tooltip>
+          </a>
       </div>
     </div>
     <div class="lg:hidden">
@@ -62,6 +81,14 @@
 import { mapState } from "vuex";
 export default {
   name: "Header",
+      computed: {
+    ...mapState({
+      settings: (state) => state.settings,
+    }),
+  },
+  async fetch() {
+    await this.$store.dispatch("fetchSettings")
+  },
   data() {
     return {
       activeMenu: false,

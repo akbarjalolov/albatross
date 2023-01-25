@@ -53,7 +53,7 @@
     <div class="w-full max-h-[640px] mt-[60px]">
       <img
         class="w-full h-full max-h-[640px] object-cover"
-        src="@/static/img/truck-about.png"
+        src="@/static/img/truck-about.jpg"
         alt=""
       />
     </div>
@@ -62,8 +62,6 @@
       <div class="container mx-auto px-[16px]">
         <div class="grid grid-cols-12">
           <div
-            v-for="(item, index) in aboutInfo"
-            :key="index"
             class="
               col-span-12
               md:col-span-6
@@ -86,7 +84,7 @@
                 "
               ></div>
               <h4 class="text-dark leading-130 text-[40px] font-medium">
-                {{ item.title }}
+                {{ about?.shipped }}
               </h4>
             </div>
             <p
@@ -98,7 +96,124 @@
                 text-center
               "
             >
-              {{ item.desc }}
+              Cars shipped 
+            </p>
+          </div>
+
+          <div
+            class="
+              col-span-12
+              md:col-span-6
+              lg:col-span-3
+              about-card
+              flex flex-col
+              py-[20px]
+              px-[66px]
+            "
+          >
+            <div class="flex items-center justify-center">
+              <div
+                class="
+                  about-card__circle
+                  mr-[-60px]
+                  w-[72px]
+                  h-[72px]
+                  bg-dBlue
+                  rounded-full
+                "
+              ></div>
+              <h4 class="text-dark leading-130 text-[40px] font-medium">
+                 {{ about?.clients }}
+              </h4>
+            </div>
+            <p
+              class="
+                mt-[16px]
+                font-normal
+                text-dark text-[20px]
+                leading-130
+                text-center
+              "
+            >
+              Happy clients
+            </p>
+          </div>
+
+          <div
+            class="
+              col-span-12
+              md:col-span-6
+              lg:col-span-3
+              about-card
+              flex flex-col
+              py-[20px]
+              px-[66px]
+            "
+          >
+            <div class="flex items-center justify-center">
+              <div
+                class="
+                  about-card__circle
+                  mr-[-60px]
+                  w-[72px]
+                  h-[72px]
+                  bg-dBlue
+                  rounded-full
+                "
+              ></div>
+              <h4 class="text-dark leading-130 text-[40px] font-medium">
+                  {{ about?.mistakes }}
+              </h4>
+            </div>
+            <p
+              class="
+                mt-[16px]
+                font-normal
+                text-dark text-[20px]
+                leading-130
+                text-center
+              "
+            >
+             Fatal mistakes
+            </p>
+          </div>
+
+          <div
+            class="
+              col-span-12
+              md:col-span-6
+              lg:col-span-3
+              about-card
+              flex flex-col
+              py-[20px]
+              px-[66px]
+            "
+          >
+            <div class="flex items-center justify-center">
+              <div
+                class="
+                  about-card__circle
+                  mr-[-60px]
+                  w-[72px]
+                  h-[72px]
+                  bg-dBlue
+                  rounded-full
+                "
+              ></div>
+              <h4 class="text-dark leading-130 text-[40px] font-medium">
+                {{ about?.yearly_orders }}
+              </h4>
+            </div>
+            <p
+              class="
+                mt-[16px]
+                font-normal
+                text-dark text-[20px]
+                leading-130
+                text-center
+              "
+            >
+              Orders per year
             </p>
           </div>
         </div>

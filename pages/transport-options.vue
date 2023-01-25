@@ -5,7 +5,7 @@
         <section-title title="Transport options" class="mt-[32px]" />
         <div class="container mx-auto px-[16px] my-[32px]">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[20px] gap-y-[24px]">                
-                <TransportCard  v-for="item in transportCardData" :data="item" :key="item.id">
+                <TransportCard  v-for="item in optionsList" :data="item" :key="item.id">
                 </TransportCard>
             </div>
         </div>
@@ -20,6 +20,7 @@
     import SectionTitle from '@/components/SectionTitle.vue'
     import TransportCard from '@/components/cards/TransportCard.vue'
     import MainForm from '@/components/sections/MainForm.vue'
+    import { mapState } from "vuex"
     export default {
         layout: 'black',
         components: { BreadCrumb, SectionTitle, TransportCard, MainForm },
@@ -62,6 +63,14 @@
                     link: '/transport-options'
                 }]
             }
+        },
+        computed: {
+            ...mapState({
+                optionsList: state => state.transportOptions
+            })
+        },
+        fetch(){
+            this.$store.dispatch('fetchTransportOptions')
         }
     }
 </script>

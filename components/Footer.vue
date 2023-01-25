@@ -305,13 +305,13 @@ export default {
         "To begin, fill out our customized form with your first vehicle shipping details to get your custom Auto Transport quote. Shortly after that, you will receive your quote on your email and as a text message. You can book online through the link you receive in your email, or you can contact one of our exper",
       footerLinks: [
         { link: "/about", text: "About us" },
-        { link: "/about", text: "Who we serve" },
+        { link: "/pages/who-we-serve", text: "Who we serve" },
         { link: "/how-it-works", text: "How it works" },
         { link: "/contacts", text: "Contacts" },
         { link: "/transport-options", text: "Transport options" },
         { link: "/blogs", text: "Blog" },
         { link: "/pages/terms-of-use", text: "Terms of use" },
-        { link: "/about", text: "Privacy policy" },
+        { link: "/pages/privacy-policy", text: "Privacy policy" },
       ],
     };
   },
