@@ -38,7 +38,6 @@ export default {
     '@nuxtjs/style-resources',
     'nuxt-webfontloader',
     '@nuxtjs/axios',
-    "vue-toastification/nuxt"
 
   ],
 

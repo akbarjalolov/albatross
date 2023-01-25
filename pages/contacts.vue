@@ -97,8 +97,13 @@
           </div>
         </div>
         <div class="col-span-12 md:col-span-6 lg:col-span-5">
-          <div class="bg-[#07192A] rounded-[16px] p-[16px] md:p-[28px]">
-            <div class="flex flex-col gap-[20px]">
+          <div class="bg-[#07192A] h-[466px] rounded-[16px] p-[16px] md:p-[28px] w-[97%] md:w-full">
+            <transition name="fadeModal">
+              <div v-if="sendSuccess" class="h-full flex flex-col justify-center">
+                <img class="max-w-[140px] mx-auto" src="@/static/img/check-circle.png" alt="">
+                <h4 class="text-center text-white font-semibold text-[24px] leading-[130%] mt-[24px]">Request sent successfully!</h4>
+            </div>
+            <div v-else class="h-full flex flex-col gap-[20px]">
               <form @submit.prevent="validateBeforeSubmit">
               <div class="relative">
                 <input
@@ -201,6 +206,9 @@
               <CButton type="submit" dynamicClass="md:mt-[44px]" text="Send"/>
               </form>
             </div>
+            </transition>
+          
+            
           </div>
         </div>
       </div>
@@ -231,11 +239,14 @@ export default {
           formData.append("description", this.form.message);
           this.$store.dispatch("postContact", formData)
           .then(() => {
-            this.$toast.success('You are successfully sent message!')
+            this.sendSuccess = true;
             this.form.fullName = "";
             this.form.phone = "";
             this.form.mail = "";
             this.form.message = "";
+            setTimeout(() => {
+              this.sendSuccess = false;
+            }, 2000);
           })
           .catch((error) => {
             reject(error)
@@ -260,6 +271,7 @@ export default {
   },
   data() {
     return {
+      sendSuccess: false,
       form: {
         fullName: "",
         phone: "",
@@ -300,5 +312,21 @@ textarea:focus {
 
 .is-invalid {
   border-color: #dc3545 !important;
+}
+
+.fadeModal-enter-active {
+  animation: fade 0.4s ease-out;
+}
+.fadeModal-leave-active {
+  animation: fade 0.4s ease-out reverse;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 </style>
