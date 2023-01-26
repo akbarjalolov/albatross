@@ -3,6 +3,7 @@
     <section-title title="F.A.Q." data-aos="fade-up" />
     <div class="container relative z-1 mt-[32px] mx-auto">
       <div class="grid grid-cols-2 gap-x-6 gap-y-4">
+        <client-only>
         <div
           class="md:col-span-1 col-span-2"
           v-for="(item, index) in data"
@@ -17,6 +18,7 @@
             </div>
           </div>
         </div>
+        </client-only>
       </div>
     </div>
   </div>

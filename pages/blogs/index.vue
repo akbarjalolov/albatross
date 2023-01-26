@@ -9,9 +9,11 @@
                 <BlogCard :isThumbnail="true" v-for="item in blogs?.results?.slice(0,1)" :data="item" :key="item.id">
                 </BlogCard>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[20px] gap-y-[24px] mt-[32px]">                
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[20px] gap-y-[24px] mt-[32px]">      
+                <client-only>         
                 <BlogCard v-for="item in blogs?.results?.slice(1)" :data="item" :key="item.id">
                 </BlogCard>
+                </client-only> 
             </div>
             <div class="flex justify-center">
                <CButton v-if="blogs?.results.length >= 7" dynamicClass="max-w-[200px] mt-[32px] mx-auto bg-white border border-solid border-[#00AFEF] text-[#00AFEF] hover:text-white" text="Load more" />

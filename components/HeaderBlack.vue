@@ -6,6 +6,7 @@
         <img @click="closeBurger" class="cursor-pointer max-w-[24px] h-auto object-cover" src="@/static/icons/close.svg" />
       </div>
       <div class="flex flex-col items-center mt-[24px] gap-[16px]">
+        <client-only>
           <nuxt-link
             v-for="(item, index) in headerLink"
             :key="index"
@@ -16,6 +17,7 @@
           >
             {{ item.text }}
           </nuxt-link>
+          </client-only>
         </div>
     </div>
     </transition>
@@ -31,6 +33,7 @@
     </nuxt-link>
     <div class="hidden lg:flex items-center gap-[120px] xl:gap-[150px]">
       <div class="header-menu flex items-center">
+        <client-only>
         <nuxt-link
           v-for="(item, index) in headerLink"
           :key="index"
@@ -41,6 +44,7 @@
         >
           {{ item.text }}
         </nuxt-link>
+        </client-only>
       </div>
       <div class="social-menu flex items-center justify-between">
 

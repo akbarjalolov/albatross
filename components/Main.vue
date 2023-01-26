@@ -10,9 +10,9 @@
       data-aos="fade-up">
       {{ mainText }}
     </h4>
-    <p class="text-dGray font-normal leading-130 text-[14px] lg:text-xl mt-[12px] text-center" data-aos="fade-up">{{
+    <h4 class="text-dGray font-normal leading-130 text-[14px] lg:text-xl mt-[12px] text-center" data-aos="fade-up">{{
       subtext
-    }}</p>
+    }}</h4>
     <div class="w-full max-w-[450px] lg:max-w-[1400px] flex justify-center mx-auto">
       <img class="w-full h-auto object-cover max-w-[105px] lg:max-w-[575px]" src="@/static/img/line-button.png"
         data-aos="fade-right" data-aos-delay="400" />
@@ -74,8 +74,8 @@
               </svg>
             </span>
           </div>
-          <p class="text-white text-[16px] leading-130 font-normal ml-[12px] duration-200 group-hover:text-dBlue">Learn
-            more</p>
+          <h6 class="text-white text-[16px] leading-130 font-normal ml-[12px] duration-200 group-hover:text-dBlue">Learn
+            more</h6>
         </button>
         <div class="flex items-center flex-wrap mt-[30px] lg:mt-0">
 

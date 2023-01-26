@@ -44,8 +44,10 @@
             mt-[32px]
           "
         >
+        <client-only>
           <BlogCard v-for="item in relatedPosts" :data="item" :key="item.id">
           </BlogCard>
+          </client-only>
         </div>
       </div>
     </div>

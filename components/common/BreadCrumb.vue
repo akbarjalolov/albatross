@@ -16,11 +16,13 @@
                 </nuxt-link>
               </li>
               <span class="text-[#74787D] mx-3">/</span>
-              <template v-if="links && links.length">   
+              <template v-if="links && links.length"> 
+                <client-only>
                 <li v-for="(item,index) in links" :key="index" >
                   <span v-if="index + 1 === links.length">{{ item.title }}</span>
                   <nuxt-link :to="item.link" v-else>{{ item.title }}</nuxt-link>
                 </li>
+                </client-only> 
               </template>
             </ul>
 

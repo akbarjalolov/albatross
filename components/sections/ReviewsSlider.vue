@@ -2,12 +2,13 @@
   <div v-if="data && data.length" class="lg:py-[60px] mt-[24px] lg:mt-0">
     <section-title data-aos="fade-up" title="Reviews" class="" />
     <div>
+      <client-only>
       <VueSlickCarousel class="parentSwiper !flex mt-[32px]" v-bind="settings">
         <a :href="item.url" v-for="(item, index) in data" :key="index" data-aos="fade-up" :data-aos-delay="index + 1 +'00'" class="review-slide">
           <h3 class="text-white font-medium text-[20px] lg:text-[28px] leading-130">
             {{ item.title }}
           </h3>
-          <p class="
+          <h6 class="
             text-white
             font-normal
             text-[13px]
@@ -16,7 +17,7 @@
             mt-3
           ">
             {{ item.description }}
-          </p>
+          </h6>
           <h4 class="
             text-white
             font-medium
@@ -28,7 +29,9 @@
             {{ item.rate }}
           </h4>
           <div class="flex items-center">
+            <client-only>
             <img v-for="(i, index) in item.rate" :key="index" src="@/static/icons/star.svg" alt="" />
+            </client-only>
           </div>
           <div class="flex items-center justify-between flex-col lg:flex-row">
             <div class="flex flex-col">
@@ -59,6 +62,7 @@
           </div>
         </a>
       </VueSlickCarousel>
+      </client-only>
     </div>
   </div>
 </template>

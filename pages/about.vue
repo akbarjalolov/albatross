@@ -231,11 +231,13 @@
             gap-x-[20px] gap-y-[24px]
           "
         >
+        <client-only>
           <TeamCard
             v-for="(item, index) in teamMembers"
             :key="index"
             :person="item"
           />
+          </client-only>
         </div>
       </div>
     </div>

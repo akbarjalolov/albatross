@@ -34,7 +34,7 @@
                 rounded-full
               "
             >
-              <p class="text-dark leading-130 text-[24px] font-medium">1</p>
+              <h6 class="text-dark leading-130 text-[24px] font-medium">1</h6>
             </div>
             <img
               class="max-h-[240px] h-full w-auto object-contain hidden lg:block"
@@ -112,7 +112,7 @@
                 rounded-full
               "
             >
-              <p class="text-dark leading-130 text-[24px] font-medium">2</p>
+              <h6 class="text-dark leading-130 text-[24px] font-medium">2</h6>
             </div>
             <img
               class="max-h-[240px] h-full w-auto object-contain hidden lg:block"
@@ -190,7 +190,7 @@
                 rounded-full
               "
             >
-              <p class="text-dark leading-130 text-[24px] font-medium">3</p>
+              <h6 class="text-dark leading-130 text-[24px] font-medium">3</h6>
             </div>
           </div>
           <div

@@ -3,7 +3,7 @@
         <img class="max-h-[214px] h-full w-full object-cover rounded-[16px]" :src="data?.image_url" alt="img-auto">
         <div class="p-[12px]">
             <h4 class="text-dark leading-130 text-[20px] font-medium mt-[20px]">{{data?.title}}</h4>
-            <p class="text-dark leading-130 text-[18px] font-normal mt-[12px] line-clamp-3">{{data?.short_content}}</p>
+            <h6 class="text-dark leading-130 text-[18px] font-normal mt-[12px] line-clamp-3">{{data?.short_content}}</h6>
             <button class="btn-arrow mt-[45px] hover:bg-dBlue duration-200 h-fit border-solid text-dBlue hover:text-white w-full flex items-center justify-center gap-[12px]  p-[10px] rounded-full border-dBlue border-2">
                 Learn more
                 <span>

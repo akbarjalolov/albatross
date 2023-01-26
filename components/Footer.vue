@@ -158,6 +158,7 @@
           pb-24
         "
       >
+      <client-only>
         <nuxt-link
           :to="item?.link"
           v-for="(item, index) in footerLinks"
@@ -175,6 +176,7 @@
         >
           {{ item?.text }}
         </nuxt-link>
+      </client-only>
       </div>
       <div
         class="

@@ -29,6 +29,7 @@
                     <div class="col-span-12 md:col-span-5">
                         <div class="h-full flex flex-col justify-between bg-white blogs rounded-2xl p-[14px] lg:p-[28px]">
                             <div>
+                                <client-only>
                             <nuxt-link :to="`/blogs/${item.slug}`" data-aos="fade-up" :data-aos-delay="index + 1 +'00'" v-for="(item,index) in blogs.slice(1,4)" :key="index" class="flex justify-center align-items-center gap-4 group border-b border-solid border-[#E6ECF0] last:border-b-0 py-[20px]">
                                 <img :src="item?.image_url" class="min-w-[80px] h-[48px] object-cover rounded-[4px] border border-solid border-[#E6ECF0]" alt="">
                                 <div class="flex flex-col">
@@ -39,6 +40,7 @@
                                     </div>
                                 </div>
                             </nuxt-link>
+                            </client-only>
                             </div>
 
                             <nuxt-link to="/blogs" data-aos="fade-right" :data-aos-delay="300" class="flex justify-end md:justify-start items-center mt-20 gap-[12px] group duration-300 hover:gap-[20px]">
