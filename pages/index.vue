@@ -1,14 +1,11 @@
 <template>
   <div>
-    <!-- <pre>{{blogs}}</pre> -->
     <Main />
     <EasyStepsSlider />
     <MainForm />
     <ReviewsSlider :data="reviews"/>
     <PartnersSlider :data="partners"/>
     <Blogs :blogs="blogs.results" />
-    <client-only>
-    </client-only>
     <Faq :data="faq"/>
   </div>
 </template>

@@ -56,6 +56,7 @@
         src="@/static/img/truck-about.jpg"
         alt=""
       />
+      asd
     </div>
     <!-- cards -->
     <div class="bg-gray-100 py-[60px]">
