@@ -3,8 +3,7 @@
         <div class="flex items-center justify-center w-full" :class="{'!justify-start' : isWhite}">
           <img src="@/static/icons/section-title-icon.svg" alt="">
         </div>
-      <h1 class="section-titles select-none relative" :class="{'!text-white' : isWhite}">{{ title }}</h1>
-      <!-- <h4 class="shadoww absolute top-0 block">{{title}}</h4> -->
+      <h1 class="section-titles select-none relative" :class="{'!text-white' : isWhite, 'text-center' : center}">{{ title }}</h1>
     </div>
   </template>
   
@@ -17,6 +16,9 @@
       },
       isWhite: {
         default: false
+      },
+      center: {
+        default: true
       }
     },
   };

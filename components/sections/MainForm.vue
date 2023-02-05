@@ -8,8 +8,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-[16px]">
                 <div class="flex flex-col justify-between items-start">
                     <div class="flex flex-col justify-start items-start" data-aos="fade-up">
-                        <SectionTitle title="Route details" isWhite='true' />
-                        <h4 class="text-lightGray text-[16px] leading-130 font-normal mt-[8px]">Our dispatchers will receive your call</h4>
+                        <SectionTitle title="Start your vehicle shipment with Albatross Auto Shipping now." :center="false" isWhite='true' />
+                        <h4 class="text-lightGray text-[16px] leading-130 font-normal mt-[8px]">Fill out the form.</h4>
                     </div>
                     <div class="flex items-center gap-[16px] mt-[16px] lg:mt-0" data-aos="fade-up">
                         <img src="@/static/icons/headset.svg" alt="head">

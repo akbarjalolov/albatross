@@ -122,27 +122,6 @@
           <img src="@/static/icons/f-twit.svg" />
         </a>
 
-        <a
-          :href="settings?.telegram"
-          data-aos="fade-up"
-          :data-aos-delay="'400'"
-          class="
-            bg-[#11304D]
-            transition-all
-            duration-300
-            hover:bg-[#00AFEF]
-            f-social
-            rounded-full
-            flex
-            items-center
-            justify-center
-            w-[40px]
-            h-[40px]
-          "
-        >
-          <img src="@/static/icons/f-tg.svg" />
-        </a>
-
       </div>
       <div
         class="

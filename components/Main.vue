@@ -78,42 +78,40 @@
             more</h6>
         </button>
         <div class="flex items-center flex-wrap mt-[30px] lg:mt-0">
-
-          <div class="bg-dBLue h-[80px] lg:h-[100px] w-[80px] lg:w-[100px] border-solid border border-dBlue flex flex-col items-center justify-center rounded-full mr-[12px]"
+          <div class="bg-dBLue h-[80px] lg:h-[118px] w-[80px] lg:w-[118px] border-solid border border-dBlue flex flex-col items-center justify-center rounded-full mr-[12px]"
             data-aos="fade-left" :data-aos-delay="'00'">
             <h3 v-if="settings.shipped" class="text-white leading-130 text-[12px] lg:text-[24px] font-medium">
-              <number ref="number1" :from="0" :to="settings.shipped" :duration="5" :delay="0" easing="Power1.easeOut" />
+              <number ref="number1" :from="0" :to="settings.shipped" :duration="3" :delay="0" easing="Power1.easeOut" />
             </h3>
-            <h3 class="text-white leading-130 text-[10px] lg:text-[12px] font-normal">cars shipped</h3>
+            <h3 class="text-white leading-130 text-[8px] lg:text-[12px] font-normal">Cars Transported</h3>
           </div>
 
-          <div class="bg-dBLue h-[80px] lg:h-[100px] w-[80px] lg:w-[100px] border-solid border border-dBlue flex flex-col items-center justify-center rounded-full mr-[12px]"
+          <div class="bg-dBLue h-[80px] lg:h-[118px] w-[80px] lg:w-[118px] border-solid border border-dBlue flex flex-col items-center justify-center rounded-full mr-[12px]"
             data-aos="fade-left" :data-aos-delay="'100'">
             <h3 v-if="settings.clients" class="text-white leading-130 text-[12px] lg:text-[24px] font-medium">
-              <number ref="number1" :from="0" :to="settings.clients" :duration="5" :delay="0" easing="Power1.easeOut" />
+              <number ref="number1" :from="0" :to="settings.clients" :duration="3" :delay="0" easing="Power1.easeOut" />
             </h3>
-            <h3 class="text-white leading-130 text-[10px] lg:text-[12px] font-normal">happy clients</h3>
+            <h3 class="text-white leading-130 text-[8px] lg:text-[12px] font-normal">Satisfied Customers</h3>
           </div>
 
-          <div class="bg-dBLue h-[80px] lg:h-[100px] w-[80px] lg:w-[100px] border-solid border border-dBlue flex flex-col items-center justify-center rounded-full mr-[12px]"
+          <div class="bg-dBLue h-[80px] lg:h-[118px] w-[80px] lg:w-[118px] border-solid border border-dBlue flex flex-col items-center justify-center rounded-full mr-[12px]"
             data-aos="fade-left" :data-aos-delay="'200'">
             <h3 v-if="settings.mistakes == 0" class="text-white leading-130 text-[12px] lg:text-[24px] font-medium">
-              0
+              0 
             </h3>
             <h3 v-else-if="settings.mistakes" class="text-white leading-130 text-[12px] lg:text-[24px] font-medium">
-              <number ref="number1" :from="0" :to="settings.mistakes" :duration="5" :delay="0" easing="Power1.easeOut" />
+              <number ref="number1" :from="0" :to="settings.mistakes" :duration="3" :delay="0" easing="Power1.easeOut" />
             </h3>
-            <h3 class="text-white leading-130 text-[10px] lg:text-[12px] font-normal">fatal mistakes</h3>
+            <h3 class="text-white leading-130 text-[8px] lg:text-[12px] font-normal">Carrier Network</h3>
           </div>
 
-          <div class="bg-dBLue h-[80px] lg:h-[100px] w-[80px] lg:w-[100px] border-solid border border-dBlue flex flex-col items-center justify-center rounded-full mr-[12px]"
+          <div class="bg-dBLue h-[80px] lg:h-[118px] w-[80px] lg:w-[118px] border-solid border border-dBlue flex flex-col items-center justify-center rounded-full mr-[12px]"
             data-aos="fade-left" :data-aos-delay="'300'">
             <h3 v-if="settings.yearly_orders" class="text-white leading-130 text-[12px] lg:text-[24px] font-medium">
-              <number ref="number1" :from="0" :to="settings.yearly_orders" :duration="5" :delay="0" easing="Power1.easeOut" />
+              <number ref="number1" :from="0" :to="settings.yearly_orders" :duration="3" :delay="0" easing="Power1.easeOut" />
             </h3>
-            <h3 class="text-white leading-130 text-[10px] lg:text-[12px] font-normal">orders per year</h3>
+            <h3 class="text-white leading-130 text-[8px] lg:text-[12px] font-normal">5 Star Reviews</h3>
           </div>
-
         </div>
       </div>
     </div>
@@ -129,8 +127,8 @@ export default {
 
   data() {
     return {
-      mainText: "We just want to get your job done!",
-      subtext: 'As Soon As Possible',
+      mainText: "Car shipping at its best! ",
+      subtext: 'We are here to help 24/7. Call us at (865) 381-8015 for your custom car shipping quote.',
       buttonText: 'Get a quote',
       carsShipped: 0,
       happyClients: 0,

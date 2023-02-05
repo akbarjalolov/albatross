@@ -34,12 +34,6 @@
             </el-tooltip>
           </a>
 
-          <a target="_blank" class="w-[24px] h-[24px] mx-[6px] object-cover" :href="settings.facebook" data-aos="fade-left" :data-aos-delay="'0'">
-            <el-tooltip class="item" effect="dark" content="Telegram account" placement="top">
-              <img class="w-full opacity-60 transition-all duration-300 hover:opacity-100" src="@/static/icons/telegram-header.svg" alt="" />
-            </el-tooltip>
-          </a>
-
           <a target="_blank" class="w-[24px] h-[24px] mx-[6px] object-cover" :href="settings.linkedin" data-aos="fade-left" :data-aos-delay="'0'">
             <el-tooltip class="item" effect="dark" content="Linkedin account" placement="top">
               <img class="w-full opacity-60 transition-all duration-300 hover:opacity-100" src="@/static/icons/linkedin-header.svg" alt="" />
@@ -85,7 +79,6 @@ export default {
       ],
       socials: [
         { url: 'https://twitter.com/', img: require('@/static/icons/twitter-header.svg'), desc: 'Twitter account' },
-        { url: 'https://web.telegram.org/', img: require('@/static/icons/telegram-header.svg'), desc: 'Telegram account' },
         { url: 'https://www.instagram.com/', img: require('@/static/icons/instagram-header.svg'), desc: 'Instagram account' },
         { url: 'https://www.youtube.com/', img: require('@/static/icons/linkedin-header.svg'), desc: 'Linkedin account' }
       ],

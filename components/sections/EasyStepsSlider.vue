@@ -21,6 +21,7 @@
             hover:bg-dark hover:border-b-2 hover:border-b-dBlue
             rounded-3xl
             p-[24px]
+            min-h-[397px]
           "
         >
           <h3 class="title-gradient group-hover:border-[#00AFEF] duration-300">
@@ -39,7 +40,7 @@
               cursor-pointer
             "
           >
-            How trucking works?
+          Quote & Order
           </p>
           <p
             class="
@@ -88,7 +89,7 @@
               cursor-pointer
             "
           >
-            How trucking works?
+          Schedule Pickup
           </p>
           <p
             class="
@@ -137,7 +138,7 @@
               cursor-pointer
             "
           >
-            How trucking works?
+          Receive your vehicle
           </p>
           <p
             class="
@@ -157,6 +158,7 @@
         </div>
       </VueSlickCarousel>
     </div>
+
   </div>
 </template>
 
