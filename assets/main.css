@@ -55,3 +55,14 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+.hasError {
+  input {
+      border: 1px solid red !important;
+  }
+
+  textarea {
+      border: 1px solid red !important;
+
+  }
+}

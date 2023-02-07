@@ -19,6 +19,7 @@ import Blogs from "../components/sections/Blogs.vue";
 import PartnersSlider from "../components/sections/PartnersSlider.vue";
 import Faq from "../components/sections/Faq.vue";
 import aosMixin from "~/mixins/aos";
+
 import { mapState } from "vuex";
 export default {
   components: {
@@ -30,6 +31,7 @@ export default {
     PartnersSlider,
     Faq,
   },
+
   mixins: [aosMixin],
   computed: {
     ...mapState({
