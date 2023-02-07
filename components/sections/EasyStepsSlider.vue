@@ -5,7 +5,7 @@
       src="@/static/img/arrow-1.png"
       alt=""
     />
-    <div class="container mx-auto h-[300px] md:h-auto">
+    <div class="container mx-auto md:h-auto">
       <section-title title="Easy Steps" />
       <VueSlickCarousel class="parentSwiper mt-[32px]" v-bind="settings">
         <div
@@ -20,8 +20,11 @@
             duration-300
             hover:bg-dark hover:border-b-2 hover:border-b-dBlue
             rounded-3xl
-            p-[24px]
-            min-h-[397px]
+            p-[12px]
+            min-h-[266px]
+            md:pd-[24px]
+            md:min-h-[397px]
+            max-h-[300px]
           "
         >
           <h3 class="title-gradient group-hover:border-[#00AFEF] duration-300">
@@ -70,7 +73,10 @@
             duration-300
             hover:bg-dark hover:border-b-2 hover:border-b-dBlue
             rounded-3xl
-            p-[24px]
+            p-[12px]
+            md:pd-[24px]
+            md:min-h-[397px]
+            max-h-[300px]
           "
         >
           <h3 class="title-gradient group-hover:border-[#00AFEF] duration-300">
@@ -112,14 +118,17 @@
           data-aos="fade-up"
           :data-aos-delay="'200'"
           class="
-            group group-steps
+          group group-steps
             max-w-[385px]
             w-full
             border-2 border-solid border-[#D3D3D5]
             duration-300
             hover:bg-dark hover:border-b-2 hover:border-b-dBlue
             rounded-3xl
-            p-[24px]
+            p-[12px]
+            md:pd-[24px]
+            md:min-h-[397px]
+            max-h-[300px]
           "
         >
           <h3 class="title-gradient group-hover:border-[#00AFEF] duration-300">
@@ -201,7 +210,7 @@ export default {
       ],
       settings: {
         dots: false,
-        infinite: false,
+        infinite: true,
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 3,
@@ -222,6 +231,8 @@ export default {
               slidesToShow: 2,
               slidesToScroll: 2,
               initialSlide: 2,
+              autoplay: true,
+        autoplaySpeed: 2000,
             },
           },
           {
@@ -229,6 +240,8 @@ export default {
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1,
+              autoplay: true,
+        autoplaySpeed: 2000,
             },
           },
         ],

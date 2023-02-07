@@ -2,9 +2,8 @@
   <div v-if="data && data.length" class="lg:py-[60px] mt-[24px] lg:mt-0">
     <section-title data-aos="fade-up" title="Reviews" class="" />
     <div>
-      <client-only>
       <VueSlickCarousel class="parentSwiper !flex mt-[32px]" v-bind="settings">
-        <a :href="item.url" v-for="(item, index) in data" :key="index" data-aos="fade-up" :data-aos-delay="index + 1 +'00'" class="review-slide ">
+        <a :href="item.url" v-for="(item, index) in data" :key="index" data-aos="fade-up" :data-aos-delay="index + 1 +'00'" class="review-slide p-[12px] md:p-[24px] h-[400px] md:h-[349px] ">
           <div class="flex flex-col justify-between h-[100%]">
           <div>
           <h3 class="text-white font-medium text-[20px] lg:text-[28px] leading-130">
@@ -17,9 +16,13 @@
             lg:text-[16px]
             leading-140
             mt-3
+            line-clamp-5
           ">
             {{ item.description }}
           </h6>
+       
+        </div>
+        <div>
           <h4 class="
             text-white
             font-medium
@@ -27,12 +30,12 @@
             lg:text-[20px]
             leading-130
             mt-[26px]
+            text-center
+            md:text-left
           ">
-            {{ item.rate }}
+            {{ item.rate }}.0
           </h4>
-        </div>
-        <div>
-          <div class="flex items-center">
+          <div class="flex items-center justify-center md:justify-start">
             <img v-for="(i, index) in item.rate" :key="index" src="@/static/icons/star.svg" alt="" />
           </div>
           <div class="flex items-center justify-between flex-col lg:flex-row">
@@ -60,13 +63,12 @@
                 {{ item.address }}
               </h6>
             </div>
-            <img :src="item.logo_url" class="h-auto lg:max-h-[60px] w-auto" alt="" />
+            <img :src="item.logo_url" class="h-auto lg:max-h-[60px] w-[150px] md:w-auto" alt="" />
           </div>
         </div>
       </div>
         </a>
       </VueSlickCarousel>
-      </client-only>
     </div>
   </div>
 </template>
@@ -132,8 +134,6 @@ export default {
   background-size: cover;
   border-radius: 32px;
   flex-direction: column;
-  padding: 28px;
-  height: 349px;
 }
 </style>
 

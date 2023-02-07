@@ -2,7 +2,7 @@
   <div>
     <!-- target -->
     <div class="w-full mx-auto flex items-center justify-between gap-[40px]">
-      <div class="pl-[32px] lg:pl-[140px] px-[16px]" v-html="about?.description">
+      <div class="pl-[32px] lg:pl-[140px] px-[16px] about-description" v-html="about?.description">
         <!-- <h4
           class="
             font-medium
@@ -302,4 +302,6 @@ export default {
 .about-card__circle {
   box-shadow: 0px 0px 16px rgba(0, 175, 239, 0.4);
 }
+
+
 </style>
