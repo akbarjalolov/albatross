@@ -3,10 +3,10 @@
     <Main />
     <EasyStepsSlider />
     <MainForm />
-    <ReviewsSlider :data="reviews"/>
-    <PartnersSlider :data="partners"/>
+    <ReviewsSlider :data="reviews" />
+    <PartnersSlider :data="partners" />
     <Blogs :blogs="blogs.results" />
-    <Faq :data="faq"/>
+    <Faq :data="faq" />
   </div>
 </template>
 

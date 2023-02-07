@@ -2,7 +2,6 @@
   <div v-if="data && data.length" class="bg-[#F5F8FC] py-[20px] py-[60px] partners-slider">
     <section-title title="Partners" data-aos="fade-up" class="mb-[36px]" />
     <div class="mb-[24px]" data-aos="fade-up" data-aos-delay="100">
-      <client-only>
         <VueSlickCarousel v-bind="settings">
           <div v-for="(item, index) in data" :key="index" class="partner-slide">
             <a :href="item.url" target="_blank" class="w-full h-full">
@@ -11,11 +10,10 @@
               <img
                 :src="item.logo_url"
                 class="
-                  max-w-[80px]
-                  lg:max-w-[110px]
+                  w-[80px]
+                  lg:max-w-[110\px]
                   h-auto
-                  w-full
-                  object-cover
+                  object-contain
                   mx-auto
                 "
                 alt=""
@@ -23,10 +21,8 @@
             </a>
           </div>
         </VueSlickCarousel>
-      </client-only>
     </div>
-    <div data-aos="fade-up" data-aos-delay="200">
-      <client-only>
+    <!-- <div data-aos="fade-up" data-aos-delay="200">
         <VueSlickCarousel v-bind="settings2">
           <div v-for="(item, index) in data" :key="index" class="partner-slide">
             <a
@@ -51,8 +47,7 @@
             </a>
           </div>
         </VueSlickCarousel>
-      </client-only>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -135,6 +130,7 @@ export default {
 
 .partner-slide {
   width: 240px !important;
+  height: 80px;
   background-color: #ffffff;
   background-position: center;
   border-radius: 16px;

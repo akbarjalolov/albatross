@@ -4,7 +4,9 @@
     <div>
       <client-only>
       <VueSlickCarousel class="parentSwiper !flex mt-[32px]" v-bind="settings">
-        <a :href="item.url" v-for="(item, index) in data" :key="index" data-aos="fade-up" :data-aos-delay="index + 1 +'00'" class="review-slide">
+        <a :href="item.url" v-for="(item, index) in data" :key="index" data-aos="fade-up" :data-aos-delay="index + 1 +'00'" class="review-slide ">
+          <div class="flex flex-col justify-between h-[100%]">
+          <div>
           <h3 class="text-white font-medium text-[20px] lg:text-[28px] leading-130">
             {{ item.title }}
           </h3>
@@ -28,10 +30,10 @@
           ">
             {{ item.rate }}
           </h4>
+        </div>
+        <div>
           <div class="flex items-center">
-            <client-only>
             <img v-for="(i, index) in item.rate" :key="index" src="@/static/icons/star.svg" alt="" />
-            </client-only>
           </div>
           <div class="flex items-center justify-between flex-col lg:flex-row">
             <div class="flex flex-col">
@@ -58,8 +60,10 @@
                 {{ item.address }}
               </h6>
             </div>
-            <img :src="item.logo_url" class="max-h-[40px] lg:max-h-[60px] h-full w-auto" alt="" />
+            <img :src="item.logo_url" class="h-auto lg:max-h-[60px] w-auto" alt="" />
           </div>
+        </div>
+      </div>
         </a>
       </VueSlickCarousel>
       </client-only>
@@ -83,7 +87,7 @@ export default {
         arrows: false,
         centerMode: true,
         infinite: true,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 2000,
         slidesToShow: 1.72,
         slidesToScroll: 1,
@@ -129,6 +133,7 @@ export default {
   border-radius: 32px;
   flex-direction: column;
   padding: 28px;
+  height: 349px;
 }
 </style>
 
