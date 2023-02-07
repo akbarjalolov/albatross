@@ -17,9 +17,8 @@
           text-[#F5F8FC]
           mt-[24px]
           text-center
-          w-[70%]
-          lg:w-[55%]
-          mx-auto
+          w-[100%]
+        mx-auto
         " data-aos="fade-up">
         {{ settings?.footer_info }}
       </h5>

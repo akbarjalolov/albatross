@@ -3,7 +3,7 @@
     <section-title data-aos="fade-up" title="Reviews" class="" />
     <div>
       <VueSlickCarousel class="parentSwiper !flex mt-[32px]" v-bind="settings">
-        <a :href="item.url" v-for="(item, index) in data" :key="index" data-aos="fade-up" :data-aos-delay="index + 1 +'00'" class="review-slide p-[12px] md:p-[24px] h-[400px] md:h-[349px] ">
+        <div v-for="(item, index) in data" :key="index" data-aos="fade-up" :data-aos-delay="index + 1 +'00'" class="review-slide p-[12px] md:p-[24px] h-[420px] md:h-[349px] ">
           <div class="flex flex-col justify-between h-[100%]">
           <div>
           <h3 class="text-white font-medium text-[20px] lg:text-[28px] leading-130">
@@ -12,11 +12,12 @@
           <h6 class="
             text-white
             font-normal
-            text-[13px]
-            lg:text-[16px]
+            text-[16px]
+            lg:text-[20px]
             leading-140
-            mt-3
-            line-clamp-5
+            mt-20
+            lg:mt-6
+            line-clamp-4
           ">
             {{ item.description }}
           </h6>
@@ -63,11 +64,13 @@
                 {{ item.address }}
               </h6>
             </div>
+            <a :href="item.url" target="_blank">
             <img :src="item.logo_url" class="h-auto lg:max-h-[60px] w-[150px] md:w-auto" alt="" />
+          </a>
           </div>
         </div>
       </div>
-        </a>
+        </div>
       </VueSlickCarousel>
     </div>
   </div>
@@ -77,7 +80,6 @@
 import SectionTitle from "../SectionTitle.vue";
 import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
-// optional style for arrows & dots
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 export default {
   components: { SectionTitle, VueSlickCarousel },
