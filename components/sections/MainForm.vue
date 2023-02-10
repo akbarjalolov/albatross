@@ -31,7 +31,7 @@
                                     src="@/static/icons/map-location.svg" alt="">
                                 <label for="fromCity"
                                     class="text-white text-[14px] leading-140 font-medium">From</label>
-                                <input v-model="form.from" v-validate="'required'"
+                                <input v-model="form.from" v-validate="'required'" name="from"
                                     class="text-white bg-[#323636] border border-solid border-[#5C6670] rounded-md px-[16px] pl-[62px] py-[12px] mt-[8px] transition-all duration-200 focus:border-dBlue"
                                     type="text" placeholder="ZIP or City, State">
                             </div>
@@ -39,7 +39,7 @@
                                 <img class="max-w-[24px] h-auto object-cover absolute top-[38px] left-[18px]"
                                     src="@/static/icons/map-location 03.svg" alt="">
                                 <label for="fromCity" class="text-white text-[14px] leading-140 font-medium">To</label>
-                                <input v-model="form.to"
+                                <input v-model="form.to" name="to" v-validate="'required'"
                                     class="text-white bg-[#323636] border border-solid border-[#5C6670] rounded-md px-[16px] pl-[62px] py-[12px] mt-[8px] transition-all duration-200 focus:border-dBlue"
                                     type="text" placeholder="ZIP or City, State">
                             </div>
@@ -50,7 +50,7 @@
                                     class="text-white text-[14px] leading-140 font-medium mb-[8px]">Time</label>
                                 <!-- <date-picker placeholder="21/12/2022" v-model="time2" type="date"></date-picker> -->
                                 <!-- <input class="text-white bg-[#323636] border border-solid border-[#5C6670] rounded-md px-[16px] pl-[62px] py-[12px] mt-[8px] transition-all duration-200 focus:border-dBlue" type="text" placeholder="Pickup a date"> -->
-                                <el-date-picker v-model="form.date" type="date" placeholder="Pickup a date">
+                                <el-date-picker v-model="form.date" type="date" name="date" v-validate="'required'" placeholder="Pickup a date">
                                 </el-date-picker>
                             </div>
                             <div class="flex flex-col relative" data-aos-delay="300">
@@ -58,7 +58,7 @@
                                     src="@/static/icons/car.svg" alt="">
                                 <label for="fromCity"
                                     class="text-white text-[14px] leading-140 font-medium mb-[8px]">Vehicle</label>
-                                <el-select v-model="form.type" placeholder="Select" style="width: 100%">
+                                <el-select v-model="form.type" name="type" v-validate="'required'"  placeholder="Select" style="width: 100%">
                                     <el-option class="size-of-car-select" label="Small Car" value="Small Car">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="576" height="228"
                                             viewBox="0 0 576 228" fill="none" class="svg replaced-svg">
@@ -576,7 +576,7 @@
                             </div>
                         </div>
                         <div @click="send()">
-                            <CButton text="Send details" class="relative z-[4]" dynamicClass="mt-[28px]" />
+                            <CButton :disabled="errors.any()" text="Send details" class="relative z-[4]" dynamicClass="mt-[28px]" />
                         </div>
                     </div>
                     <div v-if="isSent">

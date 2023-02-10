@@ -54,6 +54,6 @@ export default {
   build: {
     extractCSS: true,
     cssSourceMap: false,
-    transpile: [/^v-mask/]
+    transpile: [/^v-mask/, /^vee-validate/]
   },
 }
