@@ -1,5 +1,5 @@
 <template>
-  <div data-aos="fade-up" :data-aos-delay="'100'" class="faq relative overflow-hidden md:py-16 py-4 px-[16px]">
+  <div class="faq relative overflow-hidden md:py-16 py-4 px-[16px]">
     <section-title title="F.A.Q." data-aos="fade-up" />
     <div class="container relative z-1 mt-[32px] mx-auto">
       <div class="grid grid-cols-2 gap-x-6 gap-y-4">

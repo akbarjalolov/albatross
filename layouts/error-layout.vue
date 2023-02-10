@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="wrapper">
+      <HeaderBlack />
       <Nuxt />
     </div>
   </div>
@@ -9,11 +10,11 @@
 <script>
 import { mapState } from "vuex";
 
-import Header from "../components/Header.vue";
+import HeaderBlack from "../components/HeaderBlack.vue";
 export default {
   name: "default",
   components: {
-    Header,
+    HeaderBlack,
   },
 };
 </script>

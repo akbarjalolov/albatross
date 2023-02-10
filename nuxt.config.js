@@ -26,6 +26,7 @@ export default {
     { src: '~/plugins/slick.js' },
     { src: '~/plugins/axios.js' },
     { src: '~/plugins/vee-validate.js' },
+    { src: '~/plugins/mask.js' },
   ],
 
   components: true,
@@ -53,5 +54,6 @@ export default {
   build: {
     extractCSS: true,
     cssSourceMap: false,
+    transpile: [/^v-mask/]
   },
 }

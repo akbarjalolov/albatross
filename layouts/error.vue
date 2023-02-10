@@ -1,6 +1,5 @@
 <template>
   <div>
-  <Header />
   <div class="relative">
     <img
       class="hidden md:block absolute right-[-100px] top-[0px] opacity-10"

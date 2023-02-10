@@ -137,7 +137,8 @@
                   type="text"
                   placeholder="Your phone number"
                   v-model="form.phone"
-                  v-validate="'required|numeric'"
+                  v-validate="'required'"
+                  v-mask="'+###############'"
                 />
                 <label
                   class="
