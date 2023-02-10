@@ -2,22 +2,28 @@
   <div v-if="data && data.length" class="lg:py-[60px] mt-[24px] lg:mt-0">
     <section-title data-aos="fade-up" title="Reviews" class="" />
     <div>
-      <client-only>
       <VueSlickCarousel class="parentSwiper !flex mt-[32px]" v-bind="settings">
-        <a :href="item.url" v-for="(item, index) in data" :key="index" data-aos="fade-up" :data-aos-delay="index + 1 +'00'" class="review-slide">
+        <div v-for="(item, index) in data" :key="index" data-aos="fade-up" :data-aos-delay="index + 1 +'00'" class="review-slide p-[12px] md:p-[24px] h-[420px] md:h-[349px] ">
+          <div class="flex flex-col justify-between h-[100%]">
+          <div>
           <h3 class="text-white font-medium text-[20px] lg:text-[28px] leading-130">
             {{ item.title }}
           </h3>
           <h6 class="
             text-white
             font-normal
-            text-[13px]
-            lg:text-[16px]
+            text-[16px]
+            lg:text-[20px]
             leading-140
-            mt-3
+            mt-20
+            lg:mt-6
+            line-clamp-4
           ">
             {{ item.description }}
           </h6>
+       
+        </div>
+        <div>
           <h4 class="
             text-white
             font-medium
@@ -25,13 +31,13 @@
             lg:text-[20px]
             leading-130
             mt-[26px]
+            text-center
+            md:text-left
           ">
-            {{ item.rate }}
+            {{ item.rate }}.0
           </h4>
-          <div class="flex items-center">
-            <client-only>
+          <div class="flex items-center justify-center md:justify-start">
             <img v-for="(i, index) in item.rate" :key="index" src="@/static/icons/star.svg" alt="" />
-            </client-only>
           </div>
           <div class="flex items-center justify-between flex-col lg:flex-row">
             <div class="flex flex-col">
@@ -58,11 +64,14 @@
                 {{ item.address }}
               </h6>
             </div>
-            <img :src="item.logo_url" class="max-h-[40px] lg:max-h-[60px] h-full w-auto" alt="" />
+            <a :href="item.url" target="_blank">
+            <img :src="item.logo_url" class="h-auto lg:max-h-[60px] w-[150px] md:w-auto" alt="" />
+          </a>
           </div>
-        </a>
+        </div>
+      </div>
+        </div>
       </VueSlickCarousel>
-      </client-only>
     </div>
   </div>
 </template>
@@ -71,7 +80,6 @@
 import SectionTitle from "../SectionTitle.vue";
 import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
-// optional style for arrows & dots
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 export default {
   components: { SectionTitle, VueSlickCarousel },
@@ -83,7 +91,7 @@ export default {
         arrows: false,
         centerMode: true,
         infinite: true,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 2000,
         slidesToShow: 1.72,
         slidesToScroll: 1,
@@ -128,7 +136,6 @@ export default {
   background-size: cover;
   border-radius: 32px;
   flex-direction: column;
-  padding: 28px;
 }
 </style>
 

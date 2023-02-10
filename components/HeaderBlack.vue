@@ -94,7 +94,7 @@ export default {
         { link: "/about", text: "About us", exact: true },
         { link: "/how-it-works", text: "How it works" },
         { link: "/transport-options", text: "Transport options" },
-        { link: "/pages/who-we-serve", text: "Who we serve" },
+        // { link: "/pages/who-we-serve", text: "Who we serve" },
         { link: "/contacts", text: "Contacts" },
       ],
       socials: [

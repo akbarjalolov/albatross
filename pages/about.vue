@@ -2,7 +2,7 @@
   <div>
     <!-- target -->
     <div class="w-full mx-auto flex items-center justify-between gap-[40px]">
-      <div class="pl-[32px] lg:pl-[140px] px-[16px]" v-html="about?.description">
+      <div class="pl-[32px] lg:pl-[140px] px-[16px] about-description" v-html="about?.description">
         <!-- <h4
           class="
             font-medium
@@ -42,27 +42,18 @@
         </p> -->
       </div>
       <div class="hidden md:block">
-        <img
-          class="max-w-[550px] w-full object-cover"
-          src="@/static/img/target.png"
-          alt=""
-        />
+        <img class="max-w-[550px] w-full object-cover" src="@/static/img/target.png" alt="" />
       </div>
     </div>
     <!-- truck img -->
     <div class="w-full max-h-[640px] mt-[60px]">
-      <img
-        class="w-full h-full max-h-[640px] object-cover"
-        src="@/static/img/truck-about.jpg"
-        alt=""
-      />
+      <img class="w-full h-full max-h-[640px] object-cover" src="@/static/img/truck-about.jpg" alt="" />
     </div>
     <!-- cards -->
     <div class="bg-gray-100 py-[60px]">
       <div class="container mx-auto px-[16px]">
         <div class="grid grid-cols-12">
-          <div
-            class="
+          <div class="
               col-span-12
               md:col-span-6
               lg:col-span-3
@@ -70,38 +61,33 @@
               flex flex-col
               py-[20px]
               px-[66px]
-            "
-          >
+            ">
             <div class="flex items-center justify-center">
-              <div
-                class="
+              <div class="
                   about-card__circle
                   mr-[-60px]
                   w-[72px]
                   h-[72px]
                   bg-dBlue
                   rounded-full
-                "
-              ></div>
+                "></div>
               <h4 class="text-dark leading-130 text-[40px] font-medium">
-                {{ about?.shipped }}
+                <number ref="number1" :from="0" :to="about?.shipped" :duration="3" :delay="0" easing="Power1.easeOut" />
+
               </h4>
             </div>
-            <p
-              class="
+            <p class="
                 mt-[16px]
                 font-normal
                 text-dark text-[20px]
                 leading-130
                 text-center
-              "
-            >
-              Cars shipped 
+              ">
+              Satisfied Customers
             </p>
           </div>
 
-          <div
-            class="
+          <div class="
               col-span-12
               md:col-span-6
               lg:col-span-3
@@ -109,38 +95,32 @@
               flex flex-col
               py-[20px]
               px-[66px]
-            "
-          >
+            ">
             <div class="flex items-center justify-center">
-              <div
-                class="
+              <div class="
                   about-card__circle
                   mr-[-60px]
                   w-[72px]
                   h-[72px]
                   bg-dBlue
                   rounded-full
-                "
-              ></div>
+                "></div>
               <h4 class="text-dark leading-130 text-[40px] font-medium">
-                 {{ about?.clients }}
+                <number ref="number1" :from="0" :to="about?.clients" :duration="3" :delay="0" easing="Power1.easeOut" />
               </h4>
             </div>
-            <p
-              class="
+            <p class="
                 mt-[16px]
                 font-normal
                 text-dark text-[20px]
                 leading-130
                 text-center
-              "
-            >
-              Happy clients
+              ">
+              Carrier Network
             </p>
           </div>
 
-          <div
-            class="
+          <div class="
               col-span-12
               md:col-span-6
               lg:col-span-3
@@ -148,38 +128,33 @@
               flex flex-col
               py-[20px]
               px-[66px]
-            "
-          >
+            ">
             <div class="flex items-center justify-center">
-              <div
-                class="
+              <div class="
                   about-card__circle
                   mr-[-60px]
                   w-[72px]
                   h-[72px]
                   bg-dBlue
                   rounded-full
-                "
-              ></div>
+                "></div>
               <h4 class="text-dark leading-130 text-[40px] font-medium">
-                  {{ about?.mistakes }}
+                <number ref="number1" :from="0" :to="about?.mistakes" :duration="3" :delay="0"
+                  easing="Power1.easeOut" />
               </h4>
             </div>
-            <p
-              class="
+            <p class="
                 mt-[16px]
                 font-normal
                 text-dark text-[20px]
                 leading-130
                 text-center
-              "
-            >
-             Fatal mistakes
+              ">
+              5 Star Reviews
             </p>
           </div>
 
-          <div
-            class="
+          <div class="
               col-span-12
               md:col-span-6
               lg:col-span-3
@@ -187,32 +162,29 @@
               flex flex-col
               py-[20px]
               px-[66px]
-            "
-          >
+            ">
             <div class="flex items-center justify-center">
-              <div
-                class="
+              <div class="
                   about-card__circle
                   mr-[-60px]
                   w-[72px]
                   h-[72px]
                   bg-dBlue
                   rounded-full
-                "
-              ></div>
+                "></div>
               <h4 class="text-dark leading-130 text-[40px] font-medium">
-                {{ about?.yearly_orders }}
+                <number ref="number1" :from="0" :to="about?.yearly_orders" :duration="3" :delay="0"
+                  easing="Power1.easeOut" />
+
               </h4>
             </div>
-            <p
-              class="
+            <p class="
                 mt-[16px]
                 font-normal
                 text-dark text-[20px]
                 leading-130
                 text-center
-              "
-            >
+              ">
               Orders per year
             </p>
           </div>
@@ -223,28 +195,24 @@
     <div class="bg-white py-[60px]">
       <section-title title="Our Team" />
       <div class="container px-[16px] mt-[32px] mx-auto">
-        <div
-          class="
+        <div class="
             grid grid-cols-1
             md:grid-cols-2
             lg:grid-cols-4
             gap-x-[20px] gap-y-[24px]
-          "
-        >
-        <client-only>
-          <TeamCard
-            v-for="(item, index) in teamMembers"
-            :key="index"
-            :person="item"
-          />
+          ">
+          <client-only>
+            <TeamCard v-for="(item, index) in teamMembers" :key="index" :person="item" />
           </client-only>
         </div>
       </div>
     </div>
     <!-- faq -->
     <Faq :data="faq" />
+    <MainForm />
+
     <ReviewsSlider :data="reviews" />
-    <PartnersSlider :data="partners"/>
+    <!-- <PartnersSlider :data="partners" /> -->
   </div>
 </template>
 
@@ -255,9 +223,10 @@ import Faq from "../components/sections/Faq.vue";
 import ReviewsSlider from "../components/sections/ReviewsSlider.vue";
 import PartnersSlider from "../components/sections/PartnersSlider.vue";
 import { mapState } from "vuex";
+import MainForm from "../components/sections/MainForm.vue";
 export default {
   layout: "black",
-  components: { SectionTitle, TeamCard, Faq, ReviewsSlider, PartnersSlider },
+  components: { SectionTitle, TeamCard, Faq, ReviewsSlider, PartnersSlider, MainForm },
   data() {
     return {
       aboutInfo: [
@@ -314,7 +283,7 @@ export default {
     ...mapState({
       reviews: (state) => state.reviews,
       faq: (state) => state.faq,
-      teamMembers: (state) => state.teammates,      
+      teamMembers: (state) => state.teammates,
       partners: (state) => state.partners,
       about: (state) => state.settings
     }),
@@ -333,4 +302,6 @@ export default {
 .about-card__circle {
   box-shadow: 0px 0px 16px rgba(0, 175, 239, 0.4);
 }
+
+
 </style>

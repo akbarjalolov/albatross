@@ -2,31 +2,23 @@
   <div v-if="data && data.length" class="bg-[#F5F8FC] py-[20px] py-[60px] partners-slider">
     <section-title title="Partners" data-aos="fade-up" class="mb-[36px]" />
     <div class="mb-[24px]" data-aos="fade-up" data-aos-delay="100">
-      <client-only>
-        <VueSlickCarousel v-bind="settings">
-          <div v-for="(item, index) in data" :key="index" class="partner-slide">
-            <a :href="item.url" target="_blank" class="w-full h-full">
-              <div class="left-gradient"></div>
-              <div class="top-gradient"></div>
-              <img
-                :src="item.logo_url"
-                class="
-                  max-w-[80px]
-                  lg:max-w-[110px]
+      <VueSlickCarousel v-bind="settings">
+        <div v-for="(item, index) in data" :key="index" class="partner-slide">
+          <a :href="item.url" target="_blank" class="w-full h-full ">
+            <div class="left-gradient"></div>
+            <div class="top-gradient"></div>
+            <img :src="item.logo_url" class="
+                  w-[80px]
+                  lg:max-w-[110\px]
                   h-auto
-                  w-full
-                  object-cover
+                  object-contain
                   mx-auto
-                "
-                alt=""
-              />
-            </a>
-          </div>
-        </VueSlickCarousel>
-      </client-only>
+                " alt="" />
+          </a>
+        </div>
+      </VueSlickCarousel>
     </div>
-    <div data-aos="fade-up" data-aos-delay="200">
-      <client-only>
+    <!-- <div data-aos="fade-up" data-aos-delay="200">
         <VueSlickCarousel v-bind="settings2">
           <div v-for="(item, index) in data" :key="index" class="partner-slide">
             <a
@@ -51,8 +43,7 @@
             </a>
           </div>
         </VueSlickCarousel>
-      </client-only>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -135,6 +126,7 @@ export default {
 
 .partner-slide {
   width: 240px !important;
+  height: 80px;
   background-color: #ffffff;
   background-position: center;
   border-radius: 16px;
@@ -142,6 +134,22 @@ export default {
   justify-content: center;
   padding: 18px;
   position: relative;
+
+  img {
+    transition: 0.3s all;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    pointer-events: none;
+  }
+
+  &:hover {
+    img {
+      -webkit-filter: grayscale(0%);
+      /* Safari 6.0 - 9.0 */
+      filter: grayscale(0%);
+    }
+
+  }
 }
 
 .parentSwiper .partner-slide:hover {

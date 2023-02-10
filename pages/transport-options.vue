@@ -4,26 +4,20 @@
     <div class="container px-[16px] mx-auto">
       <section-title title="Transport options" class="mt-[32px]" />
       <div class="container mx-auto px-[16px] my-[32px]">
-        <div
-          class="
+        <div class="
             grid grid-cols-1
             md:grid-cols-2
             lg:grid-cols-3
             gap-x-[20px] gap-y-[24px]
-          "
-        >
-          <client-only>
-            <TransportCard
-              v-for="item in optionsList"
-              :data="item"
-              :key="item.id"
-            >
-            </TransportCard>
-          </client-only>
+          ">
+          <TransportCard v-for="item in optionsList" :data="item" :key="item.id">
+          </TransportCard>
         </div>
       </div>
     </div>
     <MainForm />
+    <PartnersSlider :data="partners" />
+
   </div>
 </template>
 
@@ -33,9 +27,10 @@ import SectionTitle from "@/components/SectionTitle.vue";
 import TransportCard from "@/components/cards/TransportCard.vue";
 import MainForm from "@/components/sections/MainForm.vue";
 import { mapState } from "vuex";
+import PartnersSlider from "../components/sections/PartnersSlider.vue";
 export default {
   layout: "black",
-  components: { BreadCrumb, SectionTitle, TransportCard, MainForm },
+  components: { BreadCrumb, SectionTitle, TransportCard, MainForm, PartnersSlider },
   data() {
     return {
       transportCardData: [
@@ -81,13 +76,17 @@ export default {
   computed: {
     ...mapState({
       optionsList: (state) => state.transportOptions,
+      partners: (state) => state.partners
     }),
   },
-  fetch() {
-    this.$store.dispatch("fetchTransportOptions");
+  async fetch() {
+    await this.$store.dispatch("fetchTransportOptions");
+    await this.$store.dispatch("fetchPartners")
+
   },
 };
 </script>
 
 <style lang="scss" scoped>
+
 </style>

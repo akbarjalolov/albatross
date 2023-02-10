@@ -1,7 +1,7 @@
 <template>
   <div class="w-full z-[100]">
-    <transition name="fade">
-      <div class="bg-dark p-[16px] w-[100vw] h-[100vh]" v-if="burger">
+    <transition name="translateX">
+      <div class="bg-dark p-[16px] w-[100vw] h-[100vh]" id="myBurger" v-show="burger">
         <div class="container px-[16px] mx-auto py-[28px] flex items-center justify-end">
           <img @click="closeBurger" class="cursor-pointer max-w-[24px] h-auto object-cover"
             src="@/static/icons/close.svg" />
@@ -74,7 +74,7 @@ export default {
         { link: "/about", text: "About us", exact: true },
         { link: "/how-it-works", text: "How it works" },
         { link: "/transport-options", text: "Transport options" },
-        { link: "/pages/who-we-serve", text: "Who we serve" },
+        // { link: "/pages/who-we-serve", text: "Who we serve" },
         { link: "/contacts", text: "Contacts" },
       ],
       socials: [
@@ -97,23 +97,7 @@ export default {
       const body = document.querySelector('body')
       body.style.overflow = 'auto'
     },
-    func(){
-      console.log('func')
-    }
   },
-  watch: {
-    burger: function (item) {
-      console.log(item);
-      if (item) {
-        console.log("false");
-        document.querySelector("body").style.overflow = "hidden";
-      } else {
-        console.log("true");
-        document.querySelector("body").style.overflow = "auto";
-      }
-    },
-
-  }
 };
 </script>
 
@@ -143,16 +127,19 @@ export default {
   }
 }
 
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity .5s
+
+.translateX-enter{
+	transform:translateX(-200px);
+	opacity: 0;
 }
 
-.fade-enter,
-.fade-leave-to
+.translateX-enter-active,.translateX-leave-active{
+	transform-origin: top left 0;
+	transition:.2s ease;
+}
 
-/* .fade-leave-active below version 2.1.8 */
-  {
-  opacity: 0
+.translateX-leave-to{
+	transform: translateX(-200px);
+	opacity: 0;
 }
 </style>
