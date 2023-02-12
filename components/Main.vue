@@ -60,7 +60,7 @@
     </div>
     <div class="container mt-[30px] lg:mt-[140px] relative mx-auto flex items-center justify-between">
       <div class="w-full flex flex-col lg:flex-row items-center lg:items-end justify-center lg:justify-between">
-        <button @click="scrollToDown" class="to-down group hidden md:flex items-center justify-center">
+        <button class="to-down group hidden md:flex items-center justify-center">
           <div
             class="border border-solid border-white group-hover:border-dBlue duration-200 rounded-full w-[28px] p-4 h-auto">
             <span class="arrow-container block object-cover">
@@ -145,9 +145,6 @@ export default {
     await this.$store.dispatch("fetchSettings")
   },
   methods: {
-    scrollToDown() {
-      document.querySelector('#easySteps').scrollIntoView({ behavior: 'smooth' });
-    }
   }
 };
 </script>

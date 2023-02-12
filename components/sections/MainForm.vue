@@ -576,7 +576,7 @@
                             </div>
                         </div>
                         <div @click="send()">
-                            <CButton :disabled="errors.any()" text="Send details" class="relative z-[4]" dynamicClass="mt-[28px]" />
+                            <CButton text="Send details" class="relative z-[4]" dynamicClass="mt-[28px]" />
                         </div>
                     </div>
                     <div v-if="isSent">

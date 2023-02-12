@@ -101,8 +101,7 @@
           pb-24
         ">
         <client-only>
-          <nuxt-link :to="item?.link" v-for="(item, index) in footerLinks" :key="index" data-aos="fade-up"
-            :data-aos-delay="index + 1 + '00'" class="
+          <nuxt-link :to="item?.link" v-for="(item, index) in footerLinks" :key="index" class="
             font-normal
             leading-130
             text-[16px] text-white
