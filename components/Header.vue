@@ -17,7 +17,7 @@
     </transition>
     <div class="container px-[16px] mx-auto py-[28px] flex items-center justify-between bg-transparent z-50">
       <nuxt-link to="/" data-aos="fade-right">
-        <img class="max-w-[180px] lg:max-w-[215px] object-cover" src="@/static/img/logo-white.png" alt="" />
+        <img class="max-w-[180px] lg:max-w-[215px] object-cover" src="@/static/img/logo-white.png" alt="">
       </nuxt-link>
       <div class="hidden lg:flex items-center gap-[120px] xl:gap-[150px]">
         <div class="header-menu flex items-center">

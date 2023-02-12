@@ -1,6 +1,6 @@
 <template>
   <div class="faq relative overflow-hidden md:py-16 py-4 px-[16px]">
-    <section-title title="F.A.Q." data-aos="fade-up" />
+    <section-title title="F.A.Q." />
     <div class="container relative z-1 mt-[32px] mx-auto">
       <div class="grid grid-cols-2 gap-x-6 gap-y-4">
         <div

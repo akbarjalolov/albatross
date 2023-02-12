@@ -1,7 +1,7 @@
 <template>
   <div v-if="data && data.length" class="bg-[#F5F8FC] py-[20px] py-[60px] partners-slider">
-    <section-title title="Partners" data-aos="fade-up" class="mb-[36px]" />
-    <div class="mb-[24px]" data-aos="fade-up" data-aos-delay="100">
+    <section-title title="Partners"  class="mb-[36px]" />
+    <div class="mb-[24px]">
       <VueSlickCarousel v-bind="settings">
         <div v-for="(item, index) in data" :key="index" class="partner-slide">
           <a :href="item.url" target="_blank" class="w-full h-full ">

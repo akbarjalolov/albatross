@@ -4,15 +4,27 @@
     <div class="container px-[16px] mx-auto">
       <section-title title="Transport options" class="mt-[32px]" />
       <div class="container mx-auto px-[16px] my-[32px]">
-        <div class="
+        <div v-if="loading" class="
             grid grid-cols-1
             md:grid-cols-2
             lg:grid-cols-3
             gap-x-[20px] gap-y-[24px]
           ">
-          <TransportCard v-for="item in optionsList" :data="item" :key="item.id">
+          <TransportCard v-for="item in 3" :loading="true" :data="item" :key="item.id">
           </TransportCard>
         </div>
+
+        <div v-else-if="optionsList && optionsList.length" class="
+            grid grid-cols-1
+            md:grid-cols-2
+            lg:grid-cols-3
+            gap-x-[20px] gap-y-[24px]
+          ">
+          <TransportCard v-for="item in optionsList" :loading="loading" :data="item" :key="item.id">
+          </TransportCard>
+        </div>
+
+
       </div>
     </div>
     <MainForm />
@@ -71,6 +83,7 @@ export default {
           link: "/transport-options",
         },
       ],
+      loading: true
     };
   },
   computed: {
@@ -78,6 +91,11 @@ export default {
       optionsList: (state) => state.transportOptions,
       partners: (state) => state.partners
     }),
+  },
+  mounted() {
+    setTimeout(() => {
+      this.loading = false;
+    }, 1000);
   },
   async fetch() {
     await this.$store.dispatch("fetchTransportOptions");

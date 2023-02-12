@@ -2,7 +2,7 @@
   <div>
     <!-- target -->
     <div class="w-full mx-auto flex items-center justify-between gap-[40px]">
-      <div class="w-[70%] pl-[32px] lg:pl-[140px] px-[16px] about-description" v-html="about?.description">
+      <div class="w-[90%] md:w-[70%] pl-[32px] lg:pl-[140px] px-[16px] about-description" v-html="about?.description">
         <!-- <h4
           class="
             font-medium
@@ -304,13 +304,22 @@ export default {
 }
   </style>
 
-  <style lang=scss>
+  <style lang="scss">
 
-.about-description {
-  p {
-    font-size: 20px;
-    color: #000000;
+  @media screen and (max-width: 768px) {
+    .about-description {
+      p {
+        line-height: 24px;
+        span {
+           font-size: 18px !important;
+           color: #000000;
+           line-height: 28px;
+           strong{
+              font-size: 26px;
+           }
+        }
+      }
+    }  
   }
-}
     </style>
 
