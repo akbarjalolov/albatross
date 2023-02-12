@@ -20,7 +20,7 @@
             duration-300
             hover:bg-dark hover:border-b-2 hover:border-b-dBlue
             rounded-3xl
-            p-[12px]
+            p-[24px]
             min-h-[266px]
             md:pd-[24px]
             md:min-h-[397px]
@@ -73,7 +73,7 @@
             duration-300
             hover:bg-dark hover:border-b-2 hover:border-b-dBlue
             rounded-3xl
-            p-[12px]
+            p-[24px]
             md:pd-[24px]
             md:min-h-[397px]
             max-h-[300px]
@@ -125,7 +125,7 @@
             duration-300
             hover:bg-dark hover:border-b-2 hover:border-b-dBlue
             rounded-3xl
-            p-[12px]
+            p-[24px]
             md:pd-[24px]
             md:min-h-[397px]
             max-h-[300px]

@@ -1,16 +1,16 @@
 <template>
-  <div v-if="data && data.length" class="bg-[#F5F8FC] py-[20px] py-[60px] partners-slider">
+  <div v-if="data && data.length" class="bg-[#F5F8FC] py-[60px] partners-slider">
     <section-title title="Partners"  class="mb-[36px]" />
     <div class="mb-[24px]">
-      <VueSlickCarousel v-bind="settings">
+      <VueSlickCarousel v-bind="settings" class="parentSwiper">
         <div v-for="(item, index) in data" :key="index" class="partner-slide">
           <a :href="item.url" target="_blank" class="w-full h-full ">
             <div class="left-gradient"></div>
             <div class="top-gradient"></div>
             <img :src="item.logo_url" class="
-                  w-[80px]
-                  lg:max-w-[110\px]
-                  h-auto
+                  w-auto
+                  lg:max-h-[45px]
+                  h-full
                   object-contain
                   mx-auto
                 " alt="" />
@@ -59,7 +59,7 @@ export default {
         arrows: false,
         centerMode: true,
         infinite: true,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 2000,
         slidesToShow: 6,
         slidesToScroll: 1,
@@ -81,33 +81,33 @@ export default {
           },
         ],
       },
-      settings2: {
-        dots: false,
-        arrows: false,
-        centerMode: true,
-        infinite: true,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        slidesToShow: 6,
-        slidesToScroll: 1,
-        loop: true,
-        responsive: [
-          {
-            breakpoint: 991,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-            },
-          },
-          {
-            breakpoint: 617,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-            },
-          },
-        ],
-      },
+      // settings2: {
+      //   dots: false,
+      //   arrows: false,
+      //   centerMode: true,
+      //   infinite: true,
+      //   autoplay: true,
+      //   autoplaySpeed: 2000,
+      //   slidesToShow: 6,
+      //   slidesToScroll: 1,
+      //   loop: true,
+      //   responsive: [
+      //     {
+      //       breakpoint: 991,
+      //       settings: {
+      //         slidesToShow: 1,
+      //         slidesToScroll: 1,
+      //       },
+      //     },
+      //     {
+      //       breakpoint: 617,
+      //       settings: {
+      //         slidesToShow: 1,
+      //         slidesToScroll: 1,
+      //       },
+      //     },
+      //   ],
+      // },
     };
   },
   props: {
@@ -134,6 +134,7 @@ export default {
   justify-content: center;
   padding: 18px;
   position: relative;
+  overflow: hidden;
 
   img {
     transition: 0.3s all;
