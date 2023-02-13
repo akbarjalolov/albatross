@@ -86,6 +86,11 @@ export default {
       toggle: false,
     };
   },
+  watch: {
+    $route() {
+      this.closeBurger()
+    },
+  },
   methods: {
     openBurger() {
       this.burger = true

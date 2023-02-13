@@ -1,6 +1,6 @@
 <template>
   <div>
-    <BreadCrumb :links="links" />
+    <BreadCrumb :links="links" :loading="loading"/>
     <div class="container px-[16px] mx-auto">
       <div class="container mx-auto px-[16px] my-[32px]">
         <img
@@ -65,17 +65,6 @@ export default {
   components: { BreadCrumb, CopyUrl, SectionTitle, BlogCard },
   data() {
     return {
-      // slugData: {
-      //   img: "https://picsum.photos/1200/500",
-      //   title: "Lowest Quote Isn’t Always the Best Option Car Shipping",
-      //   author: {
-      //     name: "David Branson",
-      //     position: "Account executive, Auto Transport Expert",
-      //   },
-      //   publishedData: "12.12.2022",
-      //   content:
-      //     "Everyone enjoys a good smoking bargain. It's no surprise that 76 percent of customers say price comparison shopping is a regular part of their buying habits. Furthermore, 61 percent of customers see discounts and coupons as inducements to purchase. Seeking bargains is not just human nature, but it may also help you remain within your budget. However, whether it's apparel, gadgets, or services like auto transportation, you don't want to trade quality for the price. When it comes to automobile transportation, cheaper does not necessarily imply better. Continue reading to learn how to identify the top vehicle shipping companies.",
-      // },
       relatedPosts: [
         {
           img: "https://picsum.photos/300/300",
@@ -111,25 +100,30 @@ export default {
           desc: "Need an expensive, classic, or antique car transported a long-distance? Do you want to avoid potential damages that can occur with standard auto shipping? At Nexus Auto Transport, we want to make the process of shipping your car from point A to point B.",
         },
       ],
-      links: [
+      loading: true,
+    };
+  },
+  computed: {
+    ...mapState({
+      slugData: (state) => state.blogSlug,  
+    }),
+    links() {
+      return [
         {
           title: "Blog",
           link: "/blogs",
         },
         {
-          title: '',
-          link: "aaa",
+          title: this.slugData?.title,
+          link: "",
         },
-      ],
-    };
-  },
-  computed: {
-    ...mapState({
-      slugData: (state) => state.blogSlug,
-    }),
+      ];
+    }
   },
   mounted() {
-    console.log(this.$route)
+    setTimeout(() => {
+      this.loading = false;
+    }, 1000)
   },
   async fetch(){
      this.$store.dispatch("fetchBlogSlug", this.$route.params.slug)
