@@ -39,8 +39,14 @@ export default {
     '@nuxtjs/style-resources',
     'nuxt-webfontloader',
     '@nuxtjs/axios',
+    '@nuxtjs/dayjs'
 
   ],
+
+  dayjs: {
+    locales: ['en'],
+    defaultLocale: 'en',
+  },
 
   styleResources: {
     scss: ['@/assets/scss/functions.scss'],

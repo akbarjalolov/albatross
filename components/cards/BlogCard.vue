@@ -1,6 +1,7 @@
 <template>
   <div>
-    <nuxt-link :to="`/blogs/${data?.slug}`"  
+    <nuxt-link
+      :to="`/blogs/${data?.slug}`"
       v-if="isThumbnail"
       class="
         lg:max-h-[290px]
@@ -55,7 +56,8 @@
         </div>
       </div>
     </nuxt-link>
-    <nuxt-link :to="`/blogs/${data?.slug}`"
+    <nuxt-link
+      :to="`/blogs/${data?.slug}`"
       v-else
       class="
         max-h-[360px]
@@ -97,7 +99,7 @@
             {{ data?.full_name }}
           </h4>
           <h4 class="text-lightGray leading-130 text-[14px] font-normal">
-            {{ data?.published_at }}
+            {{ data?.published_date }}
           </h4>
         </div>
       </div>

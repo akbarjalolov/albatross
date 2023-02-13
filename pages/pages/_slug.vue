@@ -18,18 +18,20 @@ export default {
     data() {
         return {
             title: '',
-            links: [
-                {
-                    name: this.staticData?.title,
-                    link: '/terms-of-use'
-                }
-            ]
         }
     },
     computed: {
         ...mapState({
             staticData: state => state.staticPage
         }),
+        links() {
+            return [
+                {
+                    title: this.staticData?.title,
+                    link: '',
+                },
+            ]
+        },
     },
     async fetch() {
         await this.$store.dispatch('fetchStaticPage', { slug: this.$route.params.slug })

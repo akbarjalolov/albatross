@@ -123,8 +123,7 @@
           mt-24
         ">
         <div class="flex flex-wrap items-center gap-[24px]">
-          <div class="flex items-center gap-[8px] hover-underline" data-aos="fade-up"
-            data-aos-anchor-placement="bottom-bottom">
+          <div class="flex items-center gap-[8px] hover-underline">
             <div class="
                 bg-[#11304D]
                 transition-all
@@ -175,7 +174,7 @@
             leading-130
             mt-[16px]
             md:mt-0
-          " data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+          " >
           © {{ currentYear }} Albatros LLC. All rights reserved.
         </h4>
       </div>

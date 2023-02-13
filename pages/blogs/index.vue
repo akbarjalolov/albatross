@@ -1,7 +1,6 @@
 <template>
 <div>
     <BreadCrumb :links="links"/>
-    <pre>{{links}}</pre>
     <div class="container px-[16px] mx-auto">
         <section-title title="Blog" class="mt-[32px]" />
         <div class="container mx-auto px-[16px] my-[32px]">
