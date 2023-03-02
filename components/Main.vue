@@ -16,8 +16,10 @@
     <div class="w-full max-w-[450px] lg:max-w-[1400px] flex justify-center mx-auto">
       <img class="w-full h-auto object-cover max-w-[105px] lg:max-w-[575px]" src="@/static/img/line-button.png"
         data-aos="fade-right" data-aos-delay="400" />
+      <a target="_blank" href="https://apps.msgplane.com/quote/aas">
       <c-button :text="buttonText" dynamicClass="max-w-[200px] min-w-[180px] mx-auto mt-[24px]" data-aos="fade-up"
         data-aos-delay="400"></c-button>
+      </a>
       <div class="w-full"></div>
     </div>
     <div class="w-full mt-[35px] lg:mt-[100px]">
@@ -97,7 +99,7 @@
           <div class="bg-dBLue h-[80px] lg:h-[118px] w-[80px] lg:w-[118px] border-solid border border-dBlue flex flex-col items-center justify-center rounded-full mr-[12px]"
             data-aos="fade-left" :data-aos-delay="'200'">
             <h3 v-if="settings.mistakes == 0" class="text-white leading-130 text-[12px] lg:text-[24px] font-medium">
-              0 
+              0
             </h3>
             <h3 v-else-if="settings.mistakes" class="text-white leading-130 text-[12px] lg:text-[24px] font-medium">
               <number ref="number1" :from="0" :to="settings.mistakes" :duration="2" :delay="0" easing="Power1.easeOut" />
