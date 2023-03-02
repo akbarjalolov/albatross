@@ -39,7 +39,8 @@ export default {
     '@nuxtjs/style-resources',
     'nuxt-webfontloader',
     '@nuxtjs/axios',
-    '@nuxtjs/dayjs'
+    '@nuxtjs/dayjs',
+    '@nuxtjs/sitemap'
 
   ],
 
@@ -62,4 +63,8 @@ export default {
     cssSourceMap: false,
     transpile: [/^v-mask/, /^vee-validate/]
   },
+
+  sitemap: {
+    hostname: 'https://albatrossllc.net/'
+  }
 }

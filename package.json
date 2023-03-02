@@ -16,6 +16,7 @@
     "aos": "^2.3.4",
     "autoprefixer": "^10.4.13",
     "core-js": "^3.9.1",
+    "@nuxtjs/sitemap": "^2.4.0",
     "element-ui": "^2.15.1",
     "floating-vue": "^1.0.0-beta.19",
     "nuxt": "^2.15.3",
